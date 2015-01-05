@@ -1,0 +1,206 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Lecture 1: Review of Stellar Astrophysics}
+\author{Brant Robertson}
+\date{January 5, 2015}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+%distance measures
+\section{Distance Measures}
+
+Astronomy is a science based on relative measurements, 
+especially for angular separations on the sky and apparent brightness.
+The {\it angular separation} $\alpha$ of objects on the sky
+is often measured
+using the {\it small angle} formula, since the relation between
+the physical line-of-sight distance $d$ and the physical separation 
+$\Delta x$ in the plane of the sky in terms of {\it radians} ($\rad$) is
+\begin{equation}
+\label{eqn:small_angle}
+\frac{\Delta x}{d} = \sin \alpha \approx \alpha (\ll 1 \rad).
+\end{equation}
+Angular separations can be measured in degrees (deg; 360 deg around the sky = $2\pi~\rad$), 
+arcmin ('; = 1/60 deg),
+and arcseconds (''; =1/60 arcmin).
+
+Distances on the scale of solar systems are often given in terms
+of the {\it Astronomical Unit} ($\AU$), which is the mean orbital
+radius of Earth about the Sun (in {\it centimeters}; $\cm$):
+\begin{equation}
+\label{eqn:AU}
+1 \AU = 1.49597871 \times 10^{13} \cm.
+\end{equation}
+\noindent
+The {\it parsec} ($\pc$) unit is defined to be the line-of-sight distance $d=1 \pc$
+at which two objects separated by a physical distance $\Delta x=1\AU$ in the
+plane of the sky have an apparent angular separation on the sky of $\alpha=1''$.
+In terms of other units,
+\begin{equation}
+\label{eqn:parsec}
+1\pc = 2.06264806 \times 10^{5} \AU = 3.08567758 \times 10^{18} \cm = 3.2616334~\ly
+\end{equation}
+\noindent
+where a {\it light year} ($\ly$) is
+\begin{equation}
+1\ly = 9.4605284\times10^{17}\cm
+\end{equation}
+\noindent
+and is defined relative to the {\it speed of light} ($c$)
+\begin{equation}
+\label{eqn:speed_of_light}
+c = 2.9979245800\times10^{10} \cm~\s^{-1}.
+\end{equation}
+\noindent
+Note that astronomers typically prefer $\pc$ to $\ly$. We also
+use the units {\it megaparsecs} ($\Mpc = 10^6 \pc$) and {\it gigaparsecs}
+($\Gpc = 10^9 \pc$).
+
+%mass, luminosity and temperature
+\section{Stellar Mass, Luminosity, Flux, Radius, and Temperature}
+Stellar masses are often expressed in terms of a {\it solar mass} ($\Msun$; mass of the Sun)
+\begin{equation}
+1\Msun = 1.9891\times10^{33}\g
+\end{equation}
+\noindent
+in grams ($\g$). The most massive stars are $\approx100\Msun$ while the
+least massive stars are $\approx0.075\Msun$.
+
+Stellar luminosities (ergs of energy emitted per second; $1\erg = 1~\g~\cm^{2}~\s^{-2}$) are also 
+often expressed in terms of the total (bolometric) {\it solar luminosity} ($\Lsun$; luminosity of the Sun)
+\begin{equation}
+1\Lsun = 3.846\times10^{33} \erg~\s^{-1}
+\end{equation}
+\noindent
+Stars range in luminosity from $10^{6}\Lsun$ to less than $10^{-4}\Lsun$.
+
+The {\it flux} $F$ is the energy per unit second per unit area ($\erg~\s^{-1}~\cm^{-2}$)
+that is received from an object a distance $d$ away, and is
+given by the {\it inverse square law}
+\begin{equation}
+\label{eqn:inverse_square}
+F = \frac{L}{4\pi d^{2}}.
+\end{equation}
+\noindent
+
+The {\it flux density} ($\Fnu \equiv dF/d\nu$) of an object is best measured in {\it janskys}
+\begin{equation}
+1\Jy = 10^{-23} \erg~\s^{-1}~\cm^{-2}~\Hz^{-1}.
+\end{equation}
+\noindent
+Note that the {\it hertz} ($1\Hz = 1 s^{-1}$) is the unit of frequency $\nu$.
+Astronomers will also use a flux density ($\Flambda = dF/d\lambda$) 
+defined relative to wavelength. Typically, the units of $\Flambda$
+are in $\erg~\cm^{-2}~\s^{-1}~\Ang^{-1}$, where $\Ang$ is the {\it angstrom}
+($1\Ang = 10^{-8}\cm$). The wavelength and frequency of light are related by
+$c = \nu \lambda$, and the two flux densities are therefore 
+related by $\Flambda = (c/\lambda^2)\Fnu$.
+The total flux is related to the flux density by
+\begin{equation}
+F = \int \Fnu d \nu = \int \Flambda d\lambda.
+\end{equation}
+\noindent
+If the distance of an object is known, astronomers will also use the term
+{\it luminosity density} (e.g., $\Lnu = dL/d\nu$).
+
+The luminosity, radius, and temperature of an object are related. For stellar
+objects, we often use the {\it solar radius} ($\Rsun$) to express sizes
+\begin{equation}
+1\Rsun = 6.995 \times 10^{10} \cm
+\end{equation}
+\noindent
+If the luminosity $L$ and radius $R$ of an object are known, we can define
+the effective temperature $T$ in {\it Kelvin} ($K$)
+of an object through the {\it Stefan-Boltzmann Law}
+\begin{equation}
+L = 4\pi R^{2}\sigmaSB T^{4}
+\end{equation}
+\noindent
+where the {\it Stefan-Boltzmann constant} is
+\begin{equation}
+\sigmaSB = 5.670373\times^{-5} \erg~\cm^{-2}~\s^{-1}~\K^{-4}.
+\end{equation}
+The Stefan-Boltzmann constant can be computed theoretically in
+terms of the speed of light, the {\it Boltzmann constant}
+\begin{equation}
+\kB = 1.380658\times10^{-16} \erg~\K^{-1}
+\end{equation}
+\noindent
+and the {\it Planck constant}
+\begin{equation}
+h = 6.6260755\times10^{-27}\erg~\s,
+\end{equation}
+\noindent
+which gives the definition
+\begin{equation}
+\sigmaSB \equiv \frac{2\pi^5 \kB^4}{15 h^3 c^2}.
+\end{equation}j
+
+The effective temperature is typically a measure of the temperature
+of the star at its {\it photosphere}, or the radius where the optical
+depth of the star's atmosphere is $\tau\approx1$ and it becomes opaque. 
+For the Sun,
+$T\approx5780\K$. The temperature is also related to the wavelength
+at the peak of the black body curve via {\it Wien's Displacement Law}
+\begin{equation}
+\lambda_{\mathrm{max}} = \frac{2.897756\times10^{7} \Ang~\K}{T},
+\end{equation}
+which gives $\lambda_{\mathrm{max}}\approx5000\Ang$ (yellow)
+for the Sun.
+
+Based on their temperatures, stars are classified into {\it spectral types}.
+The spectral types are OBAFGKMLTY, and are usually subclassified into {\it early}
+(OBA) and {\it late} (FGKM) type stars. O type stars are hot ($T>3\times10^4\K$) while
+M type stars are relatively cool ($M\approx3000\K$), and each type is
+subsubclassified by decreasing temperature
+from $0-9$ (e.g., the Sun is a G2 star). Deviations from a black body are
+determined by the atomic and molecular species absorption in the stellar atmospheres,
+with strong Hydrogen absorption in A star spectra and strong molecular bands appearing
+in M star spectra.
+
+{\bf See Figure 1.1 of Sparke and Gallagher.}
+
+The {\it main sequence} of stars traces a band in the diagram of luminosity and
+temperature (the {\it Hertzsprung-Russell diagram}), and consists of stars that
+shine by burning hydrogen through nuclear fusion. Main sequence stars range in
+radius from about $R\approx0.1\Rsun$ to $R\approx25\Rsun$, with a scaling of
+\begin{equation}
+R\sim \Rsun\left(\frac{M}{\Msun}\right)^{0.7}.
+\end{equation}
+\noindent
+The corresponding scaling of stellar luminosity near the main sequence is
+\begin{equation}
+L\sim\Lsun\left(\frac{M}{\Msun}\right)^{\beta}
+\end{equation}
+\noindent
+with $\beta\approx5$ for $M\lesssim\Msun$ and 
+$\beta\approx3.9$ for $\Msun\lesssim M \lesssim 10\Msun$. For stars
+with $M\gtrsim10\Msun$, $L\sim50\Lsun(M/\Msun)^{2.2}$.
+
+{\it Giant} and {\it supergiant} stars have evolved off the main sequence, and
+have radii and luminosities that are typically much larger than main sequence
+stars of the same effective temperature. Supergiants can have radii of $1000\Rsun$
+and luminosities of $10^{6}\Rsun$.
+
+{\it White dwarf} stars are not on the main sequence, but instead are the
+remains of the core of an evolved star that is supported through electron
+degeneracy pressure. White dwarfs have typical sizes of $0.01\Rsun$.
+
+{\it Neutron stars} are the remnants of certain supernovae that leave behind
+a core supported by neutron degeneracy pressure. Neutron stars have radii 
+of only $R\sim10\mathrm{km}$, about the size of a large city.
+
+
+
+\end{document}
