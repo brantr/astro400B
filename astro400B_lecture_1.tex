@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[12pt]{article}
 \usepackage[margin=1.0in]{geometry}
 \usepackage{amssymb}
 
@@ -145,7 +145,7 @@ h = 6.6260755\times10^{-27}\erg~\s,
 which gives the definition
 \begin{equation}
 \sigmaSB \equiv \frac{2\pi^5 \kB^4}{15 h^3 c^2}.
-\end{equation}j
+\end{equation}
 
 The effective temperature is typically a measure of the temperature
 of the star at its {\it photosphere}, or the radius where the optical
@@ -158,6 +158,8 @@ at the peak of the black body curve via {\it Wien's Displacement Law}
 \end{equation}
 which gives $\lambda_{\mathrm{max}}\approx5000\Ang$ (yellow)
 for the Sun.
+
+\subsection{The Main Sequence}
 
 Based on their temperatures, stars are classified into {\it spectral types}.
 The spectral types are OBAFGKMLTY, and are usually subclassified into {\it early}
@@ -172,7 +174,7 @@ in M star spectra.
 {\bf See Figure 1.1 of Sparke and Gallagher.}
 
 The {\it main sequence} of stars traces a band in the diagram of luminosity and
-temperature (the {\it Hertzsprung-Russell diagram}), and consists of stars that
+temperature (the {\it Hertzsprung-Russell or HR diagram}), and consists of stars that
 shine by burning hydrogen through nuclear fusion. Main sequence stars range in
 radius from about $R\approx0.1\Rsun$ to $R\approx25\Rsun$, with a scaling of
 \begin{equation}
@@ -181,6 +183,7 @@ R\sim \Rsun\left(\frac{M}{\Msun}\right)^{0.7}.
 \noindent
 The corresponding scaling of stellar luminosity near the main sequence is
 \begin{equation}
+\label{eqn:luminosity_vs_mass}
 L\sim\Lsun\left(\frac{M}{\Msun}\right)^{\beta}
 \end{equation}
 \noindent
@@ -200,6 +203,106 @@ degeneracy pressure. White dwarfs have typical sizes of $0.01\Rsun$.
 {\it Neutron stars} are the remnants of certain supernovae that leave behind
 a core supported by neutron degeneracy pressure. Neutron stars have radii 
 of only $R\sim10\mathrm{km}$, about the size of a large city.
+
+{\bf See Figure 1.4 of Sparke and Gallagher.}
+
+The main sequence lifetime of a star is predominately determined by its
+mass-to-light ratio, since hydrogen mass is being burned into helium at a 
+rate that must fuel the stellar luminosity. For $\ave{\beta} \approx 3.5$ in
+Equation \ref{eqn:luminosity_vs_mass}, we have that
+\begin{equation}
+\label{eqn:main_sequence_lifetime_basic}
+\tau_{\mathrm{MS}} = \tau_{\mathrm{MS},\odot}\frac{M/L}{\Msun/\Lsun} \sim 10\Gyr\left(\frac{M}{\Msun}\right)^{-2.5}\sim 10\Gyr\left(\frac{L}{\Lsun}\right)^{-5/7}.
+\end{equation}
+Sparke and Gallagher give a more accurate approximation as
+\begin{equation}
+\label{eqn:main_sequence_lifetime}
+\log(\tau_{\mathrm{MS}}/1\Gyr) = 1.015 - 3.49\log(M/\Msun) +0.83(\log[M/\Msun])^2
+\end{equation}
+\noindent
+(note the factor of 10 error in Sparke and Gallagher Equation 1.9).
+
+\subsection{Chemical Abundance}
+
+The presence of atomic and molecular features in the spectra of stars enable us
+to measure the amount of metals (elements heavier than Helium) in their atmospheres.
+We typically measure the metallicity $Z$ on a log scale relative to the solar abundance,
+with the definition
+\begin{equation}
+[A/B]\equiv \log \left[ \frac{(\mathrm{number\,\,of\,\,A\,\,atoms/number\,\,of\,\,B\,\,atoms})_{\star}}{(\mathrm{number\,\,of\,\,A\,\,atoms/number\,\,of\,\,B\,\,atoms})_{\odot}} \right].
+\end{equation}
+For the Sun, the total metallicity is $[Z/\mathrm{H}] = 0$ by definition, while for a star with $10\times$ the
+solar metallicity we have $[Z/\mathrm{H}] = 1$. Often, astronomers abbreviate metallicity 
+with $[\mathrm{Fe}/\mathrm{H}]$ even though O is typically the most abundant metal by number. 
+The relative abundance of metals in stars is set by a combination of {\it Big Bang Nucleosynthesis}
+that determined the initial abundance of H, He, and Li (primarily) and {\it Stellar Nucleosynthesis}
+that determined the abundance of heavier elements through a variety of stellar fusion and supernovae-related
+processes. The presence of metals in a star can effect its evolution by increasing the atmospheric opacity.
+Low metallicity stars have lower opacity in their atmospheres, leading to a denser, hotter, and bluer star
+at fixed mass.
+
+{\bf See Figure 1.3 of Sparke and Gallagher.}
+
+\subsection{Typical life of a star}
+
+The typical star goes through several phases during its life:
+
+\begin{enumerate}
+
+\item {\it Pre-main sequence}. The initial formation of stars is not well-understood, but
+the general picture involves a collapsing gas cloud with some initial angular momentum. As
+the cloud cools, the angular momentum causes the gas cloud to form a disk. The disk eventually
+forms a central bound object that continues to collapse roughly spherically.  This cloud does
+shine (in the infrared) by converting gravitational potential energy to thermal energy via a
+virialization process. The pre-main sequence phase ends once the star is dense and hot enough in
+its core to undergo nuclear fusion.
+
+\item {\it Main sequence}. The hydrogen-burning phase of stellar life. All stars with masses
+below about $0.6\Msun$ have main sequence lifetimes longer than the age of the universe and
+remain on the main sequence.  The fate of heavier stars depends on their mass.
+
+\item {\it Post-main sequence for low-mass stars} ($0.6\Msun\lesssim M\lesssim 2\Msun$).
+{\bf See Figure 1.4 of Sparke and Gallagher.} 
+The cores of these stars contracts as hydrogen is burned, and the outer layers puff up and
+become cooler as the star becomes a {\it subgiant}. The temperature around the core
+becomes hot enough to burn hydrogen in a shell around the exterior of the core, leading to
+the {\it red giant} phase. The helium by-product of the hydrogen shell burning falls on the
+core, which causes the core to contract and get hotter. The shell burns even brighter, causing
+the star to become very luminous and ascend the {\it red giant branch} of the HR diagram.
+The (now) helium core eventually contracts until He can burn to C through the
+{\it triple $\alpha$ process}, which happens quickly in what's called the {\it helium flash}.
+The helium cores of stars with $M\lesssim 2\Msun$ have about the same helium core mass
+and therefore the same luminosity at the tip of the giant branch. Once the core helium is mostly
+burned the core contracts again until both He and H are burned in shells, corresponding to the
+{\it asymptotic giant branch} (AGB) phase. In the AGB phase, the star looses its outer envelope
+in a {\it planetary nebula} phase where the expelled gas is ionized by UV light from the hot
+central core. This core is a degenerate white dwarf, which gradually emits as a black body (typically)
+modified by H and He absorption. The white dwarf cooling time (to $T\sim0$) is longer than the age
+of the universe, and most white dwarfs are around ten thousand $\K$ at their surface.
+
+\item {\it Post-main sequence for intermediate-mass stars} ($2\Msun\lesssim M\lesssim 8\Msun$).
+The post-main sequence lives of these stars are similar to low-mass stars, but their helium
+cores can become more massive and they can therefore reach higher luminosities (and are bluer) 
+than the red clump where low-mass stars congregate in their giant phases. Some of these stars
+regularly pulsate as {\it Cepheid} variables that can be used as distance indicators. The
+white dwarfs of these stars may contain some Ne in addition to C and O.
+
+\item {\it Post-main sequence for high-mass stars} ($M\gtrsim 8\Msun$).
+The post-main sequence lives of high-mass stars differs substantially from lower mass
+populations. The cores of stars above $\sim10\Msun$ can burn through the $\alpha$ process C$\to$O,
+O$\to$Ne, all the way up to Fe where the binding energy per nucleon peaks. During this heavy element
+burning, the star is a blue or yellow supergiant. But after the core reaches Fe,
+nuclear fusion stops since burining iron to heavier elements through fusion is endothermic
+and requires (rather than provides) energy. The core then collapses, forms neutrons and hardens,
+and then the outer layers bounce and are pushed via neutrinos to form a {\it Supernova Type II}.
+The remnant is left as a neutron star. For stars $8\Msun \lesssim M \lesssim10\Msun$, the core probably
+exceeds the {\it Chandrasekar limit} of $1.4\Msun$ where degeneracy pressure can no longer resist gravity
+and the star also explodes as a Type II supernova. For stars larger than $\sim40\Msun$ less is 
+known, but some shed their outer layers and are seen as {\it Wolf-Rayet} stars with strong winds. Some
+heavier stars may have cores that collapse to form black holes.
+
+\end{enumerate}
+
 
 
 
