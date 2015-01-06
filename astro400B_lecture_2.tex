@@ -19,8 +19,9 @@
 
 %magnitudes
 \section{Magnitudes}
+\subsection{Vega Magnitudes}
 
-Magnitudes are the pride of astronomy, and enable astronomers to
+Vega magnitudes are both the scourge and pride of astronomy, and enable astronomers to
 engage in discussions no other scientists understand. The
 {\it apparent magnitude}
 difference $m_1 - m_2$ 
@@ -31,7 +32,120 @@ via the relation
 \label{eqn:apparent_magnitude_difference}
 m_{1} - m_{2} = -2.5 \log (F_1 / F_2).
 \end{equation}
+\noindent
+Note that I have used fluxes here rather than flux densities,
+but in fact we can use Equation \ref{eqn:apparent_magnitude_difference}
+with flux densities as well (see below).
 
+Typically, when we measure a magnitude we are band-limited by a
+filter with a bandpass function $\TBP(\lambda)$. The total flux in
+a given filter can be written as
+\begin{equation}
+F_{\mathrm{PB}} = \int_{0}^{\infty} \TBP(\lambda)\Flambda(\lambda)d\lambda \approx \Flambda(\lambda_{\mathrm{eff}})\Delta\lambda
+\end{equation}
+\noindent
+where $\Delta \lambda$
+is the wavelength-width of the filter and $\lambda_{\mathrm{eff}}$ is the effective wavelength of the filter 
+\begin{equation}
+\lambda_{\mathrm{eff}} = \left. \int_{0}^{\infty} \lambda \TBP(\lambda) \Flambda(\lambda) d\lambda \middle/ \int_{0}^{\infty} \TBP(\lambda) \Flambda(\lambda) d\lambda \right. .
+\end{equation} 
+\noindent
+The apparent magnitude difference between two objects measured in a given filter is
+\begin{equation}
+m_{1,\mathrm{BP}} - m_{2,\mathrm{BP}} = -2.5 \log \left\{ \int_{0}^{\infty} \TBP(\lambda) F_{1,\lambda}(\lambda) d \lambda \middle/ \int_{0}^{\infty} \TBP(\lambda) F_{2,\lambda}(\lambda) d \lambda \right\}.
+\end{equation}
 
+For some bands, such as in the UV, there were no well-measured stellar spectra.  In this case,
+astronomers would define the average flux density
+\begin{equation}
+\label{eqn:average_flux_density_lambda}
+\ave{F_{\mathrm{BP}}} = \frac{\int \TBP(\lambda) \Flambda(\lambda) d\lambda}{\int \TBP(\lambda) d\lambda},
+\end{equation}
+\noindent
+from which we could define
+\begin{equation}
+m_{\mathrm{BP}} = -2.5 \log \left( \frac{\ave{F_{\mathrm{BP}}}}{\ave{F_{V,0}}}\right).
+\end{equation}
+\noindent
+The quantity $\ave{F_{V,0}} \approx 3.63 \times 10^{-9} \erg~\cm^{-2}~\s^{-1}~\Ang^{-1}$ 
+is the average flux density of a star with apparent(!) magnitude $m_{V}=0$ (e.g., Vega).
+A quick cheat is
+\begin{equation}
+m_{\mathrm{BP}} = -2.5 \log \ave{F_{\mathrm{BP}}} - 21.1
+\end{equation}
+\noindent
+if $\ave{F_{\mathrm{BP}}}$ is also measured in units of $\erg~\cm^{-2}~\s^{-1}~\Ang^{-1}$.
+
+Why are Vega magnitudes appalling? The issue is $\Flambda(\lambda)$ must be known for Vega
+for all wavelengths. A corollary is that the differences between the apparent magnitudes
+of different stars in different filters depend on the spectral shape of Vega. It's a bit
+insane.
+
+\section{AB Magnitudes}
+
+Eventually, astronomers came to their senses and started using ``AB'' magnitudes that are measured 
+relative to a source that is flat in $\Fnu$. There are two main advantages:
+
+\begin{enumerate}
+\item Magnitudes depend on the spectral shape of the measured object but not a reference star.
+\item Magnitudes can be defined as a flux density easily, e.g., AB magnitudes $\equiv$ Janskys.
+\item Absolute magnitudes are easily understood interms of flux density (including luminosity and distance).
+\end{enumerate}
+
+Let's redefine the average flux density in some filter as
+\begin{equation}
+\label{eqn:average_flux_density}
+\ave{F_{\mathrm{BP}}} = \frac{\int \TBP(\nu) \Fnu(\nu) d\nu}{\int \TBP(\nu) d\nu}.
+\end{equation}
+\noindent
+This quantity has units $\erg~\cm^{-2}~\s^{-1}~\Hz^{-1}$, which is just a multiple
+of the Jansky.
+
+For distant extragalactic work, the micro- ($\mu\Jy$) and nanojansky (nJy) are most convenient.
+We can easily convert between the AB magnitude and nanojansky as
+\begin{equation}
+m_{\mathrm{AB}} = 31.4 - 2.5 \log \left(\frac{\ave{\Fnu}}{1~\mathrm{nJy}}\right).
+\end{equation}
+\noindent
+Note that this sensibly has nothing to do with Vega.
+
+\subsection{Absolute Magnitude}
+The absolute magnitude of an object is the apparent magnitude of
+an object if it were placed at a distance of 10$\pc$
+\begin{equation}
+\label{eqn:absolute_magnitude}
+M = m - 5\log(d/10\pc).
+\end{equation}
+\noindent
+For instance, the absolute magnitude of the Sun depends on the
+filter used to measure the Sun's flux density (and for Vega
+magnitudes the spectral shape of Vega). It should be clear that
+the Vega and AB absolute magnitudes for the Sun (or any other star)
+are not the same. For Vega magnitudes, the absolute filter magnitudes of
+the Sun are
+\begin{equation}
+[U,B,V,R,I,J,H,K]=[5.61,5.48,4.83,4.42,4.08,3.64,3.32,3.28].
+\end{equation}
+\noindent
+In AB magnitudes, the absolute filter magnitudes of the
+Sun are 
+\begin{equation}
+[U,B,V,R,I,J,H,K] = [6.36,5.36,4.82,4.65,4.55,4.57,4.71,5.19].
+\end{equation}
+
+\subsection{Bolometric Correction}
+
+The absolute magnitude of a star (nominally) measures the bandpass
+averaged flux of an object, referenced to a distance of 10 parsecs.
+This quantity involves the luminosity (density) of the object in a given 
+filter, and differs from the total luminosity of an object. The {\it bolometric
+magnitude} of an object is related to its total luminosity, and we can define
+the {\it bolometric correction} to be the amount that needs to be subtracted
+from the bandpass magnitude of an object to find its bolometric magnitude.
+In an equation, we can write
+\begin{equation}
+M_{\mathrm{bol}} = M_V - \mathrm{BC}
+\end{equation}
+For the Sun in Vega magnitudes, $\mathrm{BC}\approx0.07$.
 
 \end{document}
