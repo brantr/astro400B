@@ -121,8 +121,286 @@ magnitude isophote.
 
 \section{Sky Brightness}
 
+The sky is bright!  In full moon, the sky is brighter than 20$\mg~\arcsec^{-2}$
+in the optical and about 13$\mg~\arcsec^{-2}$ in the infrared.  Most of the
+infrared sky brightness comes from spectral lines like OH in the atmosphere.
+Space is typically $3-4\mg~\arcsec^{-2}$ fainter in the optical and about
+$9\mg~\arcsec^{-2}$ fainter in the near IR.  For observations in the infrared,
+space can't be beat.
 
+\section{Galaxy Luminosity Function}
 
+We can count the number density of galaxies as a function of their luminosity,
+and we appropriately call this distribution the {\it luminosity function}. The
+galaxy luminosity function has been found to have a shape close to a parameterized
+form called the {\it Schechter} function (after Paul Schechter).  The Schechter
+function provides the number density of galaxies in a differential luminosity bin
+$dL$ as
+\begin{equation}
+\label{eqn:schechter_function_luminosity}
+\Phi(L)dL = \phi_{\star} \left(\frac{L}{L_{\star}}\right)^{\alpha}\exp\left(-\frac{L}{L_{\star}}\right)\frac{dL}{L_{\star}}
+\end{equation}
+\noindent
+where $L_{\star}$ is a characteristic luminosity of galaxies and $\phi_{\star}$ is 
+a typical abundance.  Below $L_\star$, the luminosity function is a power law, and
+above $L_\star$ the abundance of galaxies drops exponentially. Sometimes, astronomers
+will use $1+\alpha$ as the power law exponent, so beware!
 
+{\bf See Figure 1.16 of Sparke and Gallagher.}
+
+It happens to be the case that $L_{\star}\approx2\times10^{10}\Lsun$, which is close
+to the luminosity of the Milky Way. The typical abundance of galaxies is $\phi_\star\approx7\times10^{-3}\Mpc^{-3}$. The faint-end slope of the 2DF luminosity function is $\alpha=-0.46$.
+Defined as in Equation \ref{eqn:schechter_function_luminosity}, the number of galaxies
+diverges as $L\to0$ if $\alpha<-1$.
+
+The total luminosity density provided by galaxies can be found by integrating 
+Equation \ref{eqn:schechter_function_luminosity} as
+\begin{equation}
+\rho_{L} = \int_{0}^{\infty} \Phi(L) L dL = \phi_\star L_{\star} \Gamma(\alpha + 2)
+\end{equation}
+\noindent
+where $\Gamma$ is the Gamma function, which for an integer $n$ is $\Gamma(n) = (n-1)!$.
+It turns out that $\Gamma(1.5)\approx0.886227$, so we have that 
+$\rho_{L}\approx1.25\times10^{8}\Lsun\Mpc^{-3}$.
+
+\section{Galaxies Trace the Universal Expansion}
+
+Galaxies are great because they are bright and easy targets for
+measuring spectra. By measuring spectra we can determine the 
+redshift from identified spectral lines whose rest wavelengths are
+known. The redshifts can be converted into line-of-sight velocities $v$.
+Sensibly, in 1929 Hubble plotted the velocities of about two dozen
+galaxies versus their distances (which were very wrong), and 
+found that the recessional velocity increased linearly with distance as
+\begin{equation}
+v = H_{0} d,
+\end{equation}
+\noindent
+which is known as the {\it Hubble Law}.  The factor $H_0$ is known
+as the {\it Hubble parameter} and typically has units 
+of $\km~\s^{-1}~\Mpc^{-1}$. Current best estimates are that
+$H_0\approx67~\km~\s^{-1}~\Mpc^{-1}$. We often further
+parameterize the {\it Hubble parameter} in terms of
+\begin{equation}
+h = \frac{H_0}{100~\km~\s^{-1}~\Mpc^{-1}},
+\end{equation}
+\noindent
+such that $h\approx0.67$. Often people will just approximate and
+use $h=0.7$. Distances found from velocities depend on $h^{-2}$ and
+number densities will depend on $h^{3}$, and often you will encounter
+the following standard notations
+\begin{equation}
+R = r~h^{-1}~\Mpc~~\mathrm{(Distance)}
+\end{equation}
+\begin{equation}
+L = l~h^{-2}~\Lsun~~\mathrm{(Luminosity)}
+\end{equation}
+\begin{equation}
+V = v~h^{-3}~\Mpc~~\mathrm{(Volume)}
+\end{equation}
+\begin{equation}
+N = n~h^{3}~\Mpc^{-3}~~\mathrm{(Number~density)}
+\end{equation}
+\noindent
+When you see these notations, you need to plug in the value of the
+Hubble parameter $h$ to compute a ``proper'' number.  For instance,
+the book has the local luminosity density as 
+$\rho_{L}\approx2\times10^{8}h~\Lsun~\Mpc^{-3}$. For $h=0.67$, the
+proper luminosity density is then $\rho_L = 1.34\times10^{8}~\Lsun~\Mpc^{-3}$.
+You will hear astronomers say ``with little h'' or ``including little h'' --
+and sometimes they mean they have or have not included little $h$!
+
+\subsection{Hubble Time}
+You may have noticed that $H_0$ has units of inverse time. We can
+define the {\it Hubble time} as 
+\begin{equation}
+t_{H} = \frac{1}{H_0} = 9.78h^{-1}~\Gyr = 15~\Gyr \times \left(\frac{0.67}{h}\right).
+\end{equation}
+\noindent
+If the Hubble Law held to time $t\to0$, then $1/H_0$ would be the age of the
+universe since the Big Bang. But the universe does not expand at the
+same rate during its history, and $1/H_0$ is simply an approximate age
+of the universe (not bad, since the universe is about $13.8~\Gyr$ old).
+
+\subsection{Peculiar Velocities}
+
+As one might imagine, the expansion of the universe is not the only physical
+process that might induce a line-of-sight velocity for a galaxy relative to
+us. For instance, the random motions of galaxies in a galaxy cluster can induce a
+substantial los velocity ($\sim1500~\km~\s^{-1}$) that might change the measured
+redshift for the galaxy. We call the deviation of the los velocity from the
+Hubble law the {\it peculiar velocity} of the galaxy, and write
+\begin{equation}
+v = H_0 d + v_{\mathrm{pec}}.
+\end{equation}
+
+\section{Critical Density}
+
+We will describe in future classes the dynamics of the expanding universe.
+For now, we will discuss some salient features of the universal expansion. An
+important quantity is the {\it critical density} $\rhoc$, which describes the
+critical energy density that the universe must have to be geometrically flat.
+From the equations of general relativity, we can determine that the critical density is
+\begin{equation}
+\rhoc = \frac{3 H_0^2}{8\pi G} = 1.9\times10^{-29}~h^2~\g~\cm^{-3}~=2.8\times10^{11}~h^2~\Msun~\Mpc^{-3}
+\end{equation}
+\noindent
+For a matter dominated universe with the critical density, the age of the universe is
+\begin{equation}
+t_{\mathrm{u}} = \frac{2}{3H_0} \approx 10~\Gyr \times \left(\frac{0.67}{h}\right).
+\end{equation}
+\noindent
+But our universe is dark energy dominated (see below)! 
+This is useful nonetheless because it's an
+exact result.  For our universe, we have to do an integral (later!) to determine the
+age of the universe in terms of the Hubble parameter.
+
+\section{Components of the Universe}
+
+Our universe is comprised of a variety of forms of matter and energy.  Owing to
+general relativity, both matter and energy provide a source for gravity and so
+both effect the dynamical expansion of the universe.  Here is a brief run-down
+of the different types of matter and energy in the universe:
+
+\begin{enumerate}
+\item {\it Baryonic (normal) matter}. We are made of {\it baryonic} matter, meaning
+that we are comprised of forms of matter that are ultimately made from three quarks
+(proton and neutrons). There are also enough electrons such that the universe is
+electrically neutral, but their mass is $\sim2000\times$ less than the nucleons.
+Surprising as it may seem, the universe is only about $4-5\%$ baryonic matter!
+\item {\it Radiation} There are a {\bf lot} of photons in the universe! The energy
+density associated with the total cosmic microwave background and the extragalactic
+background light is quite small today ($<10^{-4}$ of the total energy density). At
+early times the universe was actually dominated by radiation, but the fractional
+contribution of radiation to the total energy density declines dramatically with
+time.
+\item {\it Dark matter}. Most of the matter in the universe is dark matter, which
+comprises about $\sim25\%$ of the total energy density. Dark matter is non-baryonic,
+and likely consists of subatomic particles called {\it Weakly Interacting Massive Particles},
+or WIMPs, that only interact through the gravitational and possibly weak nuclear forces.
+There are plenty of dark matter candidates from elementary particle theories, but dark
+matter has not yet been detected directly via experiment.
+\item {\it Dark energy}. This mysterious component of the universe as a negative
+equation of state associated with it, such that a universe dominated by dark
+energy accelerates its expansion as its volume increases. We think that about $70\%$
+of the universal energy density is comprised of dark energy, and it is possibly in
+the form of a ``cosmological constant'', meaning that the dark energy density remains
+constant with time. Since the universe is expanding and the matter density declines
+with volume, the universe is becoming progressively more and more dark energy dominated
+as it expands. The result is that the universal expansion will continue to accelerate,
+likely without a meaningful bound (the expansion will infact eventually exceed the speed
+of light if the dark energy is a cosmological constant). There are natural ways of
+estimating the energy density associated with a cosmological constant from fundamental
+particle physics, but these methods overestimate the amount of dark energy by $\sim120$
+{\it orders of magnitude}(!; depending on how you count). Needless to say, even if the
+dark energy is a cosmological constant, we don't really know how to describe it in terms
+of a physical model.
+\item {\it Curvature}. If the universe does not have the critical density, then there
+is a geometric curvature to the universe. There is an energy density associated with this
+curvature that can affect the dynamics of the universe, and if the universe is not flat then
+this curvature energy must reckon in the accounting for the time-dependent expansion rate.  
+Fortunately (I guess), we think the universe is very close to
+flat, remarkably so, and most calculations will be performed assuming the curvature energy
+is zero.
+\end{enumerate}
+
+\section{The Scale Factor and Universal Expansion}
+
+Since the universe is expanding, it is useful to define a quantity called the
+{\it scale factor} $a(t)$ that relates the current separation $R(t_0) = r$ of objects to
+their separation $R(t) = r\times a(t)$ at a previous time.  Defining $a(t_0)=1$, and calling
+$r$ the {\it comoving} separation, we can more easily compare physical (proper)
+length scales at different times. As one can infer, the Hubble parameter is related
+to the current rate of change of $a(t)$:
+\begin{equation}
+H_0 = \frac{1}{a(t_0)}\left.\frac{da}{dt}\right|_{t=t_0} = \frac{\dot{a}(t_0)}{a(t_0)}
+\end{equation}
+\noindent
+where we'll use the dot notation to represent a time derivative.
+You can also infer that the Hubble parameter is time-dependent, such that
+$H(t) = \dot{a}(t)/a(t)$.
+
+The expansion of the universe affects light that is traveling through the
+universe over an appreciable distance. As the universe expands, the wavelength
+of light will increase, leading to an induced redshift. If the galaxies
+recessional velocity is much less than the speed of light ($v\ll c$), then
+over the light travel time $\Delta t = d/c$ the ratio of the observed to
+emitted wavelength will be
+\begin{equation}
+\frac{\lambda_{\mathrm{obs}}}{\lambda_{\mathrm{e}}} = 1 + \frac{\Delta \lambda}{\lambda_{\mathrm{e}}} \approx 1+\frac{H_0 d}{c} = 1+ H_0 \Delta t = 1 + \frac{\dot{a}(t_0)}{a(t_0)} \Delta t
+\end{equation}
+\noindent
+To find a more general relation, this
+equation can be rewritten to relate the rate of change in wavelength in terms of
+the rate of change of the scale factor as
+\begin{equation}
+\frac{\dot{\lambda}}{\lambda} = \frac{\dot{a}}{a}
+\end{equation}
+\noindent
+We can integrate these equations over time
+\begin{equation}
+\int_{t_\mathrm{e}}^{t_\mathrm{obs}} \frac{\dot{\lambda}}{\lambda}d t = \int_{t_\mathrm{e}}^{t_\mathrm{obs}} \frac{\dot{a}}{a}d t 
+\end{equation}
+\begin{equation}
+\ln \frac{\lambda(t_{\mathrm{obs}})}{\lambda(t_\mathrm{e})} = \ln \frac{a(t_{\mathrm{obs}})}{a(t_\mathrm{e})} 
+\end{equation}
+\begin{equation}
+1+z = \frac{\lambda(t_{\mathrm{obs}})}{\lambda(t_\mathrm{e})} =  \frac{a(t_{\mathrm{obs}})}{a(t_\mathrm{e})} 
+\end{equation}
+\noindent
+This equation is the {\it cosmological redshift} formula that enables us to compute the 
+redshifting of light from the universal expansion as it travels from distant objects
+ to us. Note that the cosmological redshift may also be used as a short hand for
+ time or relative scale factor.  
+ As $z\to\infty$, $t_\mathrm{e}\to0$, and $a(t_\mathrm{e})\to0$.
+ The most distant galaxies now known are at $z\sim10$ and the CMB was
+ emitted at $z\sim1100$.
+
+\section{The Early Universe}
+
+From the Wein displacement law, we know that the peak emission wavelength of a 
+black body varies inversely with its temperature. The wavelength of light in 
+the universe will be redshifted by the cosmological expansion, so we expect
+that black body radiation filling the cosmos will have its temperature
+decline as $T\propto1/a(t)$. A corollary of this relation is that at
+early times, the universe was filled with very hot, energetic radiation.
+Interacting photons with sufficient energies could produce matter--antimatter
+pairs of particles.  Here's how it works -- basically the typical
+energy of a photon in a radiation field of temperature $T$ is
+\begin{equation}
+\mathcal{E} = 4 \kB T.
+\end{equation}
+\noindent
+Roughly speaking, a pair of photons could produce a proton--antiproton pair
+if
+\begin{equation}
+\kB T \gtrsim \mproton c^2
+\end{equation}
+\noindent
+where $\mproton$ is the mass of the proton. We typically talk about
+mass energies like $\mproton c^2$ in units of the {\it electron volt} (eV),
+which is the energy gained by an electron moving across a potential
+difference of 1V. For reference, 
+an electon volt $1\eV = 1.6\times10^{-12}~\erg$.
+The rest mass energy of the proton is 
+$\mproton c^2 = 0.938272 \times 10^9 \eV = 0.938272~\GeV$. It turns
+out that this energy corresponds to a universal time of $<10^{-4}\s$
+when the universe had a temperature $T\gg10^{13}~\K$. So before this epoch,
+protons and antiprotons could be created in pairs freely.  After this epoch,
+the temperature of photons were no longer high enough to produce the pairs and
+the only possible process was annihilation.
+
+\subsection{Baryon Asymmetry}
+
+A substantial problem in modern physics is explaining why, in the context
+of the above picture, there were somehow more protons that survived than
+antiprotons! That problem is called {\it baryon asymmetry} and it forms 
+an important area of current fundamental physics research. The size of the
+asymmetry was only about one part in a billion.
+
+\subsection{Other Processes}
 
 \end{document}
+
+
+
