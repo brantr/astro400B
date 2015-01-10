@@ -58,11 +58,89 @@ magnitude of an object with its distance or
 parallax through the {\it distance modulus}
 equation
 \begin{equation}
-(m-M) = 5 \log \left(\frac{d}{10~\pc}\right) = 5 \log \left(\frac{0.1~\arcsec}{p}\right)
+m-M = 5 \log \left(\frac{d}{10~\pc}\right) = 5 \log \left(\frac{0.1~\arcsec}{p}\right).
 \end{equation}
 
+\subsection{Luminosity and Mass Functions}
+The luminosity and mass functions of stars enable
+us to learn about the star formation history of
+the Galaxy and about the star formation process
+itself.
 
+{\bf See Figure 2.3 of Sparke and Gallagher}
 
+The luminosity and mass functions reflect combinations
+of the numbers of stars per unit mass and the
+mass to light ratio of stars as a function of mass.
+
+The luminosity function is
+\begin{equation}
+\Phi(x) = \frac{\mathrm{number~of~stars~per~unit~magnitude}}{\mathrm{detectable~volume}}
+\end{equation}
+
+\subsubsection{Initial Luminosity Function}
+Stars have a finite lifetime, so the observed luminosity
+function defined above is a time-evolved distribution
+where some fraction of stars have left the main sequence
+after their MS lifetime $\tau_{\mathrm{MS}}$.
+If the star formation rate of the disk has been roughly
+constant, the initial luminosity function
+is related to the observed luminosity function as
+\begin{eqnarray}
+\Psi(M_{V}) &=& \Phi_{\mathrm{MS}}(M_V)~~\mathrm{for~}\tau_{\mathrm{MS}}(M_V)\ge\tau_{\mathrm{gal}} \\
+&=& \Phi_{\mathrm{MS}}(M_V)\times\frac{\tau_{\mathrm{gal}}}{\tau_{\mathrm{MS}}(M_V)}~~\mathrm{when~}\tau_{\mathrm{MS}}(M_V)<\tau_{\mathrm{gal}} \nonumber
+\end{eqnarray}
+\noindent
+where $\tau_\mathrm{gal}\approx8-10~\Gyr$ is the star formation timescale
+of the disk.
+
+\subsubsection{Initial Mass Function}
+
+The stellar initial mass function, or IMF for short,
+is one of the most important distributions in astronomy
+and represents an interesting combination of physics in
+molecular gas, cooling, and gravity. The IMF represents
+the initial number of stars per unit mass that forms
+in a typical volume.  We write
+\begin{equation}
+\xi(M) dM = \xi_0 (M/\Msun)^{-2.35}\frac{dM}{\Msun}
+\end{equation}
+\noindent
+The power-law slope $-2.35$ is called the {\it Salpeter}
+slope.
+
+{\bf See Figure 2.5 of Sparke and Gallagher}
+
+\section{Stars in the Galaxy}
+
+Understanding the structure of the Galaxy is
+tightly connected to understanding the distances
+to stars at all distances.
+
+\subsection{Distances from Motions}
+
+The tangential and radial velocities of stars
+can inform us about their distances.  The radial
+(line-of-sight) velocities can be measured via
+the Doppler shift we discussed previously. The
+tangential velocity is related to the apparent
+proper motion $\mu$ on the sky of an object and
+its distance $d$.  If the relation between
+tangential and radial velocities is known, then
+by measuring the radial velocity and proper motion
+we can find an object's distance.
+
+The tangential velocity is
+\begin{equation}
+v_{t} = \mu~(\mathrm{radians/time})\times d,~or~\mu~(0.001\arcsec/\yr)=\frac{v_t~(\km~\s^{-1})}{4.74\times d~(\kpc)}
+\end{equation}
+
+We can identify stars that orbit the supermassive black hole
+at the center of the Galaxy. The orbits of these stars allow 
+us to measure the mass of the Galactic SMBH, and since we can
+compute their physical tangential velocity their distances can
+be inferred. It turns out we are $d=8.46\pm0.4~\kpc$ away from
+the Galactic center.
 
 \end{document}
 
