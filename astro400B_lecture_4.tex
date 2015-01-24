@@ -257,6 +257,245 @@ than $10\sim\Gyr$ old and very metal poor.
 {\bf See Figure 2.14 of Sparke and Gallagher.}
 
 
+\section{Galactic Rotation}
+
+The disk of the Milky Way rotates, and it rotates {\it differentially}
+such that the stars in the inner parts of the galaxy orbit the
+center of the galaxy more rapidly than stars in the outer disk do.
+Differential rotation by looking at the proper motions of disk
+stars, and seeing that inner stars were passing us while
+outer stars were trailing. For stars near the Sun, proper
+motions showed a $\cos(2l)$ dependence on Galactic longitude that
+can be understood via a differentially rotating disk.
+
+\subsection{Local Standard of Rest}
+
+The sun lies about 15$\pc$ out of the disk plane, and the orbit
+of the Sun about the GC is not purely circular. We define the
+{\it local standard of rest} by the average motions of stars
+near the Sun correcting for asymmetric drift. Relative to the
+standard, the Sun is moving toward the GC, leading the 
+rotation, and moving up relative to the disk plane.
+
+In 1985, the IAU adopted a LSR radius of $R_{0}=8.5~\kpc$ from
+the GC and $V_{0}=220~\km~\s^{-1}$ for its circular velocity.
+Current estimates are closer to $R_0\sim8~\kpc$ and $V_0 \sim 200$.
+
+\subsection{Measuring Galactic Rotation}
+
+For disk stars, we can determine their radial velocity
+relative to the Sun assuming circular orbits.
+
+{\bf See Figure 2.19 of Sparke and Gallagher}.
+
+The Sun is at $R_0$, $V_0$, while the star has a radius $R$
+and orbital speed $V(R)$.  The radial velocity relative to
+the Sun is
+\begin{equation}
+V_{r} = V\cos\alpha - V_0 \sin l.
+\end{equation}
+\noindent
+But $\sin l/R - \sin(\alpha + \pi/2)/R_0$, so
+\begin{equation}
+V_r = R_0 \sin l \left(\frac{V}{R} - \frac{V_0}{R_0}\right).
+\end{equation}
+
+For solid body rotation, $V(R)=constant$ and the relative 
+radial velocity would be zero. Instead, $V/R$ decreases
+with $R$.
+
+{\bf See Figure 2.20 of Sparke and Gallagher}
+
+As a function of Galactic longitude, we have
+\begin{itemize}
+\item For $0<l<90$, $V_r$ is positive for nearby objects,
+and negative for distant objects on the other side of the
+Galaxy with $R>R_0$.
+\item For $90<l<180$, $V_r$ is always negative.
+\item For $180<l<270$, $V_r$ is always positive.
+\item For $270<l<360$, the first quadrant pattern is repeated with opposite sign.
+\end{itemize}
+
+\subsection{Oort Constants}
+When an object is near the Sun, $R\approx R_0 - d \cos l$ and
+we can approximate the radial velocity as
+\begin{equation}
+V_r \approx d \sin(2l) A
+\end{equation}
+\noindent
+where
+\begin{equation}
+A \equiv \left[-\frac{R}{2} \frac{dV}{dR}\right]_{R_0}
+\end{equation}
+\noindent
+is called the {\it Oort} constant after Jan Oort. The $A$ constant
+measures the local shearing motions in the disk.
+For the Milky Way, $A = 14.8\pm0.8~\km~s^{-1}~\kpc^{-1}$.
+
+The tangential velocity of a star relative to the Sun is
+\begin{equation}
+V_t = V \sin \alpha - V_0 \cos l
+\end{equation}
+\noindent
+But $R_0 \cos l = R\sin\alpha + d$, and we have
+\begin{equation}
+V_t = R_0 \cos l \left(\frac{V}{R} - \frac{V_0}{R_0}\right) - V\frac{d}{R}
+\end{equation}
+\noindent
+Near the Sun, $R_0-R \approx d \cos l$, so
+\begin{equation}
+V_t \approx d [A \cos(2l) + B]
+\end{equation}
+\noindent
+where
+\begin{equation}
+B = -\frac{1}{2}\left[\frac{1}{R}\frac{d (RV)}{dR}\right]
+\end{equation}
+\noindent
+where $B$ is the second Oort constant that measures vorticity.
+$B = -12.4\pm0.6~\km~\s^{-1}~\kpc^{-1}$ in the Solar neighborhood.
+
+\subsection{Tangent Point Method}
+
+In the inner Galaxy $R<R_0$, the {\it tangent point method} can be
+used to find the rotation curve.  Since $V/R$ decreases with
+radius, if we look at regions near the Galactic center in projection
+($0<l<90$), then the radial speed $V_r(l,R)$ is maximized at the
+tangent point where the
+line of sight is closest to the GC.  There, we have
+\begin{equation}
+R = R_0 \sin l
+\end{equation}
+\noindent
+and
+\begin{equation}
+V(R) = V_r + V_0 \sin l
+\end{equation}
+
+The galactic rotation curve can then be inferred from
+the maximum velocity in Figure 2.20 at each $l$.
+
+{\bf See Figure 2.20 of Sparke and Gallagher}
+
+\subsection{Outer Galaxy}
+
+Measuring the rotation of the outer galaxy is done by
+determining distances via spectroscopic or photometric
+parallax, and then measuring $V_r$ via emission lines.
+We think $V(R)$ is either flat or increasing in the
+outer galaxy.
+
+
+\section{Dark Matter}
+
+For a spherical mass distribution, the velocity of
+a circular orbit related to the interior mass by
+\begin{equation}
+V^2 = \frac{GM(<R)}{R}
+\end{equation}
+\noindent
+If the circular velocity is flat in the outer 
+galaxy, we would infer that
+\begin{equation}
+M(<R) \propto R
+\end{equation}
+\noindent
+Clearly, the exponential disk cannot supply
+this mass growth with radius.
+But we know how to relate $M(<R)$ to a density
+profile through the integral
+\begin{equation}
+M(<R) = 4\pi\int_0^{R}\rho(r)r^{2}dr
+\end{equation}
+\noindent
+Further if we assume $\rho(r)\propto r^{\alpha}$,
+then
+\begin{equation}
+M(<R) \propto R \propto R^{3 + \alpha}
+\end{equation}
+\noindent
+So we infer that a spherical density profile would 
+be declining at $\rho(r)\propto r^{-2}$ in the
+regime where the mass was growing linearly and
+the circular velocity is flat.
+
+That mass grows with radius implies there is a {\it lot}
+of mass in the exterior of the galaxy.
+
+\section{The Gaseous Disk}
+
+The distribution of gas in the galaxy can be determined by
+measuring the line of sight velocity of emission lines and
+then assuming the gas is on a circular orbit.  We call this
+approach determining the {\it kinematical distance} to the
+gas. This method can be used on both HI and $H_2$ (well, CO)
+to determine the relative distribution of neutral and molecular
+gas in the Galaxy.
+
+{\bf See Figure 2.22 of Sparke and Gallagher}
+
+The MW has about $6\times10^{9}\Msun$ of HI and about 
+$3\times10^{9}\Msun$ of $H_2$. The molecular hydrogen
+is mostly in the solar circle, but the HI extends much
+further.  The molecular disk is about $80\pc$ thick
+near the Sun, while the HI is about twice as extended.
+
+There is some HI gas outside of the midplane, and much of
+that is moving toward us. There are HI gas clouds called
+{\it high velocity clouds} because they are moving
+at $\sim100\km~\s^{-1}$ toward us.  We don't know what
+causes HVCs.
+
+{\bf See Figure 2.22 of Sparke and Gallagher}
+
+Gas above $\sim1\kpc$ is mostly warm or hot ionized media.
+This gas absorbs CIV, and the hotter gas emits OVI.
+
+In the inner $3\kpc$ of the galaxy, interior to a molecular
+ring, the surface density of galaxy drops again.  In the
+inner $200\pc$ of the Galactic Bulge is a gas rich region
+with about one hundred million solar masses of gas.
+
+The interstellar medium is comprised of a variety of
+phases that are mixed on scales below $\sim1\kpc$:
+
+\begin{itemize}
+\item There are a few thousand gian molecular clouds
+with about $20\pc$ sizes, $M>10^{5}\Msun$, and
+$n\sim200-10^{4}~\cm^{-3}$.
+\item The GMCs are surrounded by neutral hydrogen
+with $n\sim25$ and $T<80\K$. Near the sun HI can
+have $T\sim8000\K$ and $n\sim0.3\cm^{-3}$.
+\item Hot diffuse plasmas with $n\sim0.002\cm^{-3}$
+and $T\sim10^{6}\K$ surrounds the HI.
+\item Around hot stars HII regions can form, with
+photodissociation regions located at the boundary
+with surrounding dense gas.
+\end{itemize}
+
+{\bf See Table 2.4 of Sparke and Gallagher}
+
+GMCs are turbulent, and have supersonic line widths.
+
+\subsection{Dust}
+
+There is a lot of dust in Milky Way gas and in the
+gas of many other galaxies.  The dust absorbs about
+half the optical and UV light of the galaxy.  There
+is about one dust grain per trillion hydrogen atoms,
+and the grains are typically $\lesssim0.3$ microns
+in size. About $10-20\%$ of the dust is in small
+polycyclic aromatic hydrocarbons (PAH) that absorbs
+light and emits photoelectrons, which thermalize
+and heat the gas (forming the prime heat source for
+atomic HI).  Hot dust is at $\sim100K$ and emits at
+$30$ microns, while cold dust is at $30\K$ and
+emits at $100$ microns.
+
+
+{\bf See Figure 2.24 of Sparke and Gallagher}
+
+
 \end{document}
 
 
