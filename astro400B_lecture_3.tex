@@ -114,7 +114,7 @@ often given in $\mg~\arcsec^{-2}$, such that a square arcsecond area
 of the galaxy has the apparent brightness of an object with the
 same magnitude. Sensible astronomers also use $\Lsun\pc^{-2}$. Central
 regions of galaxies reach $I_{B}\approx 18~\mg~\arcsec^{-2}$, while
-the outer regions of disks are typically $I_{B}\approx25~\mg~\arcsec{-2}$.
+the outer regions of disks are typically $I_{B}\approx25~\mg~\arcsec^{-2}$.
 The radius of the isophote of 25th B-band magnitude, $R_{25}$ is used as
 a proxy for galaxy size, as is the {\it Holmberg radius} at the 26.5th
 magnitude isophote.
@@ -125,7 +125,7 @@ The sky is bright!  In full moon, the sky is brighter than 20$\mg~\arcsec^{-2}$
 in the optical and about 13$\mg~\arcsec^{-2}$ in the infrared.  Most of the
 infrared sky brightness comes from spectral lines like OH in the atmosphere.
 Space is typically $3-4\mg~\arcsec^{-2}$ fainter in the optical and about
-$9\mg~\arcsec^{-2}$ fainter in the near IR.  For observations in the infrared,
+$9~\mg~\arcsec^{-2}$ fainter in the near IR.  For observations in the infrared,
 space can't be beat.
 
 \section{Galaxy Luminosity Function}
@@ -162,6 +162,13 @@ Equation \ref{eqn:schechter_function_luminosity} as
 where $\Gamma$ is the Gamma function, which for an integer $n$ is $\Gamma(n) = (n-1)!$.
 It turns out that $\Gamma(1.5)\approx0.886227$, so we have that 
 $\rho_{L}\approx1.25\times10^{8}\Lsun\Mpc^{-3}$.
+
+For a partial integral, we have
+\begin{equation}
+\rho_{L}(L>L_{\mathrm{min}}) = \int_{L_{\mathrm{min}}}^{\infty} \Phi(L) L dL = \phi_\star L_{\star} \Gamma(\alpha + 2, L_{\mathrm{min}}/L_{\star}),
+\end{equation}
+\noindent
+where $\Gamma(a,x)$ is the incomplete gamma function.
 
 \section{Galaxies Trace the Universal Expansion}
 
