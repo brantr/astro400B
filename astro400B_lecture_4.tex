@@ -495,6 +495,83 @@ emits at $100$ microns.
 
 {\bf See Figure 2.24 of Sparke and Gallagher}
 
+\section{Recombination and the Ionization State of the ISM}
+
+Ionized hydrogen (proton plus electron) can undergo a recombination
+to form neutral hydrogen. The rate of this process depends on the
+properties of the ionized gas.  We can write the recombination rate
+$dn_e/dt$ that changes the number density $n_e$ of free electrons as
+\begin{equation}
+\frac{d n_{e}}{d t} = n_{e}^2 \alpha(T_e)
+\end{equation}
+\noindent
+where $T_e$ is the temperature of the gas and $\alpha(T_e)$ is 
+the ``recombination coefficient''
+\begin{equation}
+\alpha(T_e) \approx 2 \times 10^{-13} \left( \frac{T_e}{10^4~\K}\right)^{-3/4}~\cm^{3}~\s^{-1}.
+\end{equation}
+\noindent
+There's a lot hidden in the coefficient!
+
+We can also define the recombination time $t_{rec}$ that characterizes
+the timescale over which the ionized gas will significantly increase
+its neutrality.  The recombination time is given by
+\begin{equation}
+t_{rec} = \frac{n_e}{|dn_e/dt|} = \frac{1}{n_e \alpha(T_e)} \approx 1500~\yr \times \left(\frac{T_e}{10^{4}K}\right)^{3/4}\left(\frac{100~\cm^{-3}}{n_e}\right)
+\end{equation}
+
+In HII regions, $t_{rec}$ is a few thousand years.  In the diffuse ionized ISM, the recombination time is a few million years.
+
+\subsection{Cooling Rate and Time}
+
+Gas has an internal thermal energy of $E \propto nT$. If the gas radiates this thermal energy with an energy $L$, the
+cooling timescale for the gas is $t_{cool} \propto nT/L$. For optically thin gas, we can write
+\begin{equation}
+L = n^{2} \Lambda(T)
+\end{equation}
+\noindent
+and
+\begin{equation}
+t_{cool}  \propto T/[n\Lambda(T)].
+\end{equation}
+The quantity $\Lambda(T)$ is called the ``cooling function'' and depends only on temperature.
+
+{\bf See Table 2.5 and Figure 2.25 of Sparke and Gallagher.}
+
+At high temperatures $T>10^{7}~\K$, free-free cooling dominates such that $\Lambda(T) \propto T^{1/2}$
+and $t_{cool} \propto \sqrt{T}/n$.
+
+\section{Jeans Mass}
+
+Since gas can cool, eventually the thermal random motions of the gas will be unable to support
+it against its own self-gravity. The condition for this self-gravitational collapse is called the
+Jeans criterion. A gas cloud of density $\rho$ and temperature $T$ will collapse if its 
+diameter is
+\begin{equation}
+\lambda_J = c_s \sqrt{\frac{\pi}{G\rho}}
+\end{equation}
+\noindent
+where $c_s$ is the sound speed of the gas. We can express the sound speed
+in terms of the temperature and mean molecular weight of the gas
+\begin{equation}
+c_s^{2} = \kB T / \mu m_{H}
+\end{equation}
+\noindent
+where $m_H$ is the mass of the hydrogen atom.  The mass within the Jeans diameter
+\begin{equation}
+M_J \equiv \frac{\pi}{6} \lambda_J^3 \rho = \left(\frac{1}{\mu m_H}\right)^2 \left(\frac{\kB T}{G}\right)^{3/2} \left(\frac{4\pi n}{3}\right)^{-1/2} \frac{\pi^3}{3\sqrt{3}}
+\end{equation}
+\begin{equation}
+M_j \approx 20 \left(\frac{T}{10\K}\right)^{3/2} \left(\frac{100~\cm^{-3}}{n}\right)^{1/2}~\Msun.
+\end{equation}
+\noindent
+If the cloud does collapse, it does so on the free fall time
+\begin{equation}
+t_{ff} = \sqrt{\frac{1}{G\rho}} \approx \frac{10^8}{\sqrt{n_H}}~\yr.
+\end{equation}
+\noindent
+If the cooling time is much less than the free fall time, the gas cloud will fragment in to smaller clouds during the collapse.
+Something must moderate this process because the star formation rate you would infer from converting the molecular gas into stars on a free fall time is many times larger than the observed star formation rate.
 
 \end{document}
 
