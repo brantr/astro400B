@@ -78,6 +78,7 @@ to both sides.  Remembering that the operator acts on $\vx$ and not $\vx'$, we h
 \noindent
 We can evaluate this by noting that
 \begin{equation}
+\label{eqn:nabla}
 \nabla\left(\frac{1}{|\vx - \vx'|}\right), \nabla^{2}\left(\frac{1}{|\vx - \vx'|}\right) = 0.
 \end{equation}
 \noindent
@@ -93,7 +94,7 @@ that $\rho(\vx)\approx$ a constant, then we can write
 \begin{eqnarray}
 \label{eqn:pois_med}
 \nabla^{2}\Phi(\vx) &\approx& - G\rho(\vx) \int_{S(\epsilon)} \nabla^2 \left( \frac{1}{|\vx - \vx'|} \right)d^{3}\vx' \nonumber \\
-&=& - G \rho(\vx)  \int_{S(\epsilon)} \nabla_{\vx}^2 \left( \frac{1}{|\vx - \vx'|} \right)d V'.
+&=& - G \rho(\vx)  \int_{S(\epsilon)} \nabla_{\vx'}^2 \left( \frac{1}{|\vx - \vx'|} \right)d V'.
 \end{eqnarray}
 \noindent
 Now we get to use the {\it divergence} theorem
@@ -103,17 +104,188 @@ Now we get to use the {\it divergence} theorem
 \noindent
 which allows us to write Equation \ref{eqn:pois_med} as
 \begin{equation}
-- G \rho(\vx)  \int_{S(\epsilon)} \nabla_{\vx}^2 \left( \frac{1}{|\vx - \vx'|} \right)d V' = - G \rho(\vx) \oint_S(\epsilon) \nabla\left(\frac{1}{|\vx-\vx'|}\right)
+- G \rho(\vx)  \int_{S(\epsilon)} \nabla_{\vx'}^2 \left( \frac{1}{|\vx - \vx'|} \right)d V' = - G \rho(\vx) \oint_{S(\epsilon)} \nabla_{\vx'}\left(\frac{1}{|\vx-\vx'|}\right) \cdot d\vS'
+\end{equation}
+\noindent
+By applying Equation \ref{eqn:nabla} and the identity $\nabla_{\vx'} f = -\nabla f$, we have
+\begin{eqnarray}
+- G \rho(\vx) \oint_{S(\epsilon)} \nabla_{\vx'}\left(\frac{1}{|\vx-\vx'|}\right) \cdot d\vS' &=&
+-G \rho(\vx) \oint_{S(\epsilon)} \left(\frac{\vx-\vx'}{|\vx-\vx'|^{3}}\right) \cdot d\vS' \nonumber \\
+&=& 4 \pi G \rho(\vx)
+\end{eqnarray}
+
+
+\subsection{Inside a Uniform Shell}
+
+The gravitational force inside a spherical shell of uniform density is zero.  The potential is a
+constant.
+
+{\bf See Figure 3.1 of Sparke and Gallagher.}
+
+The opening angle OA is the same as OB, so the ratio of the enclosed mass is (SA/SB)$^{2}$.  Since
+the ratio of the forces scale like the inverse of this ratio (from the inverse square law), the
+force contributions of the A and B patches are equal and opposite.
+
+\subsection{Gravitational Potential Outside a Uniform Spherical Shell}
+
+{\bf See Figure 3.2 of Sparke and Gallagher}
+
+We are calculating the potential a uniform spherical shell of mass $M$ and radius $a$.  
+Consider a point $P$ a distance $r$. The contribution of a narrow cone of opening
+solid angle $\Delta\Omega$ around another point $Q'$ is
+\begin{equation}
+\Delta\Phi[\vx(P)] = -\frac{GM}{|\vx(P) - \vx(Q')|} \frac{\Delta\Omega}{4\pi}
+\end{equation}
+\noindent
+Now consider the potential $\Phi'$ at point $P'$ at a radius $a$ away from the
+center of a shell of the same mass $M$ but with a radius $r$.
+The contribution $\Delta\Phi'$ from the material in the same cone of solid
+angle $\Delta\Omega$ but at point $Q$ a distance $r$ away is
+\begin{equation}
+\Delta\Phi'[\vx(P')] = - \frac{GM}{|\vx(P') - \vx(Q)|}\frac{\Delta\Omega}{4\pi}
+\end{equation}
+\noindent
+but since $PQ'=P'Q$, $\Delta\Phi[\vx(P)] = \Delta\Phi'[\vx(P')]$.
+When we integrate over $4\pi$, we have
+\begin{equation}
+\Phi[\vx(P)] = \Phi'[\vx(P')]= \Phi'[\vx=0] = -\frac{GM}{r}
+\end{equation}
+\noindent
+The force associated with this spherical shell is just $F(r) = \nabla \Phi[\vx(P)] = -\frac{GMm}{r}$.
+So the force outside the shell is the same as for a point mass at distance $r$.
+
+Inside a spherical mass distribution $\rho(r)$, the 
+centripetal acceleration that allows for a circular 
+orbit must be the radial gravitational force inwards.
+On a circular orbit, in terms of the circular velocity
+$V$ this acceleration is just
+\begin{equation}
+a = \frac{V^{2}(r)}{r} = -F(r) = \frac{GM(<r)}{r^2}.
+\end{equation}
+\noindent
+For a point mass, $V(r)\propto r^{-1/2}$.  No extended
+distribution can have a circular velocity curve that
+declines more rapidly than $\propto r^{-1/2}$.
+
+Note that the potential of a distributed mass density $\rho(\vx)$
+is not the same as for a point mass.  Instead, we have
+\begin{equation}
+\Phi(r) = - \left[ \frac{GM(<r)}{r} 4 \pi G \int_{r}^{\infty} \rho(r') r' dr'\right].
+\end{equation}
+\noindent
+But as long as the spherical mass distribution has a finite size, eventually we 
+will have
+\begin{equation}
+\Phi(\vx) \to - \frac{G M_{\mathrm{tot}}}{|\vx|}
+\end{equation}
+\noindent
+at large enough radius.
+
+
+\subsection{Moving Through a Potential}
+
+If we are moving through a background potential $\Phi(\vx)$ with
+velocity $\vx$, the potential we experience changes
+with time according to $d\Phi/dt = \vx\cdot\nabla\Phi(\vx)$.
+We can re-write Newton's equation as
+\begin{equation}
+\vx \cdot \frac{d}{dt} ( m\vv) + m \vv\cdot\nabla \Phi(\vx) = 0 = \frac{d}{dt}\left[\frac{1}{2}m\vv^{2} + m \Phi(\vx)\right]
+\end{equation}
+\noindent
+Therefore, the total energy
+\begin{equation}
+\label{eqn:total_energy}
+E \equiv \frac{1}{2} m\vv^{2} + m\Phi(\vx) =~\mathrm{const}
+\end{equation}
+\noindent.
+We can write of course that $E = KE + PE$, where $KE = \frac{1}{2}m\vv^{2}$ and $PE = m\Phi(\vx)$.
+The kinetic energy cannot be negative, and we adopt $\Phi(\vx)\to0$ as $\vx\to\infty$.  At position
+$\vx$, an orbit is unboutnd only if the total energy $E>0$. The speed at this place in the
+orbit must exceed the escape speed, which is found by setting Equation \ref{eqn:total_energy} to zero.
+We then have
+\begin{equation}
+v_{e}^{2} = - 2 \Phi(\vx).
 \end{equation}
 
+\subsection{Angular Momentum}
 
+The angular momentum of an orbit is $L = \vx \times m\vv$. The time rate of change is
+\begin{equation}
+\frac{dL}{dt} = \vx \times \frac{d}{dt} (m \vv) = -m\vx \times \nabla \Phi.
+\end{equation}
+\noindent
+For a spherically symmetric distribution, the force is central and $dL/dt = 0$ (angular
+momentum is conserved).
+In an axisymmetric distribution, on the component of $L$ parallel to the symmetry
+axis is conserved.
 
+\subsection{Total Energy is Not Conserved in a Time-Dependent Potential}
 
+In a many-body system, the total energy of each star is not individually conserved.
+The time derivative of the kinetic energy of star $i$ is
+\begin{equation}
+\sum_{i} \vv_i \cdot \frac{d}{dt} (m_i \vv_i) = \frac{d}{dt} KE = -\sum_{i,j;i\ne j} \frac{Gm_i m_j}{|\vx_i - \vx_j|^{3}}(\vx_i - \vx_j) \cdot \vv_i
+\end{equation}
+\noindent
+Doing the same calculation on star $j$ and taking the dot product with $\vx_j$ gives
+\begin{equation}
+\frac{1}{2}\sum_{j} (m_j \vv_j \cdot \vv_j) = - \sum_{i,j; i\ne j}\frac{Gm_i m_j}{|\vx_i - \vx_j|^{3}}(\vx_j - \vx_i)\cdot \vx_j
+\end{equation}
+\noindent
+Adding the RHS of these two equations gives
+\begin{equation}
+- \sum_{i,j; i\ne j}\frac{Gm_i m_j}{|\vx_i - \vx_j|^{3}}(\vx_j - \vx_i)\cdot(\vv_i - \vv_j) = \sum_{i,j;i\ne j}\left(\frac{Gm_i m_j}{|\vx_i - \vx_j|}\right).
+\end{equation}
+The potential energy $PE$ is a sum of pairs of potentials from individual objects
+\begin{equation}
+PE = -\frac{1}{2} \sum_{i,j;i\ne j}\frac{Gm_i m_j}{|\vx_i - \vx_j|} = \frac{1}{2} \sum_i m_i \Phi(\vx_i) = \frac{1}{2} \int \rho(\vx)\Phi(\vx)dV.
+\end{equation}
+\noindent
+We divided by two so every object contributes only once.
 
+We can now see that, for the whole collection of objects 
+\begin{equation}
+2 \frac{d}{dt} \left[ KE - \frac{1}{2} \sum_{i,j;i\ne j} \frac{G m_i m_j}{|\vx_i - \vx_j|}\right] = 0.
+\end{equation}
+\noindent
+This means the total energy of the system is conserved.
 
+\subsection{External Forces}
 
-
-
-
+Consider the total force on an object $i$ in 
+a many body system under the influence of an external force $\vF_{\mathrm{ext}}$.
+\begin{equation}
+\sum_i \frac{d}{dt} (m_i \vv_i) \cdot \vx_i = -\sum_{i,j; i\ne j} \frac{Gm_i m_j}{|\vx_i - \vx_j|^{3}} (\vx_i - \vx_j) \cdot \vx_i + \sum_i \vF_{\mathrm{ext}}^{i} \cdot \vx_i.
+\end{equation}
+\noindent
+The force on the $j$th object is
+\begin{equation}
+\sum_j \frac{d}{dt} (m_j \vv_j) \cdot \vx_j = - \sum_{i,j;i\ne j }\frac{G m_i m_j}{|\vx_i - \vx_j|^{3}}(\vx_j - \vx_i)\cdot\vx_j + \sum_j \vF_{\mathrm{ext}}^{j} \cdot \vx_j
+\end{equation}
+\noindent
+The left hand sides of these equations are equal, and are equal to
+\begin{equation}
+\frac{1}{2} \sum_i \frac{d^2}{dt^2}(m_i\vx_i \cdot \vx_i) - \sum_i m_i \vv_i \cdot \vv_i = \frac{1}{2} \frac{d^2I}{dt^2} -2 KE
+\end{equation}
+\noindent
+where the moment of inertia $I$ is
+\begin{equation}
+I \equiv \sum_i m_i \vx_i \cdot \vx_i.
+\end{equation}
+\noindent
+By averaging the force on $i$ and $j$, we find
+\begin{equation}
+\frac{1}{2} \frac{d^2 I}{dt^2} - 2 KE = PE + \sum_i \vF_{\mathrm{ext}}^{i} \cdot \vx_i
+\end{equation}
+\noindent
+and averaging this over a short time interval $0<t<\tau$ gives
+\begin{equation}
+\frac{1}{2\tau}\left[ \frac{dI}{dt(\tau)} - \frac{dI}{dt}(0)\right] = 2 \ave{KE} + \ave{PE} + \sum_i \ave{\vF_{\mathrm{ext}}^{i} \cdot \vx_i}
+\end{equation}
+\noindent
+If all objects in the system are bound, then $|\vx_i \cdot \vv_i|$ and $dI/dt$ will be finite.  As $\tau\to\infty$, the LHS goes to zero.  Then we have
+\begin{equation}
+2\ave{KE} + \ave{PE} + \sum_i \ave{\vF_{\mathrm{ext}}^{i} \cdot \vx_i} = 0
+\end{equation}
 
 \end{document}
