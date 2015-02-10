@@ -288,4 +288,92 @@ If all objects in the system are bound, then $|\vx_i \cdot \vv_i|$ and $dI/dt$ w
 2\ave{KE} + \ave{PE} + \sum_i \ave{\vF_{\mathrm{ext}}^{i} \cdot \vx_i} = 0
 \end{equation}
 
+\section{Two-Body Relaxation}
+
+A potential can be thought of as a combination of a smooth and steep potential wells.
+We can calculate the average time between strong encounters with the steep
+potential wells supplied near individual stars. Suppose taht the
+stars have mass $m$ and typical velocities $V$. If two stars come
+within $r$ of one another, their kinetic energies increase to balance the
+change in potential energy.  We say there is a {\it strong encounter}
+if the change in potential energy is comparable to their starting
+kinetic energy.  In other words
+\begin{equation}
+\frac{Gm^{2}}{r} \gtrsim \frac{mV^{2}}{2}
+\end{equation}
+\noindent
+and the radius must be smaller than
+\begin{equation}
+r \lesssim r_{s} \equiv \frac{2Gm}{V^2}.
+\end{equation}
+\noindent
+In the solar neighborhood, $V\approx30~\km~s^{-1}$, and taking $m\sim0.5\Msun$ we have $r_s \approx 1~$AU.
+For the Sun, there has been no strong encounter for $\sim4.5~\Gyr$. Over a time $t$, the Sun
+has an encounter with all stars in a cylinder with volume $\pi r_s^2 V t$. If there is a number
+density of $n$, then we are interested in the time when $n\pi r_s^2 V t = 1$.  This time is
+\begin{equation}
+t_s = \frac{V^3}{4\pi G^2 m^3 n} \approx 4 \times 10^{12}~\yr~\left(\frac{V}{10~\km~s^{-1}}\right)^3\left(\frac{m}{\Msun}\right)^{-2}\left(\frac{n}{1~\pc^{-3}}\right)^{-1}.
+\end{equation}
+\noindent
+For $n\approx0.1~\pc^{-3}$, then $t_s\sim10^{15}~\yr$.
+
+
+\subsection{Weak Encounters}
+
+Instead of strong encounters, we need to calculate the effects of weaker encounters
+on indivudal stars.  We do this via the impulse approximation, that tells us how to
+approximate the change in velocity from a weak encounter.  As one object passes
+another, the perpendicular force between them is
+\begin{equation}
+\vF_{\perp} = \frac{GmMb}{(b^2 + V^2t^2)^{3/2}} = M \frac{dV_{\perp}}{dt}.
+\end{equation}
+\noindent
+Integrating over time, we find that
+\begin{equation}
+\Delta V_{\perp} = \frac{1}{M} \int_{-\infty}^{\infty} \vF_{\perp}(t) dt \frac{2 G m}{bV}.
+\end{equation}
+Slower approaches result in larger perpendicular velocity changes. The
+path of $M$ is bent via
+\begin{equation}
+\alpha = \frac{\Delta V_{\perp}}{V} = \frac{2Gm}{bV^2}.
+\end{equation}
+\noindent
+A weak encounter requires $b$ to be larger than $r_s$.
+
+The number of stars with mass $m$ passing $M$ with
+separations between $b$ and $b+\Delta b$ is the product of
+the number density $n$ and the volume $V t \cdot 2 \pi b\Delta b$.
+We multiply by $\Delta V_{\perp}^{2}$ and integrate over $b$ to find
+\begin{equation}
+\ave{\Delta V_{\perp}^{2}} = \int_{b_{min}}^{b_{max}} n V t\left(\frac{2Gm}{bV}\right)^2 2 \pi b db = \frac{8 \pi G^2 m^2 nt}{V} \ln \left(\frac{b_{max}}{b_{min}}\right).
+\end{equation}
+\noindent
+After a time $t_{\mathrm{relax}}$ such that $\ave{\Delta V_{\perp}^2} = V^2$, the expected perpendicular 
+velocity becomes about equal to its original forward speed.  The initial path is forgotten!
+Defining $\Lambda\equiv (b_{max}/b_{min})$, we find the relaxation time is much shorter than
+the strong interaction time as
+\begin{equation}
+t_{\mathrm{relax}} = \frac{V^3}{8\pi G^2 m^2 n \ln \Lambda} = \frac{t_s}{2 \ln \Lambda}
+\end{equation}
+\begin{equation}
+t_{\mathrm{relax}} \approx \frac{2\times10^9~\yr}{\ln \Lambda}\left(\frac{V}{10~\km~s^{-1}}\right)^3\left(\frac{m}{\Msun}\right)^{-2}\left(\frac{n}{10~\pc^{-3}}\right)^{-1}.
+\end{equation}
+\noindent
+So what is $\Lambda$?  Well, if $b<r_s$ the method can't be correct and we usually take $b_{min} = r_s$.  We
+can then take $b_{max}$ to be the size of the whole system.  For the Sun, $r_s = 1$~AU.  If we 
+take $300~\pc \leq b_{max} \leq 30~\kpc$, then $\Lambda\approx18-22$.  So the exact value of
+$\Lambda$ doesn't matter, as $t_{\mathrm{relax}}\approx10^{13}~\yr$.
+
+In a cluster consisting of $N$ stars with mass $m$ and typical $V$, the average separateiion is about
+half the size of the system $R$.  We have
+\begin{equation}
+\frac{1}{2}NmV^2 \sim \frac{G(Nm)^2}{2R},~\Lambda = \frac{R}{r_s} \sim \frac{GmN}{V^2} \cdot \frac{V^2}{2Gm}\sim\frac{N}{2}.
+\end{equation}
+The crossing time of the system is $t_{cross} \sim R/V$.  Since $N=4n\pi R^3 /3$, we have
+\begin{equation}
+\frac{t_{relax}}{t_{cross}} \sim \frac{V^4 R^2}{6 N G^2 m^2 \ln \Lambda} \sim \frac{N}{6 \ln (N/2)}.
+\end{equation}
+\noindent
+For $N\sim10^{11}$ stars, the relaxation will take $10^9$ crossing times.  For globulars with $10^6$ stars,
+the relaxation time for the whole system is $t_{\mathrm{relax}} \sim 10^4 t_{cross}$.
 \end{document}
