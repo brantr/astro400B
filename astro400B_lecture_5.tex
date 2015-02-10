@@ -29,7 +29,7 @@ distance $\vr$, causing a change in momentum $m\vv$ of:
 \noindent
 where $G$ is Newton's gravitational constant. For an $N$-body system, we have
 \begin{equation}
-\frac{d}{dt}(m{i}\vv_{i}) = -\sum_{j\ne i}\frac{G m_{i} m_{j}}{|\vx_i - \vx_j|^{3}} (\vx_i - \vx_j)
+\frac{d}{dt}(m_{i}\vv_{i}) = -\sum_{j\ne i}\frac{G m_{i} m_{j}}{|\vx_i - \vx_j|^{3}} (\vx_i - \vx_j)
 \end{equation}
 \noindent
 This equation can be re-written as
@@ -79,7 +79,7 @@ to both sides.  Remembering that the operator acts on $\vx$ and not $\vx'$, we h
 We can evaluate this by noting that
 \begin{equation}
 \label{eqn:nabla}
-\nabla\left(\frac{1}{|\vx - \vx'|}\right), \nabla^{2}\left(\frac{1}{|\vx - \vx'|}\right) = 0.
+\nabla\left(\frac{1}{|\vx - \vx'|}\right) = -\frac{\vx-\vx'}{|\vx-\vx'|^3}, \nabla^{2}\left(\frac{1}{|\vx - \vx'|}\right) = 0.
 \end{equation}
 \noindent
 So we conclude that outside of a very small region around $\vx$, $\nabla^{2}\Phi(\vx)=0$.
@@ -170,7 +170,7 @@ declines more rapidly than $\propto r^{-1/2}$.
 Note that the potential of a distributed mass density $\rho(\vx)$
 is not the same as for a point mass.  Instead, we have
 \begin{equation}
-\Phi(r) = - \left[ \frac{GM(<r)}{r} 4 \pi G \int_{r}^{\infty} \rho(r') r' dr'\right].
+\Phi(r) = - \left[ \frac{GM(<r)}{r} + 4 \pi G \int_{r}^{\infty} \rho(r') r' dr'\right].
 \end{equation}
 \noindent
 But as long as the spherical mass distribution has a finite size, eventually we 
@@ -186,10 +186,10 @@ at large enough radius.
 
 If we are moving through a background potential $\Phi(\vx)$ with
 velocity $\vx$, the potential we experience changes
-with time according to $d\Phi/dt = \vx\cdot\nabla\Phi(\vx)$.
+with time according to $d\Phi/dt = \vv\cdot\nabla\Phi(\vx)$.
 We can re-write Newton's equation as
 \begin{equation}
-\vx \cdot \frac{d}{dt} ( m\vv) + m \vv\cdot\nabla \Phi(\vx) = 0 = \frac{d}{dt}\left[\frac{1}{2}m\vv^{2} + m \Phi(\vx)\right]
+\vv \cdot \frac{d}{dt} ( m\vv) + m \vv\cdot\nabla \Phi(\vx) = 0 = \frac{d}{dt}\left[\frac{1}{2}m\vv^{2} + m \Phi(\vx)\right]
 \end{equation}
 \noindent
 Therefore, the total energy
