@@ -200,7 +200,7 @@ E \equiv \frac{1}{2} m\vv^{2} + m\Phi(\vx) =~\mathrm{const}
 \noindent.
 We can write of course that $E = KE + PE$, where $KE = \frac{1}{2}m\vv^{2}$ and $PE = m\Phi(\vx)$.
 The kinetic energy cannot be negative, and we adopt $\Phi(\vx)\to0$ as $\vx\to\infty$.  At position
-$\vx$, an orbit is unboutnd only if the total energy $E>0$. The speed at this place in the
+$\vx$, an orbit is unbound only if the total energy $E>0$. The speed at this place in the
 orbit must exceed the escape speed, which is found by setting Equation \ref{eqn:total_energy} to zero.
 We then have
 \begin{equation}
@@ -219,7 +219,7 @@ momentum is conserved).
 In an axisymmetric distribution, on the component of $L$ parallel to the symmetry
 axis is conserved.
 
-\subsection{Total Energy is Not Conserved in a Time-Dependent Potential}
+\subsection{Individual Energy is Not Conserved in a Time-Dependent Potential}
 
 In a many-body system, the total energy of each star is not individually conserved.
 The time derivative of the kinetic energy of star $i$ is
@@ -227,14 +227,14 @@ The time derivative of the kinetic energy of star $i$ is
 \sum_{i} \vv_i \cdot \frac{d}{dt} (m_i \vv_i) = \frac{d}{dt} KE = -\sum_{i,j;i\ne j} \frac{Gm_i m_j}{|\vx_i - \vx_j|^{3}}(\vx_i - \vx_j) \cdot \vv_i
 \end{equation}
 \noindent
-Doing the same calculation on star $j$ and taking the dot product with $\vx_j$ gives
+Doing the same calculation on star $j$ and taking the dot product with $\vv_j$ gives
 \begin{equation}
-\frac{1}{2}\sum_{j} (m_j \vv_j \cdot \vv_j) = - \sum_{i,j; i\ne j}\frac{Gm_i m_j}{|\vx_i - \vx_j|^{3}}(\vx_j - \vx_i)\cdot \vx_j
+\frac{1}{2}\sum_{j} \frac{d}{dt} (m_j \vv_j \cdot \vv_j) = - \sum_{i,j; i\ne j}\frac{Gm_i m_j}{|\vx_i - \vx_j|^{3}}(\vx_j - \vx_i)\cdot \vv_j
 \end{equation}
 \noindent
 Adding the RHS of these two equations gives
 \begin{equation}
-- \sum_{i,j; i\ne j}\frac{Gm_i m_j}{|\vx_i - \vx_j|^{3}}(\vx_j - \vx_i)\cdot(\vv_i - \vv_j) = \sum_{i,j;i\ne j}\left(\frac{Gm_i m_j}{|\vx_i - \vx_j|}\right).
+- \sum_{i,j; i\ne j}\frac{Gm_i m_j}{|\vx_i - \vx_j|^{3}}(\vx_i - \vx_j)\cdot(\vv_i - \vv_j) = \sum_{i,j;i\ne j}\frac{d}{dt}\left(\frac{Gm_i m_j}{|\vx_i - \vx_j|}\right).
 \end{equation}
 The potential energy $PE$ is a sum of pairs of potentials from individual objects
 \begin{equation}
@@ -292,7 +292,7 @@ If all objects in the system are bound, then $|\vx_i \cdot \vv_i|$ and $dI/dt$ w
 
 A potential can be thought of as a combination of a smooth and steep potential wells.
 We can calculate the average time between strong encounters with the steep
-potential wells supplied near individual stars. Suppose taht the
+potential wells supplied near individual stars. Suppose that the
 stars have mass $m$ and typical velocities $V$. If two stars come
 within $r$ of one another, their kinetic energies increase to balance the
 change in potential energy.  We say there is a {\it strong encounter}
@@ -330,7 +330,7 @@ another, the perpendicular force between them is
 \noindent
 Integrating over time, we find that
 \begin{equation}
-\Delta V_{\perp} = \frac{1}{M} \int_{-\infty}^{\infty} \vF_{\perp}(t) dt \frac{2 G m}{bV}.
+\Delta V_{\perp} = \frac{1}{M} \int_{-\infty}^{\infty} \vF_{\perp}(t) dt =\frac{2 G m}{bV}.
 \end{equation}
 Slower approaches result in larger perpendicular velocity changes. The
 path of $M$ is bent via
@@ -364,7 +364,7 @@ can then take $b_{max}$ to be the size of the whole system.  For the Sun, $r_s =
 take $300~\pc \leq b_{max} \leq 30~\kpc$, then $\Lambda\approx18-22$.  So the exact value of
 $\Lambda$ doesn't matter, as $t_{\mathrm{relax}}\approx10^{13}~\yr$.
 
-In a cluster consisting of $N$ stars with mass $m$ and typical $V$, the average separateiion is about
+In a cluster consisting of $N$ stars with mass $m$ and typical $V$, the average separation is about
 half the size of the system $R$.  We have
 \begin{equation}
 \frac{1}{2}NmV^2 \sim \frac{G(Nm)^2}{2R},~\Lambda = \frac{R}{r_s} \sim \frac{GmN}{V^2} \cdot \frac{V^2}{2Gm}\sim\frac{N}{2}.
@@ -376,4 +376,169 @@ The crossing time of the system is $t_{cross} \sim R/V$.  Since $N=4n\pi R^3 /3$
 \noindent
 For $N\sim10^{11}$ stars, the relaxation will take $10^9$ crossing times.  For globulars with $10^6$ stars,
 the relaxation time for the whole system is $t_{\mathrm{relax}} \sim 10^4 t_{cross}$.
+
+\subsection{Effects of Two-Body Relaxation}
+
+Consider a cluster of stars, each with mass $m$.
+The {\it Maxwellian} distribution gives the fraction $f$ of stars with 
+velocities between $v$ and $v+\Delta v$ as
+\begin{equation}
+4\pi f_M(E) v^{2} \Delta v 
+\end{equation}
+\noindent
+where
+\begin{equation}
+f_M(E)\propto \exp\left(-\frac{E}{kT} \right) = \exp \left\{ -\left[ m\Phi(\vx) + \frac{mv^{2}}{2} \right]
+ \Big/ kT \right\}.
+\end{equation}
+The temperature is related to the average kinetic energy as
+\begin{equation}
+\frac{1}{2}m\ave{\vv^{2}(\vx)} = \frac{3}{2}kT.
+\end{equation}
+\noindent
+But there are stars at large energies, and these will evaporate. The kinetic
+energy of stars that escape will typically be
+\begin{equation}
+\left\langle \frac{1}{2} m v_2^2(\vx) \right\rangle = - \frac{1}{N} \sum_i m_i \Phi(\vx_i) = -\frac{2}{N} PE = \frac{4}{N} KE = 6 kT
+\end{equation}
+The fraction of stars that escape will be
+\begin{equation}
+\int_{\sqrt{12kT/m}}^{\infty} f(E) v^2 dv \Big/ \int_0^{\infty} f(E) v^2 dv = 0.0074 \approx \frac{1}{136}
+\end{equation}
+\noindent
+The evaporation time will be $t_{evap} \sim 136 t_{relax}$.  For globulars this is longer than
+the age of the universe, but for open clusters it is a few gigayears.
+
+\section{Orbits of Disk Stars and Epicycles}
+
+Now we will treat orbits in axisymmetric potentials, and we will use cylindrical polar
+coordinates $(R,\phi,z)$. In an axisymmetric potential, $\partial\Phi/\partial\phi = 0$, and
+angular momentum about the $z$-axis is conserved.  We adopt $l_z$ at the angular
+momentum per unit mass, we can write
+\begin{equation}
+\frac{d}{dt}(R^2 \dot{\phi}) = 0;~l_z \equiv R^2 \dot{\phi} =~\mathrm{constant}.
+\end{equation}
+\noindent
+The radial equation of motion is
+\begin{equation}
+\label{eqn:radial_motion}
+\ddot{R} = R \dot{\phi}^2 - \frac{\partial \Phi}{\partial R} = - \frac{\partial \Phi_{\mathrm{eff}}}{\partial R}
+\end{equation}
+\noindent
+\begin{equation}
+\Phieff \equiv \Phi(R,z) + \frac{l_z^2}{2R^2}.
+\end{equation}
+Multiplying \ref{eqn:radial_motion} by $\dot{R}$ and integrating informs us that
+for a star in the midplane $z=0$
+\begin{equation}
+\frac{1}{2}\dot{R}^2 + \Phieff(R,z=0;l_z) = ~\mathrm{constant}.
+\end{equation}
+\noindent
+If $l_z\ne0$, then there is an angular momentum barrier at the center of the galaxy that
+limits $R$ to some minimum value.
+
+The vertical equation of motion is
+\begin{equation}
+\ddot{z} = -\frac{\partial \Phi}{\partial z} (R,z) = -\frac{\partial \Phieff}{\partial z} (R,z)
+\end{equation}
+\noindent
+If the potential is an even function about $z=0$ there is no vertical force in the midplane.
+
+Let's expand the potential about the average radius $R_g$ of a star in a Taylor series and
+truncate at the first term
+\begin{equation}
+\ddot{z} = -z \left[ \frac{\partial^2 \Phi}{\partial z^2}(R_g, z)\right]_{z=0} \equiv - \nu^2(R_g) z
+\end{equation}
+\noindent
+where $\nu$ is an angular frequency.  The solution to this equation is
+a harmonic oscillator
+\begin{equation}
+z(t) = Z \cos (\nu t + \theta)
+\end{equation}
+\noindent
+where $Z$ and $\theta$ are constants.
+
+Circular orbits with $\dot{R} = 0$ are only possible at a radius $R_g$ where $\Phieff =~\mathrm{constant}$.
+At this radius
+\begin{equation}
+\frac{\partial \Phi}{\partial R}(R_g,z=0) = \frac{l_z^2}{R_g^3} = R_g \Omega^{2}(R_g)
+\end{equation}
+\noindent
+where $\Omega(R)$ is the angular speed of a circular orbit in the disk plane.  If $\Phieff$ has a
+minimum at $R_g$, then the circular orbit will have the lowest $l_z$.  Any larger $l_z$
+will oscillate about the circular orbit, in an {\it epicycle} about a point that
+moves with $\Omega(R_g)$ in a circular orbit of radius $R_g$.
+
+Let's set $R = R_g+x$ in Equation \ref{eqn:radial_motion}, assume that $x\ll R$, and expand to
+first order in $x/R$ and $z/R$.  We find that
+\begin{equation}
+\ddot{x} \approx - x\left[\frac{\partial^2 \Phieff}{\partial R^2}\right]_{R_g}\equiv - \kappa^2(R_g)x
+\end{equation}
+\noindent
+and
+\begin{equation}
+x(t) \approx X \cos(\kappa t + \psi).
+\end{equation}
+\noindent
+The constant $\kappa$ is called the epicyclic frequency when $\kappa^2>0$.  If $\kappa^2<0$,
+the orbit is unstable.
+
+Recalling that in a circular orbit
+\begin{equation}
+R \Omega^2(R) = \frac{\partial \Phi(R,z=0)}{\partial R}
+\end{equation}
+\noindent
+we can write
+\begin{equation}
+\kappa^2(R) = \frac{d}{dR}[R\Omega^2(R)] + \frac{3 l_z^2}{R^4} = \frac{1}{R^3}\frac{d}{dR}[(R^2\Omega)^2] = -4B\Omega
+\end{equation}
+\noindent
+where $B$ is Oort's constant.  In the solar neighborhood $B<0$ and $\kappa^2$ is positive and the Solar
+orbit is stable.  If $R^2\Omega(R)$, the angular momentum of a circular orbit, increases with $R$ then
+all larger circular orbits are stable.  Near a black hole this isn't the case, and the inner
+most circular orbit is at $R=6GM/c^2$.
+
+\subsection{Azimuthal Motion in Epicycles}
+
+Since $R$ changes in an epicyclical orbit, the azimuthal velocity must change to
+compensate to keep $l_z$ constant.  This means that
+\begin{equation}
+\dot(\phi) = \frac{l_z}{R^2} = \frac{\Omega(R_g)R_g^2}{(R_g + x)^2} \approx \Omega(R_g)\left(1 - \frac{2x}{R_g}\right).
+\end{equation}
+\noindent
+We can integrate this equation to find that the azimuthal position with time varies as
+\begin{equation}
+\phi(t) = \phi_0  + \Omega(R_g)t - \frac{1}{R_g}\frac{2\Omega}{\kappa}X \sin(\kappa t + \psi)
+\end{equation}
+\noindent
+The first two terms are circular motion starting from $\phi_0$ with constant angular
+frequency $\Omega(R_g)$.  The third term is a harmonic oscillation with the same
+frequency $\kappa$ as the $x$ motion but $\pi/2$ out of phase, and
+larger by a factor $2\Omega/\kappa$.
+The motion is also retrograde!
+
+\subsection{$\kappa$ vs. $\Omega$}
+
+For a point mass $\kappa = \Omega$.  For a uniform sphere $\kappa = 2\Omega$.
+The galaxy has $\Omega < \kappa < 2\Omega$, and near the sun $\kappa \approx 1.4 \Omega$.
+
+\subsection{Relative Speed of Nearby Stars}
+
+The relative speeds of stars with $R_g > R_0$ are
+\begin{equation}
+v_y = R_0[\dot{\phi} - \Omega(R_0)]\approx R_0 \left[ \Omega(R_g) - 2x \frac{\Omega(R_g)}{R_g} - \Omega(R_0)\right]
+\end{equation}
+\noindent
+but since $R_0 = R_g + x$ and dropping terms in $x^2$ we have
+\begin{equation}
+v_y \approx -x\left[ 2\Omega(R_0) + R_0\left(\frac{d\Omega}{dR}\right)_{R_0}\right] = -\frac{\kappa^2 x}{2\Omega} = 2Bx
+\end{equation}
+\noindent
+Taking the average of stars we can measure, we find
+\begin{equation}
+\ave{v_y^2} = \left(\frac{\kappa^2}{2\Omega}\right)^2\ave{x^2} = \frac{\kappa^2}{4\Omega^2}\ave{v_x^2}
+\end{equation}
+\noindent
+and since $\kappa<2\Omega$, $\ave{v_y^2}<\ave{v_x^2}$.  For the thin disk, we find that $2\lesssim\ave{v_x^2}/\ave{v_y^2}\lesssim3$.
+
 \end{document}
