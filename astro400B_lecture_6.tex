@@ -1,0 +1,233 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Lecture 6: Collisionless Boltzmann Equation}
+\author{Brant Robertson}
+\date{February, 2015}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+%first section
+\section{Distribution Function}
+
+The {\it distribution function} $f(\vx,\vv,t)$ gives the probability density
+in six-dimensional {\it phase space} $(\vx,\vv)$ of having an object
+in the volume $d\vx d\vv$.  The number density $n(\vx,t)$ of objects is the
+volume integral of the distribution function
+\begin{equation}
+n(\vx,t) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(\vx,\vv,t) dv_{x}dv_y,dv_z.
+\end{equation}
+\noindent
+We can use this expression to define moments of the velocity distribution, such as
+the average velocity 
+\begin{equation}
+\ave{\vv(\vx,t)} = \frac{1}{n(\vx,t)} \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} \vv f(\vx,\vv,t) dv_{x}dv_y,dv_z.
+\end{equation}
+
+For a collisionless system where objects cannot be created or destroyed, the number density of objects
+in a given volume will follow the continuity equation
+\begin{equation}
+\label{eqn:continuity}
+\frac{\partial n}{\partial t} + \frac{\partial (nv)}{\partial x} = 0.
+\end{equation}
+\noindent
+This equation simply describes the mass conservation of objects, such that
+the time rate of change of the number density is balanced by the advection of
+spatial gradients in the number density.
+
+The {\it collisionless Boltzmann equation} that describes the probability density 
+of objects in phase space is more complicated because it must describe a time variation
+in the velocity as well as the spatial coordinates.  In one dimension, we have that
+\begin{equation}
+\frac{\partial f}{\partial t} + v\frac{\partial f}{\partial x} + \frac{dv}{dt}(x,v,t) \cdot \frac{\partial f}{\partial v} = 0
+\end{equation}
+\noindent
+The acceleration of an object will only depend on position in a background potential, so
+we have that $dv/dt = -\partial \Phi/\partial x$, and
+\begin{equation}
+\label{eqn:boltzmann}
+\frac{\partial f}{\partial t} + v \frac{\partial f}{\partial x} - \frac{\partial \Phi}{\partial x}(x,t)\cdot \frac{\partial f}{\partial v} = 0.
+\end{equation}
+\noindent
+In three dimensions, we can write
+\begin{equation}
+\label{eqn:bvec}
+\frac{\partial f(\vx, \vv, t)}{\partial t} + \vv \cdot \nabla f - \nabla \Phi \cdot \frac{\partial f}{\partial \vv} = 0.
+\end{equation}
+\noindent
+We usually don't deal with this equation in this form, but often will take moments with respect to
+e.g., velocity
+\begin{equation}
+\frac{\partial n(x,t)}{\partial t} + \frac{\partial}{\partial x}[n(x,t)\ave{v(x,t)}] - \frac{\partial \Phi}{\partial x}(x,t)[f]_{-\infty}^{\infty} = 0
+\end{equation}
+\noindent
+The last term will be zero if $f$ is well behaved, and we get back Equation \ref{eqn:continuity}.
+
+If we integrate Equation \ref{eqn:boltzmann} multiplied by $v$, we instead find
+\begin{equation}
+\frac{\partial}{\partial t}[n(x,t)\ave{v(x,t)}] + \frac{\partial}{\partial x}[n(x,t)\ave{v^2(x,t)}] = - n(x,t) \frac{\partial \Phi}{\partial x}
+\end{equation}
+\noindent
+If we define the velocity dispersion as
+\begin{equation}
+\ave{v^2(x,t)} = \ave{v(x,t)}^2 + \sigma^2,
+\end{equation}
+\noindent
+apply this definition, and then divide by $n(x,t)$, we have
+\begin{equation}
+\label{eqn:v_ave}
+\frac{d\ave{v}}{dt} + \ave{v}\frac{\partial \ave{v}}{\partial x} = -\frac{\partial \Phi}{\partial x} - \frac{1}{n}\frac{\partial}{\partial x}[n\sigma^2(x,t)].
+\end{equation}
+
+\section{Disk Mass and Jeans Equation}
+
+Consider Equation \ref{eqn:v_ave} applied to the Galactic disk.  Well above the disk
+plane, $\ave{v_z}=0$ and, if we assume the disk is stable, $\partial\ave{v_z}/\partial t=0$.
+We can then write
+\begin{equation}
+\frac{\partial}{\partial z}[n(z)\sigma_z^2] = -n(z)\frac{\partial \Phi}{\partial z}
+\end{equation}
+\noindent
+This equation is sometimes called the {\it Jeans Equation}.
+To proceed, we need to find some way of expressing the disk potential. We can use Poisson's 
+Equation in cylindrical polar coordinates assuming polar symmetry, and we find that
+\begin{equation}
+4\pi G \rho(R,z) = \nabla^{2} \Phi(R,z) = \frac{\partial^2\Phi}{\partial z^2} + \frac{1}{R}\frac{\partial}{\partial R}\left(R \frac{\partial \Phi}{\partial R}\right).
+\end{equation}
+\noindent
+We can substitute $\partial \Phi  / \partial R = V^2(R)/R$, which gives
+\begin{equation}
+4 \pi G \rho(R,z) = \frac{d}{dz}\left\{ - \frac{1}{n(z)}\frac{d}{dz}[n(z)\sigma_z^2]\right\} + \frac{1}{R}\frac{d}{dR}[V^{2}(R)].
+\end{equation}
+\noindent
+The last term is small since the Galactic rotation curve is nearly flat. Integrating over $z$, we then
+have
+\begin{equation}
+2\pi G \Sigma(<z) \equiv 2\pi G\int_{-z}^{z}\rho(z')dz' \approx -\frac{1}{n(z)}\frac{d}{dz}[n(z)\sigma_z^2]
+\end{equation}
+\noindent
+By measuring the vertical distribution of stars in the disk and the variation of $\sigma_z$ with height
+above the disk we find that $\Sigma(<z) \approx 50-60~\Msun~\pc^{2}$ near the solar circle.  The mass in
+gas and stars is about $\Sigma_{gs}(<z)\approx40-55~\Msun~\pc^{2}$.
+
+\section{Integrals of Motion}
+
+If the potential does not change with time, then the distribution
+function is also constant. In this case, we can define {\it integrals of motion} that
+remain constant along an orbit.  Examples are the total energy $E(\vx,v) = \vv^2/2 + \Phi(\vx)$,
+or the total angular momentum $\vL$ in a spherical potential, or
+the angular momentum along the symmetry axis $l_z$ in an axisymmetric potential.
+
+For any quantity $\cI$ that is constant along the orbit, we have
+\begin{equation}
+\label{eqn:eom}
+\frac{d}{dt}\cI(\vx,\vv) \equiv \frac{\partial \vx}{\partial t} \cdot \nabla \cI + \frac{\partial \vv}{\partial t} \cdot \frac{\partial \cI}{\partial \vv} = 0
+\end{equation}
+\noindent
+or\begin{equation}
+\vv \cdot \nabla \cI - \nabla \Phi \cdot \frac{\partial \cI}{\partial \vv} = 0.
+\end{equation}
+
+Note that Equation \ref{eqn:eom} looks like Equation \ref{eqn:bvec}, with the substitution
+$f\to\cI$. So the phase space density around a moving object is also a constant.
+So what can we do now?
+
+Well, remember from the discussion of epicyclical frequency that for nearly circular orbits
+\begin{equation}
+\ddot{z} \approx - \nu^2(R_g)z,
+\end{equation}
+\noindent
+such that motion in $z$ is basically independent of motion in $(R,\phi)$. This result
+means that the energy in the vertical motion
+\begin{equation}
+E_z = \Phi(R_0,z) + v_z^2/2
+\end{equation}
+\noindent
+is an integral of motion. We therefore have that
+\begin{equation}
+f(z,v_z) = f(E_z) = f\left(\Phi(R_0,z) + \frac{1}{2}v_z^2\right)
+\end{equation}
+\noindent
+If we guess at the form of $f(E_z)$, we can integrate to find $n(z)$ and $\sigma_z$.
+For instance, assume
+\begin{equation}
+f(E_z) = \frac{n_0}{\sqrt{2\pi\sigma^2}}\exp(-E_z/\sigma^2)~\mathrm{for}~E_z<0
+\end{equation}
+(if $E_z>0$, the stars would be unbound).  If we integrate over $v_z$, we have
+\begin{equation}
+\noindent{eqn:isothermal}
+n(z) = n_0 \exp\left[-\Phi(R_0,z)/\sigma^2\right];~\sigma_z = \sigma.
+\end{equation}
+
+For a spherical potential $\Phi(r)$, any $f(E,\vL)$ that doesn't have unbound stars will
+describe some density distribution that generates the potential.  If we adopt $f(E)$ without
+an $\vL$ dependence, the velocity distribution will be isotropic.
+
+\subsection{Isothermal Distribution}
+
+Consider the isothermal distribution
+\begin{equation}
+f_{I}(E) = \frac{n_0}{(2\pi\sigma^2)^{3/2}}\exp\left\{-\left[\Phi(r) + \frac{v^2}{2}\right]\middle/\sigma^2\right\}
+\end{equation}
+\noindent
+The spherical and vertical disk isothermal solutions for the number density are the same, e.g.,
+\begin{equation}
+n(r) = n_0 \exp\left[-\Phi(r)/\sigma^2\right]
+\end{equation}
+\noindent
+and we have
+\begin{equation}
+4\pi G \rho(r) = \frac{1}{r^2} \frac{d}{d r}\left(r^2\frac{d\Phi}{dr}\right) = 4\pi G m n_0 \exp\left[-\frac{\Phi(r)}{\sigma^2}\right]
+\end{equation}
+\noindent
+The calculation of $\Phi(r)$ necessarily requires a radial integral from $r=0$.  At the center,
+if the potential is smooth then the radial force has to be zero and $d\Phi(r=0)/dr =0$.  But
+no matter how $\Phi(r=0)$ is chosen, the mass will be infinite.  If the mass had been
+finite, then the escape speed would drop below $\sigma$ at some radius and not all the stars 
+would be bound.
+
+\subsection{King Model}
+
+To avoid these problems near the escape speed for finite mass, we can take the King model,
+also known as the lowered isothermal model, which is given by
+\begin{equation}
+\label{eqn:king}
+f_K(E) = \frac{n_0}{(2\pi\sigma)^{3/2}}\exp\left[-\left(\Phi(r) + \frac{v^2}{2}\right)\middle/\sigma^{2} - 1\right].
+\end{equation}
+\noindent
+This model has a truncation radius beyond which the number density declines dramatically, but the interior is
+nearly isothermal. This model provides a good representation of globular clusters.
+
+
+\subsection{Angular Momentum}
+
+We can modify Equation \ref{eqn:king} to give
+\begin{equation}
+f_A(E,L) = f_K(E)\exp\left[-\vL^2/(2\sigma^2 r_a^2)\right]
+\end{equation}
+\noindent
+where $r_a$ is the {\it anisotropy radius}.  Outside of $r_a$ the
+stars have radial orbits, as the large angular momentum orbits (e.g.,
+circular) are
+exponentially suppressed.
+
+
+Flattened systems can be described by distribution functions that
+depend on $L_z$, e.g., $f(E,L_z)$.
+
+
+
+
+
+
+\end{document}
