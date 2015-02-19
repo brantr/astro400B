@@ -1,0 +1,100 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Homework \#2}
+\author{Please Show Your Work for Full Credit}
+\date{Due Feb 26, 2015 by 9:35am}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+\section{Sparke \& Gallagher Problem 2.20}
+
+Consider the spherical density distribution $\rho_H(r)$ with
+\begin{equation}
+4\pi G\rho_H(r) = \frac{V_H^2}{r^2 +a_H^2},
+\end{equation}
+where $V_H$ and $a_H$ are constants; what is the mass $M(<r)$ contained within
+a radius $r$? Use the equation
+\begin{equation}
+M(<R) = RV^2/G
+\end{equation}
+to show that the speed $V(r)$ of a circular orbit at radius $r$
+is given by
+\begin{equation}
+V^2(r) = V_H^2[1-(a_H/r)\arctan(r/a_H)],
+\end{equation}
+\noindent
+and sketch $V(r)$ as a function of radius. This density law is sometimes
+used to represent the mass of a galaxy's dark halo -- why?
+
+\section{Sparke \& Gallagher Problem 2.24}
+
+We can estimate the size of an HII region around a massive star that radiates $S_\star$ photons with energy above 13.6eV each second. Assume that the
+gas within radius $r_\star$ absorbs all these photons, becoming almost
+completely ionized so that $n_e \approx n_H$, the density of H nuclei. In a
+steady state atoms recombine as fast as they are ionized, so the star ionizes
+a mass of gas $M_g$, where
+\begin{equation}
+S_\star = (4r_\star^3/3)n_H^2\alpha(T_e) = (M_g/m_p)n_H\alpha(T_e).
+\end{equation}
+Use the equation
+\begin{equation}
+-\frac{dn_e}{dt} = n_e^2 \alpha(T_e)~~\mathrm{with}~~\alpha(T_e) \approx 2\times 10^{-13}\left(\frac{T_e}{10^4~\K}\right)^{-3/4}~\cm^3~\s^{-1}
+\end{equation}
+\noindent
+to show that a mid-O star radiating $S_\star=10^{49}~\s^{-1}$ into gas of
+density $10^{3}~\cm^{-3}$ creates an HII region of radius $0.67~\pc$,
+containing $\sim30\Msun$ of gas (assume that $T_e=10^4\K$). What
+is $r_\star$ if the density is ten times larger? Show that only a tenth
+as much gas is ionized. How large is the HII region around a B1
+star with $n_H=10^3 \cm^{-3}$ but only $S_\star = 3\times10^{47}~\s^{-1}$?
+
+\pagebreak
+
+\section{Sparke \& Gallagher Problem 3.7}
+
+The {\it Navarro-Frenk-White} (NFW) model describes the
+halos of cold dark matter that form in cosmological simulations.
+Show that the potential corresponding to the density
+\begin{equation}
+\rho_{NFW}(r) = \frac{\rho_N}{(r/a_N)(1+r/a_N)^2}~\mathrm{is}~\Phi_{NFW}(r) = -\sigma_N^2\frac{\ln(1+r/a_N)}{(r/a_N)},
+\end{equation}
+\noindent
+where $\sigma_N^2 = 4\pi G \rho_N a_N^2$. The density rises steeply
+at the center, but less so than in the singular isothermal sphere;
+at large radii $\rho(r)\propto r^{-3}$. Show that the speed
+$V$ of a circular orbit at radius $r$ is given
+by
+\begin{equation}
+V^2(r) = \sigma_N^2\left[\frac{\ln(1+r/a_N)}{(r/a_N)} - \frac{1}{(1+r/a_N)}\right].
+\end{equation}
+
+\section{Sparke \& Gallagher Problem 3.12}
+
+Show that for the Plummer sphere model with density profile
+\begin{equation}
+\rho_P(r) = \frac{3a_P^2}{4\pi}\frac{M}{(r^2 + a_P^2)^{5/2}}
+\end{equation}
+\noindent
+and potential
+\begin{equation}
+\Phi_P(r) = -\frac{GM}{\sqrt{r^2 +a_P^2}}
+\end{equation}
+\noindent
+the potential energy is
+\begin{equation}
+PE = - \frac{3\pi}{32} \frac{GM^2}{a_P}.
+\end{equation}
+
+
+\end{document}
