@@ -18,10 +18,120 @@
 \maketitle
 
 
-\section{Tidal Limit}
+\section{Satellite Dynamics: The Tidal Limit}
 
+The orbits of stars in satellites can be very complicated.
+While orbits in many-body systems are intractable analytically,
+if a satellite follows a circular orbit and the
+gravitational potential is constant in a frame that
+uniformly rotates about the common center of mass, we
+can define an effective potential and use it to 
+describe the desired orbit of a star in the satellite.
 
+Consider a vector $\vu$ that is constant in a 
+non-rotating frame. In a rotating frame $\vu$
+will change at the rate $d\vu/dt' = -\vOmega \times \vu$
+where $d/dt'$ is the derivative measured by
+the rotating observer and $\vOmega = \Omega\hat{\mathbf{z}}$ is the
+vector angular frequency of the rotation about the $\hat{\mathbf{z}}$
+direction.
 
+If a star has velocity $\vv$ and position $\vx$ relative to an inertial
+frame, then if a rotating observer chooses their coordinates such that
+$\vx'\equiv\vx$ the velocity they observe would be
+\begin{equation}
+\vv' \equiv \frac{d\vx'}{dt'} = \vv - \vOmega \times \vx.
+\end{equation}
+\noindent
+The velocity changes at the rate
+\begin{eqnarray}
+\frac{d\vv'}{dt'} &=& \frac{d\vv'}{dt} - \vOmega \times \vv' = \frac{d\vv}{dt} - \vOmega \times \vv - \vOmega \times \vv'\nonumber\\
+&=& - \nabla \Phi - 2 \vOmega \times \vv' - \vOmega\times(\vOmega \times \vx)
+\end{eqnarray}
+\noindent
+If you take the scalar product of $\vv'$ with the last term in the RHS, you find
+\begin{equation}
+-\vv'\cdot\vOmega\times(\vOmega \times \vx) = \Omega^2(\vx\cdot\vv') - (\vv'\cdot\vOmega)(\vOmega\cdot\vx) = \frac{1}{2}\frac{d}{dt'}[(\vOmega\times\vx)^2]
+\end{equation}
+\noindent
+But $\vv'\cdot(\vOmega\times\vv')=0$ and $\vx'=\vx$.  Taking another scalar product, we have
+\begin{equation}
+\label{eqn:KE_mod}
+\frac{1}{2}\frac{d}{dt'}[\vv'^2 - (\vOmega \times \vx')^2] = -\vv' \cdot \nabla\Phi(\vx')
+\end{equation}
+If $\vOmega$ follows a satellite in its orbit, then in the rotating frame the gravitational
+potential does not change with time. The potential at the star's position
+changes at the rate $d\Phi/dt' = \vv'\cdot\nabla\Phi$.
+
+We now define the {\it Jacobi constant} $E_J$ by
+\begin{equation}
+E_J = \frac{1}{2}\vv'^2 + \Phieff(\vx'),~~\mathrm{where}~\Phieff(\vx')\equiv\Phi(\vx') - \frac{1}{2}(\vOmega\times\vx')^2
+\end{equation}
+\noindent
+and we see that Equation \ref{eqn:KE_mod} suggest that $E_J$ does not change along the star's orbit.
+We can re-write $E_J$ in terms of the star's energy and angular momentum in the inertial frame as
+\begin{equation}
+E_J = \frac{1}{2}(\vv-\vOmega\times\vx)^2 + \Phieff = \frac{1}{2}\vv^2 + \Phi(\vx,t) - \Omega\cdot(\vx\times\vv) = E - \vOmega\cdot\vL
+\end{equation}
+
+\subsection{A Simple Example of the Tidal Limit}
+
+Consider the satellite to have mass $m$ and the main galaxy to have mass $M$, separated by distance $D$,
+orbiting the center of mass $C$ with angular speed $\Omega$.  Take $x$ as the coordinate
+along the ray between $m$ toward $M$.  The center of mass is then at $x=DM/(M+m)$.  The
+effective potential is then
+\begin{equation}
+\Phieff(x) = -\frac{GM}{|D-x|} -\frac{Gm}{|x|} - \frac{\Omega}{2}\left(x-\frac{DM}{M+m}\right)^2.
+\end{equation}
+
+The effective potential has three maxima known as the {\it Lagrange points}, [$L_1$, $L_2$, $L_3$].  Let's find them by setting
+the derivative of the effective potential to zero.
+\begin{equation}
+\label{eqn:find_phieff_max}
+\frac{d\Phieff}{dx} = 0 = -\frac{GM}{(D-x)^2} \pm \frac{Gm}{x^2} - \Omega^2\left(x-\frac{DM}{M+m}\right)
+\end{equation}
+\noindent
+The acceleration $\Omega^2DM/(M+m)$ of $m$ as it circles $C$ owes to the gravitational
+attraction of $M$. We can then write
+\begin{equation}
+\Omega\frac{DM}{M+m}=\frac{GM}{D^2},~~\mathrm{so}~\Omega^2=\frac{G(M+m)}{D^3}
+\end{equation}
+\noindent
+If the satellite is much less massive than the main galaxy, $L_1$ and $L_2$ will lie close to $m$.
+Substitute $\Omega^2$ into Equation \ref{eqn:find_phieff_max}, and expand in powers of $x/D$ to find
+\begin{equation}
+0 \approx -\frac{GM}{D^2} - 2\frac{GM}{D^3}x \pm \frac{Gm}{x^2} - \frac{G(M+m)}{D^3}\left(x-\frac{DM}{M+m}\right)
+\end{equation}
+\noindent
+At the Lagrange points $L_1$ and $L_2$ we have
+\begin{equation}
+x = \pm r_J, ~~\mathrm{where}~r_J = D\left(\frac{m}{3M+m}\right)^{1/3}
+\end{equation}
+\noindent
+Stars that cannot stray further from the satellite than $r_J$, the {\it Jacobi radius} or {\it Roche limit},
+will remain bound to it.  The radius $L_1$ is not where the gravitational force from the satellite and 
+main galaxy are the same, but where the effective potential has a minimum and lies further from the satellite.
+This radius is also where expanding stars lose mass to their companion.
+
+When $M\gg m$, then the mean density within $r_J$ is three times the mean density within $D$ of the main galaxy.
+A star orbiting the satellite near $r_J$ will have an orbital period comparable to the orbit period of the
+satellite around the main galaxy.
+
+When satellites are not on circular orbits, the relevant $r_J$ is determined at the pericenter. If the
+satellite is orbiting within the dark matter halo of the main galaxy, the relevant radius is
+\begin{equation}
+r_J = D\left[\frac{m}{2M(<D)}\right]^{1/3}
+\end{equation}
+where $M(<D)$ is the mass within D.
+
+What's the Jacobi radius of the LMC-Milky Way system? The LMC is at a distance of $\sim50\kpc$ where
+the speed of a circular orbit is about the same as it is at the solar circle, or about $\sim200\km~\s^{-1}$.
+The mass of the Milky Way within the LMC's orbit is about $5\times10^{11}\Msun$.  The LMC mass is about
+$10^{10}\Msun$, so we have
+\begin{equation}
+r_J\approx 50\kpc~\times~\left(\frac{10^{10}\Msun}{2\times5\times10^{11}\Msun}\right)^{1/3} \approx 11\kpc.
+\end{equation}
+The LMC disk lies within this radius, but the SMC is too far away to stay bound to the LMC.
 
 
 \end{document}

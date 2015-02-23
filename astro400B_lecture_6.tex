@@ -165,7 +165,7 @@ f(E_z) = \frac{n_0}{\sqrt{2\pi\sigma^2}}\exp(-E_z/\sigma^2)~\mathrm{for}~E_z<0
 \end{equation}
 (if $E_z>0$, the stars would be unbound).  If we integrate over $v_z$, we have
 \begin{equation}
-\noindent{eqn:isothermal}
+\label{eqn:isothermal}
 n(z) = n_0 \exp\left[-\Phi(R_0,z)/\sigma^2\right];~\sigma_z = \sigma.
 \end{equation}
 
@@ -223,7 +223,23 @@ exponentially suppressed.
 
 
 Flattened systems can be described by distribution functions that
-depend on $L_z$, e.g., $f(E,L_z)$.
+depend on $L_z$, e.g., $f(E,L_z)$.  For example, if
+\begin{equation}
+f(E,L_z) = \tilde{f}(E)L_z^2~~\mathrm{for}~E>0
+\end{equation}
+\noindent
+for some function $\tilde{f}$, then few stars will have
+orbits that approach the $z$ axis (which requires $L_z\approx0$)
+while many will have nearly circular orbits with large $L_z$.
+Note that this requires
+\begin{equation}
+n(\vx)\ave{v_z^2} \equiv \int f\left[\Phi(\vx) + \frac{\vv^2}{2},R v_{\phi}\right] dv_R dv_\phi dv_z = n(\vx)\ave{v_R^2}.
+\end{equation}
+\noindent
+But for the Galactic disk, we saw that $\ave{v_R^2}>\ave{v_z^2}$. So for the Galactic disk
+the distribution function cannot just be $f(E,L_z)$ but must instead rely on a {\it third integral of motion}.
+One can show that for an axisymmetric potential $\Phi(R,z)$ there is no other function
+of position and velocity other than $E$ and $L_z$ that is conserved along an orbit, which is perplexing!
 
 
 
