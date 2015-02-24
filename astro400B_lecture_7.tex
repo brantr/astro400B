@@ -17,6 +17,70 @@
 %make the title, goes after document begins
 \maketitle
 
+\section{Galaxies in the Local Group}
+
+There are more than 60 known galaxies in the
+Local Group. Of these, the dominate
+galaxies are M31 (Sb; $L_V=2.7\times10^{10}\Lsun$), 
+the Milky Way (Sbc; $L_V=1.5\times10^{10}\Lsun$), 
+M33 (Sc; $5.5\times10^9\Lsun$),
+the LMC (SBm; $L_V=2.2\times10^9\Lsun$), 
+the SMC (Irr; $L_V=5.5\times10^8\Lsun$), 
+NGC205 (dE; $L_V=4\times10^8\Lsun$), and M32 (NGC221, E2; $L_V = 4\times10^8\Lsun$).
+
+There are at least 35 satellite galaxies around M31, and some are
+very very small.
+The smallest known Local Group satellites are less than $10^4\Lsun$.
+
+{\bf See Table 4.1 and Fig. 4.1 of Sparke and Gallagher.}
+
+The most important Milky Way satellite galaxies are the
+Magellanic Clouds.  The LMC is about $14\kpc$ across,
+while the SMC is about $8\kpc$ across.  The LMC has
+10\% the Milky Way brightness, while the SMC is about
+100\% the MW luminosity.  The rotation speed of 
+HI in the LMC reaches about $80\km~\s^{-1}$.
+
+{\bf See Figure 4.4 of Sparke and Gallagher.}
+
+A bridge of gas connects the LMC and the SMC, while
+the Magellanic Stream trails behind them and wraps
+about a third around the sky.
+
+{\bf See Figure 4.6 of Sparke and Gallagher.}
+
+There are some very faint dwarf galaxies, some of 
+which are dSph.  Note that the smallest dSph have
+velocity dispersions that are comparable to globular
+clusters.  However, we think that dwarf spheroidals
+have dark matter halos.
+
+{\bf See Table 4.2 of Sparke and Gallagher.}
+
+\subsection{M31}
+
+Key facts about Andromeda (M31) 
+\begin{itemize}
+\item Luminosity is 50\% larger than MW
+\item Disk scale length is 2$\times$ longer
+\item Disk circular speed is $\sim260\km~\s^{-1}$
+\item It has 300 known globular clusters, about $2\times$ as many as the Milky Way
+\item M31 satellites include M32
+\item The M31 bulge is proportionally larger than the MW's.
+\item $4-6\times10^9\Msun$ of HI, about 50\% more than MW
+\end{itemize}
+
+\subsection{M33}
+
+Key facts about the Triangulum (M33)
+
+\begin{itemize}
+\item Sc or Scd, about 1/3 luminosity of the MW
+\item Disk scale length is $h\sim1.7\kpc$.
+\item Rotational velocity is $\sim120\km~\s^{-1}$.
+\item Gas rich ($1.5\times10^9\Msun$ of HI), but little CO.
+\item Nuclear star cluster with $L\sim2.5\times10^6\Lsun$.
+\end{itemize}
 
 \section{Satellite Dynamics: The Tidal Limit}
 
@@ -81,14 +145,14 @@ orbiting the center of mass $C$ with angular speed $\Omega$.  Take $x$ as the co
 along the ray between $m$ toward $M$.  The center of mass is then at $x=DM/(M+m)$.  The
 effective potential is then
 \begin{equation}
-\Phieff(x) = -\frac{GM}{|D-x|} -\frac{Gm}{|x|} - \frac{\Omega}{2}\left(x-\frac{DM}{M+m}\right)^2.
+\Phieff(x) = -\frac{GM}{|D-x|} -\frac{Gm}{|x|} - \frac{\Omega^2}{2}\left(x-\frac{DM}{M+m}\right)^2.
 \end{equation}
 
 The effective potential has three maxima known as the {\it Lagrange points}, [$L_1$, $L_2$, $L_3$].  Let's find them by setting
 the derivative of the effective potential to zero.
 \begin{equation}
 \label{eqn:find_phieff_max}
-\frac{d\Phieff}{dx} = 0 = -\frac{GM}{(D-x)^2} \pm \frac{Gm}{x^2} - \Omega^2\left(x-\frac{DM}{M+m}\right)
+\frac{\partial\Phieff}{\partial x} = 0 = -\frac{GM}{(D-x)^2} \pm \frac{Gm}{x^2} - \Omega^2\left(x-\frac{DM}{M+m}\right)
 \end{equation}
 \noindent
 The acceleration $\Omega^2DM/(M+m)$ of $m$ as it circles $C$ owes to the gravitational
@@ -132,6 +196,96 @@ $10^{10}\Msun$, so we have
 r_J\approx 50\kpc~\times~\left(\frac{10^{10}\Msun}{2\times5\times10^{11}\Msun}\right)^{1/3} \approx 11\kpc.
 \end{equation}
 The LMC disk lies within this radius, but the SMC is too far away to stay bound to the LMC.
+
+\section{Galactic Chemical Evolution}
+
+An important clue in the formation and evolution of a galaxy is its metallicity content.
+Since stars provide the majority of the metals to be found in a galaxy, we can try to connect the
+metallicity of gas and stars in a galaxy with its star formation rate over time.
+
+The simplest model we can devise assumes that the gas in a galaxy is instantaneously 
+mixed and no gas flows in or out.  This kind of model is called a {\it one-zone},
+{\it instantaneous recycling}, {\it closed-box} model.
+
+We make the following definitions:
+
+\begin{itemize}
+\item $M_g(t)$ is the mass in gas at time $t$.
+\item $M_\star(t)$ is the mass in low-mass stars, white dwarfs, neutron
+stars or black holes
+\item $M_Z(t)$ is the total mass in heavy elements in the galactic gas
+\item The metallicity is $Z = M_Z/M_g$.
+\end{itemize}
+
+At some time $t$ a mass $\Delta M_\star'$ is formed. After the massive
+stars evolve (quickly), only $\Delta M_\star$ of stars is left.
+
+These stars return gas to the ISM, including $p\Delta M_\star$ of
+heavy elements.  The quantity $p$ is called the yield, and
+represents an average over the initial mass function (lots of
+other things can affect the yield!).
+
+The change in the metal content of the galaxy from the population
+of $\Delta M_\star'$ is
+\begin{equation}
+\Delta M_Z = p \Delta M_\star - Z \Delta M_\star = (p-Z)\Delta M_\star
+\end{equation}
+\noindent
+so the metallicity of the gas increases by
+\begin{equation}
+\label{eqn:metallicity_change}
+\Delta Z \equiv \Delta \left(\frac{M_z}{M_g}\right) = \frac{p\Delta M_\star - Z[\Delta M_\star + \Delta M_g]}{M_g}
+\end{equation}
+\noindent
+but since no gas leaves are arrives, we have that
+\begin{equation}
+\Delta M_\star + \Delta M_g = 0
+\end{equation}
+\noindent
+Let's assume the yield does not depend on the current metallicity, such that $p$ is independent of $Z$.
+We can integrate Equation \ref{eqn:metallicity_change} to find the metallicity with time as
+\begin{equation}
+\label{eqn:metallicity}
+Z(t) = Z(t=0) + p \ln\left[\frac{M_g(t=0)}{M_g(t)}\right]
+\end{equation}
+The metallicity grows with time as the gas is consumed.  The mass in stars that have
+formed $M_\star(t) = M_g(t=0) - M_g(t)$, so the mass in stars with metallicity
+less that $Z(t)$ is
+\begin{equation}
+M_\star(<Z) = M_g(0)\left[1 - \exp\left\{-\frac{[Z-Z(0)]}{p}\right\}\right]
+\end{equation}
+\noindent
+This model can therefore explain why metallicity is low where there is a lot of gas.
+
+Once all the gas is gone, the mass of stars with metallicity between $Z$ and $\Delta Z$
+should be
+\begin{equation}
+\frac{dM_\star(<Z)}{dZ} \Delta Z \propto \exp\left\{-\frac{[Z(t)-Z(0)]}{p}\right\}\Delta Z.
+\end{equation}
+\noindent
+If the initial metallicity is $Z(0)=0$, then the final metallicity when the gas
+is all used up is $Z_f = p$.
+
+Using Equation \ref{eqn:metallicity}, we can estimate the yield in the
+local Solar region of the MW.  The current stellar mass density is $\Sigma_\star\approx(30-40)\Msun~\pc^{-2}$.
+The current gas density is $\Sigma_g \approx 13\Msun~\pc^{-2}$.  By Equation \ref{eqn:metallicity}, and
+assuming $Z(0) \approx 0$, then we have
+\begin{equation}
+Z(\mathrm{today}) \approx Z_{\odot} \approx p \ln (50/13),~~\mathrm{so}~p\approx0.74Z_{\odot}.
+\end{equation}
+\noindent
+However, in this model
+the fraction with stars that have less than 1/4 the solar metallicity should be
+\begin{equation}
+\frac{M_\star(Z<Z_{\odot}/4)}{M_\star(<Z_\odot)} = \frac{1 - \exp[-Z_\odot/(4p)]}{1-\exp(-Z_\odot/p)}\approx 0.4
+\end{equation}
+\noindent
+but only 25\% of observed stars in the solar neighborhood have $<1/4Z_{\odot}$.  This discrepancy
+is called the {\it G-dwarf problem}. One solution is for pre-enrichment of $Z(0)\approx0.15Z_{\odot}$
+before the stars in the solar neighborhood started forming.  Another option is that
+the stellar distribution formed from a smaller amount of the initial gas content, and then later
+some gas was added.  Further, gas returned from stars could have low metallicity or gas
+lost by the Milky Way could have been preferentially metal rich.
 
 
 \end{document}
