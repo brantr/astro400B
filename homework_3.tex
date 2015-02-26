@@ -1,0 +1,61 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Homework \#3}
+\author{Please Show Your Work for Full Credit}
+\date{Due March 4, 2015 by 9:35am}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+\section{Sparke \& Gallagher Problem 3.20}
+
+Effective potentials have many uses. The motion of a star around
+a non-rotating black hole of mass $M_{BH}$ is given by
+\begin{equation}
+\left(\frac{dr}{d\tau}\right)^2 = E^2 - \left(c^2 - \frac{2GM_{BH}}{r}\right)\left(1 + \frac{L^2}{c^2 r^2}\right) \equiv E^2 - 2\Phi_{\mathrm{eff}}(r)
+\end{equation}
+\noindent
+we can interpret $r$ as distance from the center, and $\tau$ as time. (More precisely $r$ is the usual Schwarzschild radial coordinate, $\tau$ is proper time for a static observer at radius $r$, and $E$ and $L$ are, respectively, the energy and angular momentum per unit mass as measured by that observer.) Show that there are no circular orbits at $r<3GM_{BH}/c^2$, and that the stable circular orbits lie at $r>6GM_{BH}/c^2$ with $L>2\sqrt{3}GM_{BH}/c$.
+
+\section{Sparke \& Gallagher Problem 3.24}
+
+Use the divergence theorem to show that the potential at height $z$ above a uniform sheet of matter with surface density $\Sigma$ is
+\begin{equation}
+\Phi(\vx) = 2 \pi G \Sigma|z|
+\end{equation}
+\noindent
+Show that the vertical force does not depend on $z$, and check that $\nabla^2\Phi=0$ when $z\ne0$. Suppose that the mass of the Galaxy was all in a flat uniform disk; use the equation
+\begin{equation}
+\frac{d}{dz}\left[n(z)\sigma_z^2\right] = - \frac{\partial\Phi}{\partial z} n(z)
+\end{equation}
+\noindent
+to find the density $n(z)$ of K dwarfs, assuming that they have a constant velocity dispersion $\sigma_z$. As in the Earth's atmosphere, where the acceleration of gravity is also nearly independent of height, show that $n(z)$ drops by a factor of $e$ as $|z|$ increase by $h_z = \sigma_z^2 / (2\pi G \Sigma)$. Estimate $h$ near the Sun, taking $\sigma_z = 20~\km~\s^{-1}$.
+
+\section{Sparke \& Gallagher Problem 3.25}
+
+For stars moving vertically in the Galactic disk, suppose the distribution function $f(z,v_z)$ to be given by the equation
+\begin{equation}
+f(E_z) = \frac{n_0}{\sqrt{2\pi\sigma^2}} \exp\left(-E_z/\sigma^2\right)~~\mathrm{for}~E_z<0.
+\end{equation}
+\noindent
+When the disk is symmetric about the plane $z=0$, then $d\Phi(z)/dz=0$ at $z=0$, and we can choose $\Phi(0)=0$ too. Find the integral giving the density of stars $n(z)$: what is $n(0)$?
+
+To construct a self-consistent model, let $\Phi(z)=\sigma^{2}\phi(z)$, and let the average mass of the stars be $m$; show from Poisson's equation that
+\begin{equation}
+2\frac{d^2\phi}{dy^2} = e^{-\phi},~~\mathrm{where}~y=z/z_0~~\mathrm{and}~~z_0^2 = \sigma^2/(8\pi G m n_0).
+\end{equation}
+\noindent
+Integrate this once to find $d\phi/dy$, and then again (substituting $u=\exp[-\phi/2]$) to find $\phi(y)$ and hence $\Phi(z)$.
+Show that the number density of stars is $n(z) = n_0 \mathrm{sech}^2[z/(2 z_0)]$. What is its approximate form at large $|z|$?
+
+\end{document}
