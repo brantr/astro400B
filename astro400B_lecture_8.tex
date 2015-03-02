@@ -1,0 +1,289 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Lecture 8: Spirals and Starlight}
+\author{Brant Robertson}
+\date{March, 2015}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+%first section
+\section{Measuring Starlight}
+
+\subsection{CCD Signal-to-Noise Ratio}
+
+The signal-to-noise ratio of CCD detectors
+depends on a variety of factors. 
+
+\begin{enumerate}
+
+\item The signal $St$ measured by a CCD
+is measured in some number of electrons.
+The electrons measured from the
+observations will be the
+product of the photon count per unit
+time $C$ times
+the gain $g$ that describes the response
+of photoelectrons per photon deposited into
+a pixel, all times time $r$.  We can then write $S=gC$. The
+noise $N_S$ associated with this signal will follow
+the Poisson distribution in the counts $Ct$
+or $N_S\approx\sqrt{St}=\sqrt{gCt}$.
+
+\item The
+next issue is the {\it read noise} of the
+detector -- the excess electronic noise
+associated with the fact that charge in the
+CCDs must be moved and then read out. There
+is usually a constant noise associated with
+the {\it read noise} such that every
+read of every pixel in our aperture $n_{pix}$ 
+produces on average some excess number
+$R$ of electrons, but we add the noise of
+each pixel in quadrature. We will therefore write that
+the read noise $N_R \equiv \sqrt{R^2 \times n_{pix}}$.
+
+\item {\it Dark current} is the noise associated
+with the operation of the detector, and corresponds
+to the signal produced by each pixel when it is
+``dark'' (e.g., the shutter is closed).  The
+dark current is a rate, a number of electrons per
+second per pixel, so the total dark current noise depends on the
+integration time across the aperture as $\sqrt{Dn_{pix}t}$.
+
+\item {\it Sky background} $s_{sky}$ contributes some number of photoelectrons per pixel per
+unit time. The amount of sky you include in your signal-to-noise
+estimate depends on the aperture over which you integrate your
+signal as $\sqrt{s_{sky} n_{pix} t}$.
+
+\end{enumerate}
+
+
+The total signal to noise is then
+
+\begin{equation}
+SNR = \frac{St}{\left[St + s_{sky}n_{pix}t + R^2 n_{pix} + Dn_{pix}t\right]^{\frac{1}{2}}}
+\end{equation}
+
+The limiting cases are:
+
+\begin{enumerate}
+\item Bright sources: $SNR\propto\sqrt{t}$.
+\item Sky limited: $SNR\propto\sqrt{t}$.
+\item Read noise limited: $SNR\propto t \propto\mathrm{\#~of~exposures}$.
+\end{enumerate}
+
+\subsection{Exponential Disk Surface Brightness Profiles}
+
+The surface brightness profile of an edge-on exponential disk will be approximately
+\begin{equation}
+I(R,z) = I_0 \exp[-R/h_R] \exp[-|z|/h_z]
+\end{equation}
+\noindent
+where $h_R$ and $h_z$ are the radial scalelength and the vertical scale height,
+respectively. The central surface brightness $I_0$ will depend on the orientation.
+For a face-on exponential disk, $I(R,z)\approx I_0 \exp[-R/h_R]$ but with a different $I_0$.
+
+\subsection{Sersic Bulge Profile}
+
+The {\it Sersic} profile for a bulge is given by
+\begin{equation}
+I(R) = I_0 \exp[-(R/R_0)^{1/n}]
+\end{equation}
+\noindent
+where $R_0$ is a scale radius and $I_0$ is a central
+brightnes. For $n=1$ you have an exponential, while for $n=4$ you
+have a {\it de Vaucouleurs} profile.
+
+\section{Measuring Gas}
+
+Cosmic gas is typically directly observed in the radio where
+either HI or CO emits. The technology we have for detecting
+radio emission uses mirrors in the form of dishes and
+receivers instead of CCDs. The long wavelength of radio
+emission means that single dishes must be extremely large
+if the resolution $\theta \approx \lambda/D$ is to be
+interestingly small. In fact, single dishes must be $\sim100\m$
+across if HI maps are to have resolution better than $10'$.
+To improve resolution in the radio, we can instead use
+interferometer arrays of dishes to improve our resolution.
+
+Consider two dishes $1$ and $2$ a distance $d$ apart.
+The electric field associated with a distant source will
+have a time dependence of $E\propto\cos(2\pi ct/\lambda)$ where
+$\lambda$ is the wavelength of the emission and $c$ is the speed
+of light. For sources at an elevation $\phi$ on the sky, the
+light must travel an extra distance and be delayed by a time
+$d\cos(\phi)/c$ at position $2$ relative to position $1$.
+The voltages $V_1$ and $V_2$ at the two feeds will be
+\begin{equation}
+V_1 \propto \cos\left(\frac{2\pi ct}{\lambda}\right)~~\mathrm{and}~~V_2\propto\cos\left(\frac{2\pi(ct-d\cos\phi)}{\lambda}\right)
+\end{equation}
+\noindent
+If we multiply the voltages and filter high-frequency oscillations, we get a signal
+\begin{equation}
+S\propto \cos(2\pi d \cos(\phi)/\lambda)
+\end{equation}
+\noindent
+which can tell the difference between $\Delta\phi = \lambda/2d$, and can
+distinguish sources separated by $\lambda/d\sin\phi$. The effective resolution
+of the interferometer is then $d\sin\phi$.
+
+
+\subsection{Gas Mass}
+
+The HI line in most galaxies is optically thin.  The mass of gas providing the
+emission is then just related to the integral of the emission.  If a galaxy 
+along the line of sight is rotating at velocity $V_r$ in $\km~\s^{-1}$, 
+the total mass we measure
+is
+\begin{equation}
+M(HI) = 2.36\times10^5 \Msun \times \left(\frac{d}{\Mpc}\right)^2 \int F_{\nu}\left[1421~\mathrm{MHz}~\times\left(1-\frac{V_r}{c}\right)\right] dV_r.
+\end{equation}
+
+\subsection{Rotation Curve}
+
+For a galaxy at a systemic velocity $V_{sys}$ inclined at an angle $i$ to face-on, the rotation curve we measure as a function of radial distance $R$ and azimuth $\phi$ is
+\begin{equation}
+V_r(R,i) = V_{sys} + V(R)\sin i \cos \phi
+\end{equation}
+\noindent
+so to determine $V(R)$ we must determine the inclination and perhaps determine an angular average over azimuth.
+
+In determining the rotation curve, we are often trying to weigh the galaxy.  This is straightforward to do in
+some limiting cases.
+
+For a thin exponential disk that supplies its own gravity, the rotation curve can be written in terms of Bessel
+functions as
+\begin{equation}
+V^2(R) = 4\pi G \Sigma_0 h_R y^2 [I_0(y) K_0(y) - I_1(y) K_1(y)]
+\end{equation}
+\noindent
+where $\Sigma_0$ is the central mass surface density, $y\equiv R/2h_R$,
+ and $I$ and $K$ are modified Bessel functions (mind the subscript!). We can
+relate this to the total disk mass $M_d = 2\pi\Sigma_0 h_R^2$, such that
+\begin{equation}
+V^2(R) = \frac{2GM_d}{h_R}f(y).
+\end{equation}
+
+Otherwise, if we examine the regions of a disk where the dark halo dominates the potential, than we can just use
+the radial force equation
+\begin{equation}
+\frac{V^2(R)}{R} = \frac{GM(<R)}{R^2}
+\end{equation}
+\noindent 
+to estimate the interior mass from the rotation curve.
+
+\subsection{Tully-Fisher Relation}
+
+In 1977, Tully and Fisher showed that the luminosity of a disk galaxy was correlated with a
+power of the maximum rotational velocity.  They found that
+\begin{equation}
+\frac{L_I}{4\times10^{10} L_{I,\odot}} \approx \left(\frac{V_{max}}{200~\km~\s^{-1}}\right)^4
+\end{equation}
+\noindent
+It turns out that this relationship is perplexing if the circular velocity is dominated
+by the dark halo, and the disk and halo must have some connection to force $L\propto V^4$.
+
+
+\subsection{Spiral Arms}
+
+The spiral pattern of disks can be described mathematically.  In polar
+coordinates $(R,\phi)$ an $m$-armed spiral
+can be described by the equation
+\begin{equation}
+\cos\{m[\phi + f(R,t)]\}=1
+\end{equation}
+\noindent
+where $f(R,t)$ describes how tightly the spiral is wound, and is connected
+to the {\it pitch angle}
+\begin{equation}
+\frac{1}{\tan i} = \left|R\frac{\partial\phi}{\partial R}\right| = \left|R\frac{\partial f}{\partial R}\right|.
+\end{equation}
+\noindent
+For Sa spirals $i\approx5$ degrees, while for Sc $10\lesssim i \lesssim 30$.
+
+Are spirals long lived, permanent structures?  Or density waves that may come and go?
+Well, most spirals are trailing spirals, meaning that the ends of the spirals lag behind
+the front of the spiral in its rotation.  If spirals lived a long time, then differential
+rotation would wind them into a tight curl.  Consider stars stretched out along an
+initial ray in radius at angle $\phi = \phi_0$.  The angular rate of rotation is
+$\Omega(R) = V(R)/R$, so the curve spreads out on a spiral as $\phi = \phi_0 + \Omega(R)t$.
+In other words, $f(R,t) = -\phi_0 - \Omega(R)t$.  At the Galactic radius $R\sim8~\kpc$
+where $V\sim200~\km~\s^{-1}$ we have
+\begin{equation}
+\cot i = R \left| \frac{d\Omega(R)}{dR}\right| r \approx \frac{200}{8}\left(\frac{t}{1~\Gyr}\right)
+\end{equation}
+\noindent
+which gives
+\begin{equation}
+i\approx2^\circ \times \left(\frac{1~\Gyr}{t}\right)
+\end{equation}
+\noindent
+so after a Gyr the pitch angle would be much tighter than is observed in Sc galaxies like the MW.
+
+So spirals may not be permanent structures, but if their orbits are elliptical they can 
+reinforce the spiral pattern.  Consider a star on an eplicyclical orbit about guiding
+center $R_g$.  The azimuthal position of the guiding center is $\phi_{gc} = \Omega(R_g)t$.
+the radius of the star is
+\begin{equation}
+R = R_g + x = R_g + X \cos(\kappa t + \psi)
+\end{equation}
+\noindent
+were $X$ is the amplitude, $\kappa$ is the eplicyclic frequency and $\psi$ determines the initial
+radius $R$.  Now take several stars, put them on the circle $R_g$ but then set $\psi = 2\phi_{gc}(0)$.
+They will then lie on an oval with its long axis pointing along $\phi = 0$. At a later time $t$
+the guiding centers will be at
+\begin{equation}
+\phi_{gc} = \phi_{gc}(0) + \Omega t
+\end{equation}
+\noindent
+and the stars will lie at
+\begin{equation}
+x = X\cos\{\kappa t + 2[\phi_{gc}(t) - \Omega t]\} = X \cos](2\Omega-\kappa)t - 2\phi_{gc}(t)].
+\end{equation}
+The long axis of the oval will now point along the direction where
+\begin{equation}
+(2\Omega-\kappa)t - 2\phi = 0,~~\mathrm{or}~~\phi=(\Omega-\kappa/2) t \equiv \Omega_p t
+\end{equation}
+\noindent
+where $\Omega_p$ is the {\it pattern speed} of the spiral that will return to its original state after a time $T = 2\pi/\Omega_p$.
+This will produce a two-arm spiral.  We can make an $m-$arm spiral by setting $\psi = 4\phi_{gc}$ and 
+then the pattern speed would be $\Omega_p = \Omega - \kappa/m$.
+
+Once stars do collect in spiral arms their gravity
+can affect the spiral structure in a non linear way.  We can use the above calculation
+to determine an analytical calculation for
+tightly wound spirals that suggests that stars reinforce the spiral structure only if
+\begin{equation}
+m|\Omega_p - \Omega(R)| < \kappa(R).
+\end{equation}
+\noindent
+Hence, spiral waves can only propagate in the region between the inner Lindblad resonance
+where $\Omega_p = \Omega - \kappa/m$ and the outer Lindblad resonance where $\Omega_p = \Omega + \kappa/m$.
+
+{\bf See Figures 5.29 and 5.30 of SG.}
+
+There is a further condition on whether stars can help strengthen spiral structure.  The radial
+velocity dispersion in the disk must be low (cold) relative to the disk surface gravity.  The condition
+is
+\begin{equation}
+Q \equiv \frac{\kappa \sigma_R}{3.36 G \Sigma} \lesssim 1
+\end{equation}
+\noindent
+where $Q$ is called the {\it Toomre Q}.  In the Milky Way, $\Sigma \sim 50 \Msun \pc^{-2}$
+and $\kappa \approx 36~\km~\s^{-1}~\kpc^{-1}$.  We then find $Q\approx 1.4$, which is
+large enough relative to one that we think the radial dispersion in the Milky Way is 
+too large for stars to help strengthen the MW spirals. Confusing!
+
+\end{document}
