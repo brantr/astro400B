@@ -1,0 +1,77 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Lecture X: YYY}
+\author{Brant Robertson}
+\date{March, 2015}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+%Problem
+\section{Sparke \& Gallagher Problem 3.20}
+
+\subsection{Show that there are no circular orbits at $r<3GM_{BH}/c^2$}
+
+Our effective potential is
+\begin{equation}
+\Phi_{eff}(r,L) = \frac{1}{2}\left(c^2-\frac{2GM_{BH}}{r}\right)\left(1+ \frac{L^2}{c^2r^2}\right).
+\end{equation}
+\noindent
+Circular orbits exist only where $\partial \Phi_{eff}/\partial r = 0$.  We have
+\begin{equation}
+\frac{\partial \Phi_{eff}}{\partial r} = 3GM_{BH}L^2 - \frac{c^2L^2}{r} + GM_{BH}c^2r^2 =0
+\end{equation}
+Solving for $r$, we have
+\begin{equation}
+\label{r:dphidr}
+r = \frac{c^2L^2 \pm c^2 L^2 \sqrt{1-12\frac{G^2M_{BH}^2}{c^2L^2}} }{2GM_{BH}c^2}
+\end{equation}
+\noindent
+Taking the limit of large $L$, we have
+\begin{equation}
+r = \frac{c^2L^2 \pm c^2 L^2 \left( 1-6 \frac{G^2M_{BH}^2}{c^2L^2}\right) }{2GM_{BH}c^2} = \left[\frac{L^2}{GM_{BH}}, \frac{3GM_{BH}}{c}\right]
+\end{equation}
+\noindent
+so, for large $L$ there is a minimum radius $r = 3GM_{BH}/c^2$ where $\frac{\partial \Phi_{eff}}{\partial r}=0$.
+
+\subsection{Show that the stable circular orbits lie at $r>6GM_{BH}/c^2$ with $L>2\sqrt{3}GM_{BH}/c$}
+
+There are at least two ways to solve this problem.  First, for Equation \ref{r:dphidr} 
+we can see that the discriminant is zero when $L = \sqrt{12}GM_{BH}/c = 2 \sqrt{3} G M_{BH}/c$.
+The radius of this circular orbit (that must be larger than $r = 3 GM_{BH}/c^2$) is then $r = c^2 L^2 / 2 GM_{BH} c^2 = 6 G M_{BH} / c^2$.
+
+The second method is just to assume $L = 2 \sqrt{3} G M_{BH}/c$ and solve for where $\frac{\partial^{2}\Phi_{eff}(r)}{\partial r^2} = 0$.
+Our effective potential is
+\begin{equation}
+\Phi_{eff}(r,L) = \frac{1}{2}\left(c^2-\frac{2GM_{BH}}{r}\right)\left(1+ \frac{L^2}{c^2r^2}\right).
+\end{equation}
+\noindent
+If we plug in $L=2\sqrt{3}GM_{BH}/c$, we have
+\begin{equation}
+\Phi_{eff}(r) = \frac{1}{2}\left(1+\frac{12G^2M^2}{c^4 r^2}\right)\left(c^2 - \frac{2GM}{r}\right)
+\end{equation}
+We need to find where
+\begin{equation}
+\kappa^2 = \frac{\partial^{2}\Phi_{eff}(r)}{\partial r^2} = 0.
+\end{equation}
+\noindent
+We have that
+\begin{equation}
+\frac{\partial^{2}\Phi_{eff}(r)}{\partial r^2} = -\frac{48G^3 M^3}{c^4 r^5} + \frac{36 G^2 M^2 (c^2-\frac{2GM}{r})}{c^4 r^4} - \frac{2GM(1+\frac{12G^2M^2}{c^4r^2})}{r^3} = 0
+\end{equation}
+\noindent
+Multiplying by $r^5$ and solving for $r$ gives $r = 6GM/c^2$.
+
+
+
+\end{document}
