@@ -1,0 +1,118 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Lecture 9: Elliptical Galaxies}
+\author{Brant Robertson}
+\date{March, 2015}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+%first section
+\section{Photometry of Ellipticals}
+
+The surface brightness profile of elliptical galaxies typically is similar to the Sersic profile.  Re-writting
+the standard Sersic profile in terms of an effective radius $\Reff$, we have
+
+\begin{equation}
+I(R) = I(\Reff)\exp\{-b[(R/\Reff)^{1/n}-1]\}
+\end{equation}
+\noindent
+where $b\approx 1.999n-0.327$ for $n>1$ is a constant that gives $\Reff$ containing half the light.
+
+
+\section{Shapes of Ellipticals}
+
+The density of stars in an oblate spheroid $\rho(\vx)$ can be written
+\begin{equation}
+\label{eqn:spheroid}
+\rho(\vx) = \rho(m^2)~~\mathrm{where}~~m^2 = \frac{x^2 + y^2}{A^2}+\frac{z^2}{B^2}
+\end{equation}
+\noindent
+and $A>B>0$.  The isodensity contours are ellipsoids with $m^2 = $constant.
+
+{\bf See figure 6.8 of Sparke and Gallagher}
+
+When determining the axis ratio $q=b/a$, w place the observer in the $x-z$ plane
+looking at an angle $0^\circ < i < 90^\circ$ to the $z$ axis.
+The line of sight hits the isodensity surface $m^2 = x^2 / A^2 + z^2/B^2$ 
+at the tangent point T, so we have
+\begin{equation}
+\tan i = dx/dz = -(z/x)(A^2/B^2)
+\end{equation}
+\noindent
+The elliptical image has a semi-major axis $a=mA$.  It's semi-minor
+axis is $b=OR=OQ\sin i$.  We then have
+\begin{equation}
+OQ = OP+PQ = z+(-x)\cot i = B^2m^2/z
+\end{equation}
+\noindent
+and the observed axis ratio is
+\begin{equation}
+q_{obl} \equiv \frac{b}{a} = \frac{OQ \sin i}{mA} = \frac{B^2 m}{zA}\sin i = \left(\frac{B^2}{A^2} + \cot^2 i\right)^{1/2}\sin i
+\end{equation}
+\noindent
+therefore
+\begin{equation}
+q_{obl}^2 = (b/a)^2 = (B/A)^2\sin^2 i + \cos^2 i
+\end{equation}
+\noindent
+which means that an oblate spheroid never appears more flattened than its true axis ratio $A/B$.
+A prolate spheroid can be described by Equation \ref{eqn:spheroid} with $A<B$.  In this case
+\begin{equation}
+q_{prol}^2 = [(B/A)^2 \sin^2 i + \cos^2 i]^{-1}
+\end{equation}
+\noindent
+and $q_{prol}>A/B$.  The flattening is not more than the true axis ratio.
+
+We can integrate over inclination $i$ to determine the distribution $f(q)$ of observed axis
+ratios in the range $q +\Delta q$ given true axes $A,B$.  In the oblong case:
+\begin{equation}
+f_{obl}(q) \Delta q = \frac{\sin i \cdot \Delta q}{|dq/di|} = \frac{q\Delta q}{\sqrt{1-(B/A)^2}\sqrt{q^2-(B/A)^2}}
+\end{equation}
+\noindent
+For very flattened systems ($B\ll A$) this distribution is almost uniform.  
+For disks, there are not many as flattened as $q=0.1$. There
+are no ellipticals flatter than $q=0.3$ (E7).
+Galaxies with $M_B~-20$ have $q\approx0.75$. Galaxies with $M_B<-20$ have $q\approx0.85$.
+
+Some bright galaxies are probably triaxial
+\begin{equation}
+\rho(\vx) = \rho(m^2)~~\mathrm{where}~~m^2 = \frac{x^2}{A^2} + \frac{y^2}{B^2} + \frac{z^2}{C^2}
+\end{equation}
+\noindent
+The cross-section in any plane perpendicular to the principal axes is an ellipse.
+
+
+\section{Isophotal Shapes}
+
+The isophotes of ellipticals can change their shape as a function of
+radius.  There are {\it disky} ellipticals with extra light along the major axis.
+Others appear {\it boxy} with more light in the ``corners'' of the ellipse.
+Consider a given isophote.  We can write the ellipse of that best matches this isophote as
+\begin{equation}
+x = a \cos t;~y=b\cos t
+\end{equation}
+\noindent
+Let $\Delta r(t)$ describe the distance between the ellipse and the isophote.  We
+can write
+\begin{equation}
+\Delta r(t) \approx \Sigma_{k\ge3} a_k \cos(k t) + b_k \sin(kt)
+\end{equation}
+\noindent
+where the $k<3$ terms vanish because we are considering the best-fit ellipse.
+Terms $a_3$ and $b_3$ are usually small and describe ``egg-shaped'' isophotes.
+The term $b_4$ is usually small but $a_4$ is not.  If $a_4>0$, the
+isophote is disky and lies beyond the ellipse on the major and minor axes, 
+whereas $a_4<0$ gives a boxy isophote that bulges out at $45^{\circ}$ relative
+to the major and minor axes.
+\end{document}
