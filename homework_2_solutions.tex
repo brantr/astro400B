@@ -1,0 +1,144 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+%title material
+\title{Astronomy 400B Homework \#2 Solutions}
+\author{Brant Robertson}
+\date{March 2015}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+%first section
+\section{Sparke \& Gallagher Problem 2.20}
+
+The mass contained within $r$ is
+\begin{eqnarray}
+M(<r) &=& \int_{0}^{r} \frac{V_H^2}{4\pi G}\frac{4\pi r'^2}{r'^2 + a_H^2}dr'\\
+&=& \frac{V_H^2 r}{G}\left[1 - \frac{a_H}{r}\arctan(r/A_H)\right].
+\end{eqnarray}
+\noindent
+Since $V^2(r) = GM(<r)/r$, we have
+\begin{equation}
+V^2(r) = \frac{GM(<r)}{r} = V_H^2\left[1 - \frac{a_H}{r}\arctan(r/a_H)\right].
+\end{equation}
+\noindent
+This is sometimes used to model a dark halo because the rotation curve flattens beyond $r/a_H\sim1$.
+\begin{figure}
+\begin{center}
+\includegraphics[width=3.5in]{vrot.eps}
+\caption{Rotation curve from Problem 2.20.}
+\end{center}
+\end{figure}
+
+
+
+\section{Sparke \& Gallagher Problem 2.24}
+We have that
+\begin{eqnarray}
+r_{\star} &=& \left(\frac{3S_\star}{4\pi n_H^2 \alpha(T_e)}\right)^{1/3}\\
+&=& \left(\frac{3\times 10^{49}~\s^{-1}}{4\pi (10^3~\cm^{-3})^2 (2.6\times10^{-13}~\cm^{3}~\s^{-1})}\right)^{1/3}\\
+&=&\left(\frac{3\times10^{49}~\s^{-1}}{3.267\times10^{-6}~\cm^{-3}~\s^{-1}}\right)^{1/3}\\
+&=& 2.0852\times10^{18}~\cm \times \frac{1\pc}{3.08568\times10^{18}~\cm} = 0.675~\pc
+\end{eqnarray}
+\noindent
+The mass within this radius is
+\begin{eqnarray}
+M_g &=& \frac{4\pi}{3} m_p n_H r_{\star}^3\\
+&=& 4.189 \times (1.672622\times10^{-24}~\g) \times(10^3~\cm^{-3})\times(2.0852\times10^{18}~\cm)^3\\
+&=&6.35\times10^{34}~\g \times \left(\frac{1~\Msun}{1.988920\times10^{33}~\g}\right)\sim 32\Msun
+\end{eqnarray}
+\noindent
+If $n_H\sim10^4~\cm^{-3}$ we have
+\begin{eqnarray}
+r_{\star} 
+&=& \left(\frac{3\times 10^{49}~\s^{-1}}{4\pi (10^4~\cm^{-3})^2 (2.6\times10^{-13}~\cm^{3}~\s^{-1})}\right)^{1/3}\\
+&=&\left(\frac{3\times10^{49}~\s^{-1}}{3.267\times10^{-4}~\cm^{-3}~\s^{-1}}\right)^{1/3}\\
+&=& 4.4932\times10^{17}~\cm \times \frac{1\pc}{3.08568\times10^{18}~\cm} \approx 0.15~\pc,
+\end{eqnarray}
+\noindent
+and for the mass we have
+\begin{eqnarray}
+M_g &=& \frac{4\pi}{3} m_p n_H r_{\star}^3\\
+&=& 4.189 \times (1.672622\times10^{-24}~\g) \times(10^4~\cm^{-3})\times(4.4932\times10^{17}~\cm)^3\\
+&=&6.36\times10^{33}~\g \times \left(\frac{1~\Msun}{1.988920\times10^{33}~\g}\right)\sim 3.2\Msun
+\end{eqnarray}
+\noindent
+Lastly, if instead $S_\star\sim3\times10^{47}~\s^{-1}$ and $n_H\approx10^3\cm^{-3}$ then
+\begin{eqnarray}
+r_{\star} 
+&=& \left(\frac{3\times 3\times10^{47}~\s^{-1}}{4\pi (10^3~\cm^{-3})^2 (2.6\times10^{-13}~\cm^{3}~\s^{-1})}\right)^{1/3}\\
+&=&\left(\frac{9\times10^{47}~\s^{-1}}{3.267\times10^{-6}~\cm^{-3}~\s^{-1}}\right)^{1/3}\\
+&=& 6.48\times10^{17}~\cm \times \frac{1\pc}{3.08568\times10^{18}~\cm} \approx 0.21~\pc.
+\end{eqnarray}
+
+\section{Sparke \& Gallagher Problem 3.7}
+The NFW density is
+\begin{equation}
+\rho_{NFW}(r) = \frac{\rho_N}{(r/a)(1+r/a)^2},
+\end{equation}
+\noindent
+The potential for a spherical system is
+\begin{equation}
+\Phi_{NFW}(r) = -\left[\frac{GM_{NFW}(<r)}{r} + 4\pi G\int_{r}^{\infty}\rho_{NFW}(r')r'dr'\right]
+\end{equation}
+\noindent
+The first term is
+\begin{equation}
+\frac{GM_{NFW}(<r)}{r} = \frac{4\pi G}{r} \int_{0}^{r} \rho_{NFW}(r')r'^2 dr' = \frac{4\pi G \rho_{N} a^2}{r/a}\left[ \ln\left(1+\frac{r}{a}\right) - \frac{r}{r+a}\right]
+\end{equation}
+\noindent
+The second term is
+\begin{equation}
+4\pi G \int_{r}^{\infty} \rho_{NFW}(r')r'dr' = \frac{4\pi G \rho_{N} a^3}{r+a}= \frac{4\pi G \rho_{N} a^2}{r/a}\frac{r}{r+a}
+\end{equation}
+\noindent
+So we have
+\begin{eqnarray}
+\Phi_{NFW}(r) &=& -\left[\frac{GM_{NFW}(<r)}{r} + 4\pi G\int_{r}^{\infty}\rho_{NFW}(r')r'dr'\right]\\
+&=& - \frac{4\pi G \rho_{N} a^2}{r/a}\left[ \ln\left(1+\frac{r}{a}\right) - \frac{r}{r+a} + \frac{r}{r+a}\right]\\
+&=& -\sigma_N^2 \left[ \frac{\ln\left(1+\frac{r}{a}\right)}{r/a}\right]
+\end{eqnarray}
+%According to Poisson's equation, we have
+%\begin{equation}
+%\nabla^2 \Phi = \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 \frac{\partial}{\partial r}\right) \Phi = 4 \pi G \rho_{NFW}(r)
+%\end{equation}
+%so we have to integrate a couple of times to find the potential
+%\begin{eqnarray}
+%r^2 \frac{\partial}{\partial r}\Phi(r) &=& 4\pi G\int_{0}^{r} \rho(r') r'^2 dr' = 4\pi G \rho_N a^3 \left[ -\frac{r}{a+r} + \ln\left(1+\frac{r}{a}\right)\right]\\
+%\Phi(r) &=& 4\pi G \rho_N a^3 \int_{0}^{r} r'^{-2} \left[ -\frac{r'}{a+r'} + \ln\left(1+\frac{r'}{a}\right)\right] dr'\\
+%\Phi(r) &=& -4\pi G \rho_N a^2 \left[ \frac{\ln(1+r/a)}{r/a} - 1 \right] + C
+%\end{eqnarray}
+%\noindent
+%Requiring $\Phi(r)\to0$ as $r\to\infty$ we can set $C$ such that
+%\begin{equation}
+%\Phi(r) = -\sigma_N^2  \frac{\ln(1+r/a)}{r/a}~~\mathrm{with}~~\sigma_N^2 = 4\pi G \rho_N a^2
+%\end{equation}
+\noindent
+To find the circular velocity, we have
+\begin{eqnarray}
+V^2(r) &=& \frac{G}{r} \int_{0}^{r} 4\pi \rho_{NFW}(r')r'^2 dr' = \frac{4\pi G}{r} \int_{0}^{r} \frac{r'^2dr'}{(r'/a)(1+r'/a)^2} \\
+V^2(r) &=& \frac{4\pi G a^3}{r} \left[ -\frac{r}{a+r} + \ln(1+r/a)\right] = \sigma_N^2 \left[  \frac{\ln(1+r/a)}{r/a} -\frac{1}{1+r/a} \right]
+\end{eqnarray}
+
+\section{Sparke \& Gallagher Problem 3.12}
+
+To find the potential energy from the density and potential, we have
+\begin{eqnarray}
+PE &=& \frac{1}{2} \int_0^{\infty} \rho(r) \Phi(r) dV\\
+PE &=& -\frac{3GM^2 a^2}{8\pi} \int_0^{\infty}  \frac{4\pi r^2 dr}{(r^2 +a^2)^{3}}\\
+PE &=& -\frac{3GM^2 a^2}{2} \int_0^{\infty}  \frac{ r^2 dr}{(r^2 +a^2)^{3}}\\
+PE &=& -\frac{3GM^2 a^2}{2} \frac{\pi}{16a^3}\\
+PE &=& -\frac{3GM^2 \pi}{32 a}
+\end{eqnarray}
+
+\end{document}
