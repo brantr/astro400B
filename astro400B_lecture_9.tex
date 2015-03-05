@@ -115,4 +115,101 @@ The term $b_4$ is usually small but $a_4$ is not.  If $a_4>0$, the
 isophote is disky and lies beyond the ellipse on the major and minor axes, 
 whereas $a_4<0$ gives a boxy isophote that bulges out at $45^{\circ}$ relative
 to the major and minor axes.
+
+\section{Fundamental Relations of Elliptical Galaxies}
+
+There is a correlation between elliptical galaxy luminosity and
+velocity dispersion called the Faber-Jackson relation
+\begin{equation}
+\frac{L_V}{2\times10^{10}\Lsun} \approx \left( \frac{\sigma}{200~\km~\s^{-1}}\right)^{4}.
+\end{equation}
+
+There is another relation called the {\it Fundamental Plane} that
+connects the effective radius, surface brightness within the effective
+radius, and velocity dispersion as
+\begin{equation}
+\Reff \propto \sigma^{1.2} I_{e}^{-0.8}.
+\end{equation}
+Note that expectations would suggest $\Reff \propto \sigma^2 I_{e}^{-1}$.
+
+\section{Rotation in Ellipticals}
+
+Consider the equation
+\begin{equation}
+\frac{d}{dt}(m_\alpha \vv_\alpha) = - \sum_{\beta; \alpha \ne \beta} \frac{Gm_\alpha m_\beta}{|\vx_\alpha - \vx_\beta|^3}(\vx_\alpha - \vx_\beta)
+\end{equation}
+\noindent
+Now multiply by the $z$-component by $z$ and sum over stars to find
+\begin{equation}
+\sum_{\alpha} \frac{d}{dt}(m_\alpha v_{z\alpha})z_\alpha = - \sum_{\alpha,\beta; \alpha \ne \beta} \frac{Gm_\alpha m_\beta}{|\vx_\alpha - \vx_\beta|^3}(z_\alpha - z_\beta)z_\alpha
+\end{equation}
+\noindent
+But we could have started with star $\beta$
+\begin{equation}
+\sum_{\beta} \frac{d}{dt}(m_\beta v_{z\beta})z_\beta = - \sum_{\alpha,\beta; \alpha \ne \beta} \frac{Gm_\alpha m_\beta}{|\vx_\alpha - \vx_\beta|^3}(z_\beta - z_\alpha)z_\beta
+\end{equation}
+\noindent
+Now, average these equations
+\begin{equation}
+\frac{1}{2}\frac{d^2 I_{zz}}{dt^2} = 2KE_{zz} + PE_{zz}
+\end{equation}
+\noindent
+where
+\begin{equation}
+I_{zz} \equiv \sum_{\alpha} m_\alpha z_\alpha z_\alpha,
+\end{equation}
+\noindent
+the $z$-direction kinetic energy is
+\begin{equation}
+KE_{zz} \equiv \frac{1}{2} \sum_{\alpha} m_{\alpha} v_{z\alpha} v_{z\alpha}
+\end{equation}
+and the $z$ contribution to the potential energy is
+\begin{equation}
+PE_{zz} \equiv -\sum_{\alpha,\beta;\alpha\ne\beta}\frac{1}{2} \frac{Gm_\alpha m_\beta}{|\vx_\alpha - \vx_\beta|^3}(z_\alpha-z_\beta)^2.
+\end{equation}
+\noindent
+If all the stars are bound, we can write
+\begin{equation}
+2\ave{KE_{zz}} + \ave{PE_{zz}} = 0
+\end{equation}
+\noindent
+Assume the galaxy is axisymmetric and rotates about the $z$ direction.  If the rotation speed
+$V$ and velocity dispersions $\sigma_x$ and $\sigma_z$ are almost constant, then
+\begin{equation}
+\frac{\ave{PE_{zz}}}{\ave{PE_{xx}}} = \frac{\ave{KE_{zz}}}{\ave{KE_{xx}}} \approx \frac{\sigma_z^2}{\frac{1}{2}V^2 + \sigma_x^2}
+\end{equation}
+\noindent
+The ratio of potential energies depend only on $B/A$ or $\epsilon = 1-B/A$.  Roughly
+\begin{equation}
+\frac{\ave{PE_{zz}}}{\ave{PE_{xx}}} \approx (B/A)^{0.9} = (1-\epsilon)^{0.9}
+\end{equation}
+\noindent
+The max velocity is less than the average velocity, $V_{max}\approx\pi V/4$.
+If the random motions are isotropic, then we have
+\begin{equation}
+\left(\frac{V_{max}}{\sigma}\right) =\left(\frac{V}{\sigma}\right)_{iso} \equiv \frac{\pi}{4}\sqrt{2[(1-\epsilon)^{-0.9} -1]} \approx \sqrt{\epsilon/(1-\epsilon)}
+\end{equation}
+\noindent
+Even fairly spherical galaxies should rotate fast -- for example, $B/A=0.7$ should imply $V_{max}/\sigma\approx0.68$. But real galaxies are no where near that {\bf see Figure 6.14 of Sparke and Gallagher}.
+
+\section{Super Massive Black Holes}
+There are supermassive black holes at the centers of ellipticals. The
+circular velocities near the black holes will exceed the typical velocity 
+dispersion of the ellipticals if you get close enough.  In other words
+\begin{equation}
+V^2(r) \approx \frac{GM_{BH}}{r} \gtrsim \sigma_c^2
+\end{equation}
+\noindent
+so you'd have to get within
+\begin{equation}
+r_{BH} \approx 45~\pc \times \left(\frac{M_{BH}}{10^8\Msun}\right) \times \left(\frac{\sigma_c^2}{100~\km~\s^{-1}}\right)^{-2}
+\end{equation}
+\noindent
+to see the effect of the black hole.  
+We find that for bulges
+\begin{equation}
+\log_{10}\left(M_{BH}/M_{\odot}\right) = \alpha + \beta \log_{10} (\sigma/\sigma_0)
+\end{equation}
+\noindent
+with $\beta\approx4.02$ and $\alpha\approx8.13$.
 \end{document}
