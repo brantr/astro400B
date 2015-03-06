@@ -3,7 +3,7 @@
 \usepackage{amssymb}
 
 %title material
-\title{Astronomy 400B Lecture X: YYY}
+\title{Astronomy 400B Homework \#3 Solutions}
 \author{Brant Robertson}
 \date{March, 2015}
 
@@ -72,6 +72,172 @@ We have that
 \noindent
 Multiplying by $r^5$ and solving for $r$ gives $r = 6GM/c^2$.
 
+
+\section{Sparke \& Gallagher Problem 3.24}
+
+The divergence theorem states
+\begin{equation}
+\int \nabla^2 \Phi dV = \oint \nabla \Phi \cdot d\vS
+\end{equation}
+\noindent
+but we know that $\nabla^2 \Phi = 4\pi G \rho$.
+For a thin disk, integrated over some area $A = \int dS$ we have
+\begin{equation}
+4\pi G \int \rho dV = 4\pi G \int \Sigma dA = 4\pi G \Sigma A
+\end{equation}
+\noindent
+The surface integral over the same area $A$ will have two
+components above and below the disk.  The dot product
+$\nabla \Phi \cdot d\vS>0$ on both sides, so we have
+\begin{equation}
+\oint \nabla \Phi \cdot d\vS = 2 A \nabla \Phi %\cdot \frac{\vz}{|z|}
+\end{equation}
+\noindent
+We then have
+\begin{eqnarray}
+\nabla \Phi = \frac{1}{2A} 4 \pi G \Sigma A = 2\pi G \Sigma
+\end{eqnarray}
+\noindent
+Above the disk, we have
+\begin{equation}
+\int_0^{z} \nabla \Phi dz' = \Phi(z) = \int_{0}^{z} 2\pi G \Sigma dz' = 2\pi G \Sigma z~~~\mathrm{for}~~z>0.
+\end{equation}
+Similarly, below the disk we have
+\begin{equation}
+\int_{z}^{0} \nabla \Phi dz' = \Phi = \int_{z}^{0} 2\pi G \Sigma dz' = 2\pi G \Sigma (-z) =2\pi G \Sigma|z|  ~~~\mathrm{for}~~z<0.
+\end{equation}
+\noindent
+So, connecting above and below the disk we can write
+\begin{equation}
+\Phi = 2\pi G \Sigma|z| 
+\end{equation}
+\noindent
+The vertical force is
+\begin{equation}
+\nabla \Phi = \nabla 2\pi G \Sigma|z| = 2 \pi G \Sigma \frac{z}{|z|},
+\end{equation}
+\noindent
+or
+\begin{eqnarray}
+\nabla \Phi &=& 2\pi G \Sigma~~\mathrm{for}~z>0\\
+&=& -2\pi G \Sigma~~\mathrm{for}~z<0\\
+\end{eqnarray}
+\noindent
+Which is independent of $z$.
+\noindent
+We can check that
+\begin{equation}
+\nabla^2 \Phi = 2\pi G \Sigma \frac{\partial^2}{\partial z^2}|z| = 2\pi G \Sigma \frac{\partial}{\partial z}\frac{z}{|z|} = 2\pi G \Sigma \left(\frac{1}{|z|} - \frac{z^2}{|z|^3} \right) =  2\pi G \Sigma \left(\frac{1}{|z|} - \frac{1}{|z|} \right) = 0.
+\end{equation}
+\noindent
+Now consider the equation
+\begin{equation}
+\frac{d}{dz}[n(z)\sigma_z^2] = - \frac{\partial \Phi}{\partial z} n(z)
+\end{equation}
+\noindent
+Using the above information, we have
+\begin{eqnarray}
+\sigma_z^2 \frac{dn}{dz} &=& -2\pi G \Sigma \frac{z}{|z|} n(z) = -2\pi G \Sigma n(z)\\
+\frac{dn}{n} &=& -\frac{2\pi G\Sigma}{\sigma_z^2}\\
+\ln n &=& -\frac{2\pi G\Sigma}{\sigma_z^2} z\\
+n(z) &=& \exp\left(-\frac{2\pi G\Sigma}{\sigma_z^2} z \right) = \exp\left(- \frac{z}{h_z}\right)
+\end{eqnarray}
+\noindent
+where
+\begin{equation}
+h_z = \sigma_z^2 / (2\pi G \Sigma)
+\end{equation}
+\noindent
+If $\sigma_z = 20~\km~\s^{-1}$, then taking $\Sigma = 50~\Msun~\pc^{-2}$ we have
+\begin{equation}
+h_z = \frac{(20~\km~\s^{-1})^2}{2\pi(4.301\times10^{-6}~\km^2~\s^{-2}~\Msun^{-1}~\kpc)(50~\Msun~\pc^{-2})(1000~\pc/\kpc)}
+\end{equation}
+\noindent
+which gives $h_z \approx 296~\pc$.
+
+
+\section{Sparke \& Gallagher Problem 3.25}
+The distribution function is
+\begin{equation}
+f(E_z) = \frac{n_0}{\sqrt{2\pi\sigma^2}}\exp\left[-\left(E_z\right)/\sigma^2\right].
+\end{equation}
+\noindent
+Let's define the relative potential $\Psi\equiv -\Phi$ and the
+relative energy $\mathcal{E} \equiv -E_z$.
+
+We find the number density as
+\begin{eqnarray}
+n(z) &=& \int_{-\infty}^{\infty} f(z,v_z) dv_z\\
+n(z) &=& \int_{-\infty}^{\infty} \frac{n_0}{\sqrt{2\pi\sigma^2}}\exp\left[-\left(E_z(z,v_z)\right)/\sigma^2\right] dv_z\\
+n(z)&=&\frac{n_0}{\sqrt{2\pi\sigma^2}}\int_{-\infty}^{\infty}  \exp(-\Phi(z)/\sigma^2)\exp\left[-\left(\frac{1}{2}v_z^2\right)/\sigma^2\right]dv_z\\
+n(z)&=&n_0\exp(-\Phi(z)/\sigma^2)\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left[-\left(\frac{1}{2}v_z^2\right)/\sigma^2\right]dv_z\\
+n(z)&=&n_0\exp(-\Phi(z)/\sigma^2)
+\end{eqnarray}
+For $z=0$, we have $\Phi(z) = 0$ and
+%\begin{eqnarray}
+%n(0)&=&\frac{n_0}{\sqrt{2\pi\sigma^2}}\int_{-\infty}^{\infty}  \exp\left[-\frac{1}{2}(v_z^2/\sigma^2)\right]dv_z\\
+%\end{eqnarray}
+%\noindent
+so $n(0) = n_0$.
+
+\subsection{A Self-consistent model}
+Let
+\begin{equation}
+\Phi(z) = \sigma^2\phi(z).
+\end{equation}
+\noindent
+Poisson's equation is
+\begin{eqnarray}
+\frac{\partial^2\Phi}{\partial z^2} = 4\pi G \rho &=& 4\pi G m n_0 \exp(-\Phi(z)/\sigma^2)\\
+\frac{\partial^2\Phi}{\partial z^2}  &=& 4\pi G m n_0 \exp[-\phi(z)]
+\end{eqnarray}
+\noindent
+where $\phi(z)=\Phi(z)/\sigma^2$.
+Defining $y \equiv z/z_0$ with $z_0^2 = \sigma^2/(8\pi G m n_0)$, we have
+that $dy = dz/z_0$ or $dz = z_0 dy$ and
+\begin{eqnarray}
+\frac{\partial^2\Phi}{\partial z^2} = \frac{\sigma^2}{z_0^2}\frac{\partial^2\phi}{\partial y^2}  &=& 4\pi G m n_0 \exp[-\phi(z)]\\
+\frac{\partial^2\phi}{\partial y^2}  &=& \frac{4\pi G m n_0 z_0^2}{\sigma^2} \exp[-\phi(z)] = \frac{1}{2}\exp[-\phi(z)]
+\end{eqnarray}
+\noindent
+or
+\begin{equation}
+2 \frac{d^2 \phi}{d y^2} = e^{-\phi}
+\end{equation}
+\noindent
+Note that $2d^2\phi/dy^2 \cdot d\phi/dy = d(d\phi/dy)^2/dy$.  So we have
+\begin{eqnarray}
+2d^2\phi/dy^2 \cdot d\phi/dy = d(d\phi/dy)^2/dy = e^{-\phi} d\phi/dy\\
+\int_{0}^{y} \frac{d}{dy'}\left[\left(\frac{d\phi}{dy}\right)^2\right] dy' = \int_{0}^{\phi} e^{-\phi'} \frac{d\phi'}{dy}dy\\
+\left[\left(\frac{d\phi}{dy}\right)^2\right] |_{0}^{y} = -e^{-\phi} |_{0}^{\phi}\\
+\frac{d\phi}{dy} = \sqrt{1-e^{-\phi}}\\
+y(\phi) = \int_{0}^{\phi}\frac{d\phi'}{\sqrt{1-e^{-\phi'}}}\\
+u = \exp[-\phi/2]\\
+du = -\exp[-\phi/2] d\phi/2 \\
+d\phi = -2 u^{-1} du\\
+y(\phi) = -\int \frac{2 u^{-1} du}{\sqrt{1-u^2}}\\ 
+y(\phi) = -2[ \ln u - \ln[1 + \sqrt{1-u^2}]]\\
+y(\phi) = -2\left[ \ln \frac{u}{1+\sqrt{1-u^2}}\right]= -2\left[ \ln \frac{e^{-\phi/2}}{1+\sqrt{1-e^{-\phi}}}\right]\\
+\phi(y) = \ln\left[\frac{1}{4}e^{-y}(1+e^y)^{2}\right]\\
+n(z) = n_0 \exp[-\phi(y)] = n_0 \exp  \ln\left[\frac{1}{4}e^{-y}(1+e^y)^{2}\right]^{-1} = n_0 \frac{4 e^y}{(1+e^y)^2} = n_0 \left[\frac{2 e^{y/2}}{1+e^{y}}\right]^2\\
+\end{eqnarray}
+\noindent
+But
+\begin{equation}
+\mathrm{sech}~x= \frac{2e^x}{1+e^{2x}}
+\end{equation}
+\noindent
+So, we have
+\begin{equation}
+n(z) = n_0 \left[\frac{2 e^{y/2}}{1+e^{y}}\right]^2 = n_0 \mathrm{sech}^{2}~\frac{y}{2} = n_0 \mathrm{sech}^2~\frac{z}{2 z_0}
+\end{equation}
+%\phi(y) = \ln \left[\frac{1}{e^{y/2} - \sqrt{e^{y}-1}}\right]^2\\
+%n(z) = n_0\exp(-\phi(y)) =  n_0\left[e^{z/2z_0} - \sqrt{e^{z/z_0}-1}\right]^2
+%u = \exp[-\phi/2]\\
+%du = -\exp[-\phi/2] d\phi/2 \\
+%d\phi = -2 u^{-1} du
+%y = 2 \ln \left[ e^{-\phi/2} + \sqrt{e^{\phi}-1}\right]\\
+%\exp(y/2) =  e^{-\phi/2} + \sqrt{e^{\phi}-1}
 
 
 \end{document}
