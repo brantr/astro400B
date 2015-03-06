@@ -83,7 +83,7 @@ The divergence theorem states
 but we know that $\nabla^2 \Phi = 4\pi G \rho$.
 For a thin disk, integrated over some area $A = \int dS$ we have
 \begin{equation}
-4\pi G \int \rho dV = 4\pi G \int \Sigma dA = 4\pi G \Sigma A
+4\pi G \int \rho dV = 4\pi G \int \Sigma dS = 4\pi G \Sigma A
 \end{equation}
 \noindent
 The surface integral over the same area $A$ will have two
@@ -114,18 +114,18 @@ So, connecting above and below the disk we can write
 \noindent
 The vertical force is
 \begin{equation}
-\nabla \Phi = \nabla 2\pi G \Sigma|z| = 2 \pi G \Sigma \frac{z}{|z|},
+-\nabla \Phi = -\nabla 2\pi G \Sigma|z| = -2 \pi G \Sigma \frac{z}{|z|},
 \end{equation}
 \noindent
 or
 \begin{eqnarray}
-\nabla \Phi &=& 2\pi G \Sigma~~\mathrm{for}~z>0\\
-&=& -2\pi G \Sigma~~\mathrm{for}~z<0\\
+-\nabla \Phi &=& -2\pi G \Sigma~~\mathrm{for}~z>0\\
+&=& 2\pi G \Sigma~~\mathrm{for}~z<0\\
 \end{eqnarray}
 \noindent
 Which is independent of $z$.
 \noindent
-We can check that
+We can check that for $z\ne0$
 \begin{equation}
 \nabla^2 \Phi = 2\pi G \Sigma \frac{\partial^2}{\partial z^2}|z| = 2\pi G \Sigma \frac{\partial}{\partial z}\frac{z}{|z|} = 2\pi G \Sigma \left(\frac{1}{|z|} - \frac{z^2}{|z|^3} \right) =  2\pi G \Sigma \left(\frac{1}{|z|} - \frac{1}{|z|} \right) = 0.
 \end{equation}
@@ -135,7 +135,7 @@ Now consider the equation
 \frac{d}{dz}[n(z)\sigma_z^2] = - \frac{\partial \Phi}{\partial z} n(z)
 \end{equation}
 \noindent
-Using the above information, we have
+Using the previous information, above the disk plane we have
 \begin{eqnarray}
 \sigma_z^2 \frac{dn}{dz} &=& -2\pi G \Sigma \frac{z}{|z|} n(z) = -2\pi G \Sigma n(z)\\
 \frac{dn}{n} &=& -\frac{2\pi G\Sigma}{\sigma_z^2}\\
@@ -162,8 +162,8 @@ The distribution function is
 f(E_z) = \frac{n_0}{\sqrt{2\pi\sigma^2}}\exp\left[-\left(E_z\right)/\sigma^2\right].
 \end{equation}
 \noindent
-Let's define the relative potential $\Psi\equiv -\Phi$ and the
-relative energy $\mathcal{E} \equiv -E_z$.
+%Let's define the relative potential $\Psi\equiv -\Phi$ and the
+%relative energy $\mathcal{E} \equiv -E_z$.
 
 We find the number density as
 \begin{eqnarray}
