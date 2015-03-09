@@ -29,7 +29,7 @@ Our effective potential is
 \noindent
 Circular orbits exist only where $\partial \Phi_{eff}/\partial r = 0$.  We have
 \begin{equation}
-\frac{\partial \Phi_{eff}}{\partial r} = 3GM_{BH}L^2 - \frac{c^2L^2}{r} + GM_{BH}c^2r^2 =0
+\frac{\partial \Phi_{eff}}{\partial r} = 3GM_{BH}L^2 - c^2L^2r + GM_{BH}c^2r^2 =0
 \end{equation}
 Solving for $r$, we have
 \begin{equation}
@@ -229,7 +229,12 @@ But
 \noindent
 So, we have
 \begin{equation}
-n(z) = n_0 \left[\frac{2 e^{y/2}}{1+e^{y}}\right]^2 = n_0 \mathrm{sech}^{2}~\frac{y}{2} = n_0 \mathrm{sech}^2~\frac{z}{2 z_0}
+n(z) = n_0 \left[\frac{2 e^{y/2}}{1+e^{y}}\right]^2 = n_0 \mathrm{sech}^{2}~\frac{y}{2} = n_0 \mathrm{sech}^2~\frac{z}{2 z_0}.
+\end{equation}
+
+What is the approximate form at large $|z|$?  Well, we have
+\begin{equation}
+n(z) = n_0 \frac{4 e^{|z|/z_0}}{(1+e^{|z|/z_0})^2}\to n_0\frac{4 e^{|z\/z_0}}{e^{2|z|/z_0}} \to 4 n_0 e^{-|z|/z_0}
 \end{equation}
 %\phi(y) = \ln \left[\frac{1}{e^{y/2} - \sqrt{e^{y}-1}}\right]^2\\
 %n(z) = n_0\exp(-\phi(y)) =  n_0\left[e^{z/2z_0} - \sqrt{e^{z/z_0}-1}\right]^2

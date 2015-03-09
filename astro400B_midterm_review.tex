@@ -1,0 +1,487 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Midterm Review}
+\author{Brant Robertson}
+\date{March, 2015}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+%first section
+\section{Chapter 1}
+
+\subsection{Stefan-Boltzmann Law}
+
+Stellar masses are often expressed in terms of a {\it solar mass} ($\Msun$; mass of the Sun)
+\begin{equation}
+1\Msun = 1.9891\times10^{33}\g
+\end{equation}
+\noindent
+in grams ($\g$). The most massive stars are $\approx100\Msun$ while the
+least massive stars are $\approx0.075\Msun$.
+
+Stellar luminosities (ergs of energy emitted per second; $1\erg = 1~\g~\cm^{2}~\s^{-2}$) are also 
+often expressed in terms of the total (bolometric) {\it solar luminosity} ($\Lsun$; luminosity of the Sun)
+\begin{equation}
+1\Lsun = 3.846\times10^{33} \erg~\s^{-1}
+\end{equation}
+\noindent
+Stars range in luminosity from $10^{6}\Lsun$ to less than $10^{-4}\Lsun$.
+
+The {\it flux} $F$ is the energy per unit second per unit area ($\erg~\s^{-1}~\cm^{-2}$)
+that is received from an object a distance $d$ away, and is
+given by the {\it inverse square law}
+\begin{equation}
+\label{eqn:inverse_square}
+F = \frac{L}{4\pi d^{2}}.
+\end{equation}
+\noindent
+
+The {\it flux density} ($\Fnu \equiv dF/d\nu$) of an object is best measured in {\it janskys}
+\begin{equation}
+1\Jy = 10^{-23} \erg~\s^{-1}~\cm^{-2}~\Hz^{-1}.
+\end{equation}
+\noindent
+Note that the {\it hertz} ($1\Hz = 1 s^{-1}$) is the unit of frequency $\nu$.
+Astronomers will also use a flux density ($\Flambda = dF/d\lambda$) 
+defined relative to wavelength. Typically, the units of $\Flambda$
+are in $\erg~\cm^{-2}~\s^{-1}~\Ang^{-1}$, where $\Ang$ is the {\it angstrom}
+($1\Ang = 10^{-8}\cm$). The wavelength and frequency of light are related by
+$c = \nu \lambda$, and the two flux densities are therefore 
+related by $\Flambda = (c/\lambda^2)\Fnu$.
+The total flux is related to the flux density by
+\begin{equation}
+F = \int \Fnu d \nu = \int \Flambda d\lambda.
+\end{equation}
+\noindent
+If the distance of an object is known, astronomers will also use the term
+{\it luminosity density} (e.g., $\Lnu = dL/d\nu$).
+
+The luminosity, radius, and temperature of an object are related. For stellar
+objects, we often use the {\it solar radius} ($\Rsun$) to express sizes
+\begin{equation}
+1\Rsun = 6.995 \times 10^{10} \cm
+\end{equation}
+\noindent
+If the luminosity $L$ and radius $R$ of an object are known, we can define
+the effective temperature $T$ in {\it Kelvin} ($K$)
+of an object through the {\it Stefan-Boltzmann Law}
+\begin{equation}
+L = 4\pi R^{2}\sigmaSB T^{4}
+\end{equation}
+\noindent
+where the {\it Stefan-Boltzmann constant} is
+\begin{equation}
+\sigmaSB = 5.670373\times10^{-5} \erg~\cm^{-2}~\s^{-1}~\K^{-4}.
+\end{equation}
+The Stefan-Boltzmann constant can be computed theoretically in
+terms of the speed of light, the {\it Boltzmann constant}
+\begin{equation}
+\kB = 1.380658\times10^{-16} \erg~\K^{-1}
+\end{equation}
+\noindent
+and the {\it Planck constant}
+\begin{equation}
+h = 6.6260755\times10^{-27}\erg~\s,
+\end{equation}
+\noindent
+which gives the definition
+\begin{equation}
+\sigmaSB \equiv \frac{2\pi^5 \kB^4}{15 h^3 c^2}.
+\end{equation}
+
+The effective temperature is typically a measure of the temperature
+of the star at its {\it photosphere}, or the radius where the optical
+depth of the star's atmosphere is $\tau\approx1$ and it becomes opaque. 
+For the Sun,
+$T\approx5780\K$. The temperature is also related to the wavelength
+at the peak of the black body curve via {\it Wien's Displacement Law}
+\begin{equation}
+\lambda_{\mathrm{max}} = \frac{2.897756\times10^{7} \Ang~\K}{T},
+\end{equation}
+which gives $\lambda_{\mathrm{max}}\approx5000\Ang$ (yellow)
+for the Sun.
+
+\subsection{The Milky Way}
+
+The Milky Way is a fantastic galaxy, and not just because we live there.
+It has a terrific richness of structure and complexity, and simply put we
+currently do not know how such a galaxy forms.
+
+The main structures of the Milky Way are ({\bf See Figure 1.8 of Sparke and Gallagher})
+
+\begin{enumerate}
+
+
+\item The dark matter halo, consisting of (presumably) subatomic particles that
+participate only in weak (Weak, gravitational force) interactions. The mass of
+the Milky Way halo is about $10^{12}\Msun$. The radius of the dark matter halo
+is roughly $300\kpc$. The dark matter halo is thought to obey a roughly broken
+power-law density profile, with $\rho\propto r^{-1}$ within about $30\kpc$ and
+$\rho\propto r^{-3}$ in the exterior.
+
+\item The stellar halo, consisting of old, metal-poor stars and globular clusters
+(old clusters of $\sim10^{5}-10^{6}$ stars). The stellar halo is only about
+$10^{9}\Msun$.
+
+\item The central bulge of the galaxy is a pseudospheroidal distribution of
+stars with a luminosity of $L\approx 5\times 10^{9}\Lsun$ 
+and mass $2\times10^{10}\Msun$.
+
+\item The supermassive black hole at the center of the Milky Way, which has a
+mass of about $\approx4.1\times10^{6}\Msun$.
+
+\item The stellar disk of the galaxy is roughly exponential, such that
+the surface density scales as $\Sigma(r) \propto \exp(-r/h)$, 
+with a scale length $h\approx3\kpc$. The total luminosity of the disk
+is about $2\times10^{10}\Lsun$ and with a mass in stars of
+about $6\times10^{10}\Msun$. The stellar disk has a {\it thin disk} 
+component with
+a scale height of about $300\pc$ containing $95\%$ of the mass, and a
+{\it thick disk} containing about $5\%$ with a scale height of about $1\kpc$.
+
+\item The gaseous disk of the galaxy is a thin layer about a $100\pc$ thick
+consisting mostly of neutral hydrogen (HI) and molecular hydrogen (H$_2$) gas.
+The gaseous disk also contains a warm ionized and hot ionized interstellar medium 
+(ISM; see below).
+The gaseous disk is also very dusty!
+
+\end{enumerate}
+
+
+\subsection{Galaxy Luminosity Function}
+
+We can count the number density of galaxies as a function of their luminosity,
+and we appropriately call this distribution the {\it luminosity function}. The
+galaxy luminosity function has been found to have a shape close to a parameterized
+form called the {\it Schechter} function (after Paul Schechter).  The Schechter
+function provides the number density of galaxies in a differential luminosity bin
+$dL$ as
+\begin{equation}
+\label{eqn:schechter_function_luminosity}
+\Phi(L)dL = \phi_{\star} \left(\frac{L}{L_{\star}}\right)^{\alpha}\exp\left(-\frac{L}{L_{\star}}\right)\frac{dL}{L_{\star}}
+\end{equation}
+\noindent
+where $L_{\star}$ is a characteristic luminosity of galaxies and $\phi_{\star}$ is 
+a typical abundance.  Below $L_\star$, the luminosity function is a power law, and
+above $L_\star$ the abundance of galaxies drops exponentially. Sometimes, astronomers
+will use $1+\alpha$ as the power law exponent, so beware!
+
+{\bf See Figure 1.16 of Sparke and Gallagher.}
+
+It happens to be the case that $L_{\star}\approx2\times10^{10}\Lsun$, which is close
+to the luminosity of the Milky Way. The typical abundance of galaxies is $\phi_\star\approx7\times10^{-3}\Mpc^{-3}$. The faint-end slope of the 2DF luminosity function is $\alpha=-0.46$.
+Defined as in Equation \ref{eqn:schechter_function_luminosity}, the number of galaxies
+diverges as $L\to0$ if $\alpha<-1$.
+
+The total luminosity density provided by galaxies can be found by integrating 
+Equation \ref{eqn:schechter_function_luminosity} as
+\begin{equation}
+\rho_{L} = \int_{0}^{\infty} \Phi(L) L dL = \phi_\star L_{\star} \Gamma(\alpha + 2)
+\end{equation}
+\noindent
+where $\Gamma$ is the Gamma function, which for an integer $n$ is $\Gamma(n) = (n-1)!$.
+It turns out that $\Gamma(1.5)\approx0.886227$, so we have that 
+$\rho_{L}\approx1.25\times10^{8}\Lsun\Mpc^{-3}$.
+
+For a partial integral, we have
+\begin{equation}
+\rho_{L}(L>L_{\mathrm{min}}) = \int_{L_{\mathrm{min}}}^{\infty} \Phi(L) L dL = \phi_\star L_{\star} \Gamma(\alpha + 2, L_{\mathrm{min}}/L_{\star}),
+\end{equation}
+\noindent
+where $\Gamma(a,x)$ is the incomplete gamma function.
+
+
+\section{Components of the Universe}
+
+Our universe is comprised of a variety of forms of matter and energy.  Owing to
+general relativity, both matter and energy provide a source for gravity and so
+both effect the dynamical expansion of the universe.  Here is a brief run-down
+of the different types of matter and energy in the universe:
+
+\begin{enumerate}
+\item {\it Baryonic (normal) matter}. We are made of {\it baryonic} matter, meaning
+that we are comprised of forms of matter that are ultimately made from three quarks
+(proton and neutrons). There are also enough electrons such that the universe is
+electrically neutral, but their mass is $\sim2000\times$ less than the nucleons.
+Surprising as it may seem, the universe is only about $4-5\%$ baryonic matter!
+\item {\it Radiation} There are a {\bf lot} of photons in the universe! The energy
+density associated with the total cosmic microwave background and the extragalactic
+background light is quite small today ($<10^{-4}$ of the total energy density). At
+early times the universe was actually dominated by radiation, but the fractional
+contribution of radiation to the total energy density declines dramatically with
+time.
+\item {\it Dark matter}. Most of the matter in the universe is dark matter, which
+comprises about $\sim25\%$ of the total energy density. Dark matter is non-baryonic,
+and likely consists of subatomic particles called {\it Weakly Interacting Massive Particles},
+or WIMPs, that only interact through the gravitational and possibly weak nuclear forces.
+There are plenty of dark matter candidates from elementary particle theories, but dark
+matter has not yet been detected directly via experiment.
+\item {\it Dark energy}. This mysterious component of the universe as a negative
+equation of state associated with it, such that a universe dominated by dark
+energy accelerates its expansion as its volume increases. We think that about $70\%$
+of the universal energy density is comprised of dark energy, and it is possibly in
+the form of a ``cosmological constant'', meaning that the dark energy density remains
+constant with time. Since the universe is expanding and the matter density declines
+with volume, the universe is becoming progressively more and more dark energy dominated
+as it expands. The result is that the universal expansion will continue to accelerate,
+likely without a meaningful bound (the expansion will infact eventually exceed the speed
+of light if the dark energy is a cosmological constant). There are natural ways of
+estimating the energy density associated with a cosmological constant from fundamental
+particle physics, but these methods overestimate the amount of dark energy by $\sim120$
+{\it orders of magnitude}(!; depending on how you count). Needless to say, even if the
+dark energy is a cosmological constant, we don't really know how to describe it in terms
+of a physical model.
+\item {\it Curvature}. If the universe does not have the critical density, then there
+is a geometric curvature to the universe. There is an energy density associated with this
+curvature that can affect the dynamics of the universe, and if the universe is not flat then
+this curvature energy must reckon in the accounting for the time-dependent expansion rate.  
+Fortunately (I guess), we think the universe is very close to
+flat, remarkably so, and most calculations will be performed assuming the curvature energy
+is zero.
+\end{enumerate}
+
+\section{Chapter 2}
+
+\subsection{Dark Matter}
+
+For a spherical mass distribution, the velocity of
+a circular orbit related to the interior mass by
+\begin{equation}
+V^2 = \frac{GM(<R)}{R}
+\end{equation}
+\noindent
+If the circular velocity is flat in the outer 
+galaxy, we would infer that
+\begin{equation}
+M(<R) \propto R
+\end{equation}
+\noindent
+Clearly, the exponential disk cannot supply
+this mass growth with radius.
+But we know how to relate $M(<R)$ to a density
+profile through the integral
+\begin{equation}
+M(<R) = 4\pi\int_0^{R}\rho(r)r^{2}dr
+\end{equation}
+\noindent
+Further if we assume $\rho(r)\propto r^{\alpha}$,
+then
+\begin{equation}
+M(<R) \propto R \propto R^{3 + \alpha}
+\end{equation}
+\noindent
+So we infer that a spherical density profile would 
+be declining at $\rho(r)\propto r^{-2}$ in the
+regime where the mass was growing linearly and
+the circular velocity is flat.
+
+That mass grows with radius implies there is a {\it lot}
+of mass in the exterior of the galaxy.
+
+
+\section{Chapter 3}
+
+\subsection{Continuous Matter Distributions}
+Now consider a continuous distribution of matter density $\rho(\vx)$.  The
+potential generated by $\rho(\vx)$ is given by
+\begin{equation}
+\label{eqn:potential}
+\Phi(\vx) = - \int \frac{G\rho(\vx')}{|\vx - \vx'|}d^{3}\vx'
+\end{equation}
+\noindent
+Note that the integral is performed over $\vx'$.  The force $\vF$ per unit mass
+is
+\begin{equation}
+\vF(\vx) = - \nabla \Phi(\vx) = - \int \frac{G\rho(\vx')(\vx-\vx')}{|\vx-\vx'|^{3}}d^{3}\vx'
+\end{equation}
+
+\subsection{Poisson's Equation}
+
+Take Equation \ref{eqn:potential} and apply the Laplacian operator 
+\begin{equation}
+\nabla^{2} \equiv \nabla \cdot \nabla = \left[\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}+\frac{\partial^{2}}{\partial z^{2}}\right]
+\end{equation}
+\noindent
+to both sides.  Remembering that the operator acts on $\vx$ and not $\vx'$, we have
+\begin{equation}
+\label{eqn:pois_init}
+\nabla^{2} \Phi(\vx) = - \int G \rho(\vx') \nabla^{2} \left(\frac{1}{|\vx-\vx'|}\right)d^{3}\vx'.
+\end{equation}
+\noindent
+We can evaluate this by noting that
+\begin{equation}
+\label{eqn:nabla}
+\nabla\left(\frac{1}{|\vx - \vx'|}\right) = -\frac{\vx-\vx'}{|\vx-\vx'|^3}, \nabla^{2}\left(\frac{1}{|\vx - \vx'|}\right) = 0.
+\end{equation}
+\noindent
+So we conclude that outside of a very small region around $\vx$, $\nabla^{2}\Phi(\vx)=0$.
+Let's take a spherical region $S(\epsilon)$ of radius $\epsilon$ centered on $\vx$. In proceeding, let's 
+note that 
+\begin{equation}
+\nabla^{2} f(|\vx-\vx'|) = \nabla_{\vx'}^{2} f(|\vx-\vx'|)
+\end{equation}
+\noindent
+for any function $f(|\vx - \vx'|)$. If we take $\epsilon$ to be small enough such 
+that $\rho(\vx)\approx$ a constant, then we can write
+\begin{eqnarray}
+\label{eqn:pois_med}
+\nabla^{2}\Phi(\vx) &\approx& - G\rho(\vx) \int_{S(\epsilon)} \nabla^2 \left( \frac{1}{|\vx - \vx'|} \right)d^{3}\vx' \nonumber \\
+&=& - G \rho(\vx)  \int_{S(\epsilon)} \nabla_{\vx'}^2 \left( \frac{1}{|\vx - \vx'|} \right)d V'.
+\end{eqnarray}
+\noindent
+Now we get to use the {\it divergence} theorem
+\begin{equation}
+\int \nabla^{2} f dV = \oint \nabla f \cdot dS,
+\end{equation}
+\noindent
+which allows us to write Equation \ref{eqn:pois_med} as
+\begin{equation}
+- G \rho(\vx)  \int_{S(\epsilon)} \nabla_{\vx'}^2 \left( \frac{1}{|\vx - \vx'|} \right)d V' = - G \rho(\vx) \oint_{S(\epsilon)} \nabla_{\vx'}\left(\frac{1}{|\vx-\vx'|}\right) \cdot d\vS'
+\end{equation}
+\noindent
+By applying Equation \ref{eqn:nabla} and the identity $\nabla_{\vx'} f = -\nabla f$, we have
+\begin{eqnarray}
+- G \rho(\vx) \oint_{S(\epsilon)} \nabla_{\vx'}\left(\frac{1}{|\vx-\vx'|}\right) \cdot d\vS' &=&
+-G \rho(\vx) \oint_{S(\epsilon)} \left(\frac{\vx-\vx'}{|\vx-\vx'|^{3}}\right) \cdot d\vS' \nonumber \\
+\therefore \nabla^2 \Phi &=& 4 \pi G \rho(\vx)
+\end{eqnarray}
+
+
+
+\section{Distribution Function}
+
+The {\it distribution function} $f(\vx,\vv,t)$ gives the probability density
+in six-dimensional {\it phase space} $(\vx,\vv)$ of having an object
+in the volume $d\vx d\vv$.  The number density $n(\vx,t)$ of objects is the
+volume integral of the distribution function
+\begin{equation}
+n(\vx,t) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(\vx,\vv,t) dv_{x}dv_y,dv_z.
+\end{equation}
+\noindent
+We can use this expression to define moments of the velocity distribution, such as
+the average velocity 
+\begin{equation}
+\ave{\vv(\vx,t)} = \frac{1}{n(\vx,t)} \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} \vv f(\vx,\vv,t) dv_{x}dv_y,dv_z.
+\end{equation}
+
+
+\section{Chapter 4}
+
+\subsection{A Simple Example of the Tidal Limit}
+
+Consider the satellite to have mass $m$ and the main galaxy to have mass $M$, separated by distance $D$,
+orbiting the center of mass $C$ with angular speed $\Omega$.  Take $x$ as the coordinate
+along the ray between $m$ toward $M$.  The center of mass is then at $x=DM/(M+m)$.  The
+effective potential is then
+\begin{equation}
+\Phieff(x) = -\frac{GM}{|D-x|} -\frac{Gm}{|x|} - \frac{\Omega^2}{2}\left(x-\frac{DM}{M+m}\right)^2.
+\end{equation}
+
+The effective potential has three maxima known as the {\it Lagrange points}, [$L_1$, $L_2$, $L_3$].  Let's find them by setting
+the derivative of the effective potential to zero.
+\begin{equation}
+\label{eqn:find_phieff_max}
+\frac{\partial\Phieff}{\partial x} = 0 = -\frac{GM}{(D-x)^2} \pm \frac{Gm}{x^2} - \Omega^2\left(x-\frac{DM}{M+m}\right)
+\end{equation}
+\noindent
+The acceleration $\Omega^2DM/(M+m)$ of $m$ as it circles $C$ owes to the gravitational
+attraction of $M$. We can then write
+\begin{equation}
+\Omega\frac{DM}{M+m}=\frac{GM}{D^2},~~\mathrm{so}~\Omega^2=\frac{G(M+m)}{D^3}
+\end{equation}
+\noindent
+If the satellite is much less massive than the main galaxy, $L_1$ and $L_2$ will lie close to $m$.
+Substitute $\Omega^2$ into Equation \ref{eqn:find_phieff_max}, and expand in powers of $x/D$ to find
+\begin{equation}
+0 \approx -\frac{GM}{D^2} - 2\frac{GM}{D^3}x \pm \frac{Gm}{x^2} - \frac{G(M+m)}{D^3}\left(x-\frac{DM}{M+m}\right)
+\end{equation}
+\noindent
+At the Lagrange points $L_1$ and $L_2$ we have
+\begin{equation}
+x = \pm r_J, ~~\mathrm{where}~r_J = D\left(\frac{m}{3M+m}\right)^{1/3}
+\end{equation}
+\noindent
+Stars that cannot stray further from the satellite than $r_J$, the {\it Jacobi radius} or {\it Roche limit},
+will remain bound to it.  The radius $L_1$ is not where the gravitational force from the satellite and 
+main galaxy are the same, but where the effective potential has a minimum and lies further from the satellite.
+This radius is also where expanding stars lose mass to their companion.
+
+When $M\gg m$, then the mean density within $r_J$ is three times the mean density within $D$ of the main galaxy.
+A star orbiting the satellite near $r_J$ will have an orbital period comparable to the orbit period of the
+satellite around the main galaxy.
+
+When satellites are not on circular orbits, the relevant $r_J$ is determined at the pericenter. If the
+satellite is orbiting within the dark matter halo of the main galaxy, the relevant radius is
+\begin{equation}
+r_J = D\left[\frac{m}{2M(<D)}\right]^{1/3}
+\end{equation}
+where $M(<D)$ is the mass within D.
+
+What's the Jacobi radius of the LMC-Milky Way system? The LMC is at a distance of $\sim50\kpc$ where
+the speed of a circular orbit is about the same as it is at the solar circle, or about $\sim200\km~\s^{-1}$.
+The mass of the Milky Way within the LMC's orbit is about $5\times10^{11}\Msun$.  The LMC mass is about
+$10^{10}\Msun$, so we have
+\begin{equation}
+r_J\approx 50\kpc~\times~\left(\frac{10^{10}\Msun}{2\times5\times10^{11}\Msun}\right)^{1/3} \approx 11\kpc.
+\end{equation}
+The LMC disk lies within this radius, but the SMC is too far away to stay bound to the LMC.
+
+
+\section{Chapter 5}
+
+\subsection{Rotation Curve}
+
+For a galaxy at a systemic velocity $V_{sys}$ inclined at an angle $i$ to face-on, the rotation curve we measure as a function of radial distance $R$ and azimuth $\phi$ is
+\begin{equation}
+V_r(R,i) = V_{sys} + V(R)\sin i \cos \phi
+\end{equation}
+\noindent
+so to determine $V(R)$ we must determine the inclination and perhaps determine an angular average over azimuth.
+
+In determining the rotation curve, we are often trying to weigh the galaxy.  This is straightforward to do in
+some limiting cases.
+
+For a thin exponential disk that supplies its own gravity, the rotation curve can be written in terms of Bessel
+functions as
+\begin{equation}
+V^2(R) = 4\pi G \Sigma_0 h_R y^2 [I_0(y) K_0(y) - I_1(y) K_1(y)]
+\end{equation}
+\noindent
+where $\Sigma_0$ is the central mass surface density, $y\equiv R/2h_R$,
+ and $I$ and $K$ are modified Bessel functions (mind the subscript!). We can
+relate this to the total disk mass $M_d = 2\pi\Sigma_0 h_R^2$, such that
+\begin{equation}
+V^2(R) = \frac{2GM_d}{h_R}f(y).
+\end{equation}
+
+Otherwise, if we examine the regions of a disk where the dark halo dominates the potential, than we can just use
+the radial force equation
+\begin{equation}
+\frac{V^2(R)}{R} = \frac{GM(<R)}{R^2}
+\end{equation}
+\noindent 
+to estimate the interior mass from the rotation curve.
+
+\subsection{Tully-Fisher Relation}
+
+In 1977, Tully and Fisher showed that the luminosity of a disk galaxy was correlated with a
+power of the maximum rotational velocity.  They found that
+\begin{equation}
+\frac{L_I}{4\times10^{10} L_{I,\odot}} \approx \left(\frac{V_{max}}{200~\km~\s^{-1}}\right)^4
+\end{equation}
+\noindent
+It turns out that this relationship is perplexing if the circular velocity is dominated
+by the dark halo, and the disk and halo must have some connection to force $L\propto V^4$.
+
+\end{document}
