@@ -144,9 +144,173 @@ Some interesting things to note
 \begin{enumerate}
 \item The slower the galaxy $M$ moves, the larger its deceleration.
 \item If $V\ll\sigma$, where $\sigma$ is the velocity dispersion of perturbers, we find that $dV/dt\propto -V$.  This is the same as what happens to a parachutist.
+\item The net effect is to lower the total kinetic motions of the galaxies over time.
+Before the encounter, the kinetic energy of one of the galaxies is
+\begin{equation}
+E_0 = KE_0 + PE_0 = - KE_0
+\end{equation}
+\noindent
+since the potential energy is $ PE_0 = - 2KE_0$ in virial equilibrium.
+Dynamical friction increases the energy in random motions and the internal kinetic
+energy by $\Delta KE$.  After the system again reaches virial equilibrium,
+the kinetic energy is less than before
+\begin{equation}
+KE_1  = - (E_0 + \Delta KE) = KE_0 - \Delta KE
+\end{equation}
+\noindent
+Stars that gain the most kinetic energy are ejected.
+\item Groups have lower relative velocties, so the dynamical
+friction should operate more efficiently.
 \end{enumerate}
 
+\section{Galaxy Mergers}
 
+Show a movie!
 
+During the merger, most of the energy released by newly formed
+stars will be absorbed by dust and re-radiated in the infrared.
+This leads to {\it ultraluminous infrared galaxies} called
+{\it ULIRGs}.  The relation between the star formation rate and
+the far-infrared emission is about
+\begin{equation}
+\dot{M}_{\star} \approx \frac{L_{FIR}}{6\times10^9\Lsun} \Msun~\yr^{-1}.
+\end{equation}
 
+{\bf Show Figure 7.7 of SG.}
+
+\section{Gas Cooling in Clusters}
+
+The x-ray emitting gas in clusters radiates, and must
+therefore cool if there is no additional 
+heat source.  The time for the gas to cool 
+depends on the density $n$ and the thermal
+energy $2n \times (3kT/2)$ as
+\begin{equation}
+t_{\mathrm{cool}} \frac{3nkT}{3\times 10^{-27}n^2\sqrt{T}}~\s\approx 14\left(\frac{10^{-3}\cm^{-3}}{n}\right)\left(\frac{10^{7}\K}{T}\right)^{1/2}~\Gyr
+\end{equation}
+\noindent
+In the centers of clusters, the gas density is $n\sim10^{-2}\cm^{-3}$ so
+the gas should cool on $\Gyr$ timescales.  However, we don't see star
+formation in the central cluster galaxies so we think the gas is somehow
+heated again (perhaps from SN or AGN).  Gas in the outer regions
+will remain hot effectively forever, with densities of $n\sim10^{-4}\cm^{-3}$.
+
+\section{Gravitational Lensing}
+
+Einstein predicted that light passing a distance $b$
+past a mass $M$ would be deflected by an angle
+\begin{equation}
+\label{eqn:alpha_grav_lens}
+\alpha \approx \frac{4GM}{bc^2} = \frac{2R_s}{b}
+\end{equation}
+\noindent
+where $R_s = 2 GM/c^2$ is the {\it Schwarzschild radius}.
+For the Sun, $R_s\sim3~\km$. The approximation
+holds only for small deflections $\alpha\ll1$.
+Note this is exactly twice the deflection determined by 
+the impluse approximation.
+
+{\bf Show figure 7.14 of SG.}
+
+Without the lense $L$, the object would appear at a distance
+$\beta = y/d_{S}$ as long as $d_{S} \gg y$.
+The light is bent by $\alpha$, so the object instead appears
+at an angle $\theta \approx x/d_S$ (for $d_S \gg x$).
+When the bending is small $x-y = \alpha d_{LS}$.
+The impact parameter in the lens plane is $b = \theta d_{L}$
+as long as $d_S \gg b$.
+
+If we divide Equation \ref{eqn:alpha_grav_lens} by $d_S$
+we find
+\begin{equation}
+\theta - \beta = \frac{\alpha d_{LS}}{d_S} = \frac{1}{\theta} \frac{4 GM}{c^2} \frac{d_{LS}}{d_L d_S} \equiv \frac{1}{\theta} \theta_E^2
+\end{equation}
+\noindent
+where $\theta_E$ is called the {\it Einstein radius}.
+We have a quadratic relation between the angular distance $\theta$ between
+$L$ and the object's position as
+\begin{equation}
+\theta^2 - \beta \theta - \theta_E^2 = 0,~\mathrm{so}~\theta_{\pm} = \frac{\beta \pm \sqrt{\beta^2 + 4 \theta_E^2}}{2}.
+\end{equation}
+\noindent
+A star directly behind the lense with $\beta=0$ will be seen as a circle
+on the sky with radius $\theta_E$.  When $\beta>0$, the image at $\theta_{+}$
+is further away from the lense with $\theta_{+}>\beta$ and is outside
+the Einstein radius with $\theta_{+}>\theta_E$ (these were the images
+seen in the Sun's lensing).  The image at $\theta_{-}$ is inverted, on
+the other side of the lens, and is within the Einstein radius.
+
+Stars in the disk plane of the Milky Way will lense each other.  We
+often cannot resolve the lense and the source separately, but we will
+see the magnification of the star -- we call this microlensing.
+
+Gravitational lensing leaves the surface brightness unchanged by increases
+the area of an extended source on the sky.  The increase of the apparent
+brightness is then just proportional to the increase in the area.
+
+{\bf Show figure 7.15 of SG.}
+
+Consider an annulus of width $S'$ centered on $L$ between
+radius $y$ and $y+\Delta y$.  An image $I$ of
+$S'$ occupies the same angle $\delta \Phi$ but the distance
+from the center is expanded or contracted as $x/y = \theta/\beta$
+while $\delta x/\delta y= d\theta/d\beta$.  The ratio of the areas
+is 
+\begin{equation}
+\frac{A_{\pm}(image)}{A(source)} = \left| \frac{\theta}{\beta}\frac{d\theta}{d\beta}\right| = \frac{1}{4}\left( \frac{\beta}{\sqrt{\beta^2 + 4 \theta_E^2}} + \frac{\sqrt{\beta^2 + 4 \theta_E^2}}{\beta}\pm 2 \right)
+\end{equation}
+\noindent
+The image at $\theta_{+}$ is always brighter than the source and is stretched in the
+tangential direction.  The closer image is dimmer unless
+\begin{equation}
+\beta^2 < (3-2\sqrt{2})\theta_E^2 / \sqrt{2}
+\end{equation}
+\noindent
+or
+\begin{equation}
+\beta \lesssim 0.348 \theta_E.
+\end{equation}
+
+\subsection{Extended Lens}
+
+If the lense is a galaxy cluster, then we can
+think of the system as a collection of point lenses.
+Let's re-write Equation \ref{eqn:alpha_grav_lens} as
+\begin{equation}
+\alpha(b) \equiv \frac{d \psi_L}{db},~\mathrm{where}~\psi_L = \frac{4 GM}{c^2}\ln b
+\end{equation}
+\noindent
+We can then sum the effect of all the mass within the lense.
+If the lens size is small compared with $d_L$ and $d_LS$ then
+the deflection only depens on the surface density $\Sigma(\vx)$
+of the lens.  We then have
+\begin{equation}
+\alpha(\vb) \equiv \nabla \psi_L(\vb),~\mathrm{where}~\psi_L(\vb) = \frac{4G}{c^2}\int \Sigma(\vb') \ln |\vb - \vb'| dS'
+\end{equation}
+\noindent
+If the lens is axisymmetric, we can evaluate this integral as
+\begin{equation}
+\alpha(b) = \frac{4G}{bc^2}\int_{0}^{b} \Sigma(R) 2 \pi R dR = \frac{4G}{c^2} \frac{M(<b)}{b}
+\end{equation}
+\noindent
+The change in the position angle is
+\begin{equation}
+\theta - \beta = \alpha(\theta)\frac{d_{LS}}{d_S} \frac{1}{\theta} \cdot \frac{4GM(<b)}{c^2}\frac{d_{LS}}{d_L d_S}
+\end{equation}
+\noindent
+but since $b = \theta d_L$, we can re-write this in terms of the critical density for lensing
+\begin{equation}
+\beta = \theta\left[1 - \frac{1}{\Sigma_{\mathrm{crit}}}\frac{M(<b)}{\pi b^2}\right],~\mathrm{where}~\Sigma_{\mathrm{crit}} \equiv \frac{c^2}{4\pi G}\frac{d_S}{d_L d_LS}
+\end{equation}
+\noindent
+The quantity $M(<b)/\pi b^2$ is just the average surface density within $b$.
+
+If the central density exceeds $\Sigma_{\mathrm{crit}}$ then the image of a
+source at $\beta=0$ will be a thin circular Einstein ring of angular size $\theta_{E} = b_E/d_L$
+where
+\begin{equation}
+\frac{M(<b_E)}{\pi b_E^2} = \Sigma_{\mathrm{crit}}
+\end{equation}
+defines the radius $b_E$ where the average surface density falls to $\Sigma_{\mathrm{crit}}$. If
+the surface density is not larger than $\Sigma_\mathrm{crit}$ no rings or multiple images are produced.
 \end{document}
