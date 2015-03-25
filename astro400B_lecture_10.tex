@@ -20,7 +20,131 @@
 %first section
 \section{Galaxy Groups}
 
+Galaxies often are found in dynamically-connected
+collections called groups, with the largest such
+structures called clusters. These groups and
+clusters are gravitationally bound amalgamations
+of individual galaxies that act dynamically as
+a single object.  For instance, we can weigh
+a group of cluster using the virial theorem,
+assuming some mass profile for the system.  For
+a group with a $1-D$ radial
+velocity dispersion of $\sigma_r =310~\km~\s^{-1}$
+and typical radius of $a_p=100~\kpc$, then assuming
+a Plummer sphere for the potential the 
+virial theorem says that
+\begin{equation}
+\frac{3M\sigma_r^2}{2} = KE = -\frac{PE}{2} = \frac{3\pi}{64}\frac{GM^2}{a_p}.
+\end{equation}
+\noindent
+Recall that a convenient set of units for the gravitational
+constant is $G=4.301183\times10^{-6}~(\km/\s)^2~\Msun^{-1}~\kpc$.
+We can then solve for the mass as
+\begin{equation}
+M = \frac{64\sigma_r^2 a_p}{\pi G} = \frac{32\times(310~\km/\s)^2\times(100~\kpc)}{\pi \times [4.301183\times10^{-6}~(\km/\s)^2~\Msun^{-1}~\kpc]} \approx 2.3\times10^{13}\Msun.
+\end{equation}
 
+Typically, the random motions of gas will also come in 
+virial equilibrium with the gravitational potential of a
+group or cluster.  For very large systems, the gas can be
+in excess of $T>10^{7}\K$, where it looses energy primarily
+by {\it free-free} emission, also called {\it thermal bremsstrahlung}.
+If so, the luminosity of a gas with density $n$ will be
+\begin{equation}
+L_{\mathrm{X}} = n^2 \Lambda(T_{\mathrm{X}}),~\mathrm{where}~\Lambda\approx3\times10^{-27}T_{\mathrm{X}}^{1/2}~\erg~\s^{-1}.
+\end{equation}
+\noindent
+If the gas is in hydrostatic equilibrium, then
+the pressure gradient in the gas will balance the gravitational
+force pulling the gas toward the center of the group or cluster.
+We can then write that
+\begin{equation}
+\nabla P = -\rho(r) \frac{GM(<r)}{r}
+\end{equation}
+\noindent
+where the fraction on the RHS is the gravitational acceleration.
+We can related the pressure to the properties of an ideal gas
+if we assume that the average mass of a gas particle for 
+gas has a weight $m = \mu m_{p}$, where for fully-ionized
+hydrogen $\mu\sim0.5$ and for solar metallicity gas $\mu\sim0.6$.
+We can then write the pressure as
+\begin{equation}
+P = \frac{\rho}{\mu m_{p}}kT
+\end{equation}
+\noindent
+and
+\begin{equation}
+M(<r) = \frac{k}{\mu m_p}\frac{r}{G \rho(r)} \frac{d}{dr}(-\rho T).
+\end{equation}
+\noindent
+We can infer the density profile from the gas surface brightness
+distribution, and the temperature by taking an x-ray spectrum of the
+gas.  That then allows us to infer the interior mass profile.
+
+\section{Dynamical Friction}
+
+One of the most important phenomena in groups and clusters is
+{\it dynamical friction}, which is the process by which the
+galaxies in groups and clusters loose energy and angular momentum
+to the surrounding sea of dark matter and stars in the intragroup
+or intracluster medium. Dynamical friction causes galaxies to ``sink''
+to the central regions of the group or cluster and thereby be
+assimilated into the larger system.  So how does this process work?
+
+As with the impluse approximation we studied before, consider a
+{\it galaxy} of mass $M$ moving past a star (or clump of dark matter)
+with a mass $m$ at an impact parameter $b$.  During the passage, the
+galaxy has a change of velocity in the direction perpendicular to the
+direction motion of
+\begin{equation}
+\Delta V_{\perp} = \frac{2Gm}{bV}.
+\end{equation}
+\noindent
+This equation applies when the impact parameter $b$ is larger than the
+size of the galaxy with mass $M$, and when the velocity $V$ is large
+enough at separation $b$ such that $\Delta V_{\perp}\ll V$.  We then
+require that
+\begin{equation}
+b \gg \frac{2G(M+m)}{V^2} \equiv 2 r_s.
+\end{equation}
+\noindent
+Note this radius differs from the strong encounter radius we used
+previously because $M\ne m$ in this case.
+
+The perturber must obtain an equal and opposite momentum, so the
+total kinetic energy in the perpendicular motion becomes
+\begin{equation}
+\Delta KE_{\perp} = \frac{M}{2}\left(\frac{2Gm}{bV}\right)^2 + \frac{m}{2}\left(\frac{2GM}{bV}\right)^2 = \frac{2G^2mM(M+m)}{b^2 V^2}.
+\end{equation}
+\noindent
+The smaller object acquires most of the energy, which must be depleted from the motion by an amount $\Delta V_{\parallel}$ of the
+larger object.  Once the galaxy and the perturber are far away (and before the encounter) the kinetic energies 
+before and after the encounter must be the same.  We then have that
+\begin{equation}
+\frac{M}{2}V^2 = \Delta KE_{\perp} + \frac{M}{2}(V + \Delta V_{\parallel})^2 + \frac{m}{2}\left(\frac{M}{m} \Delta V_{\parallel} \right)^2
+\end{equation}
+\noindent
+If we take $\Delta V_{\parallel} \ll V$, then the terms proportional to $\Delta V_{\parallel}^2$ are very small and
+can be ignored.  We can then find the amount by which each perturber reduces the velocity of the galaxy with
+mass $M$ as
+\begin{equation}
+- \Delta V_{\parallel} \approx \frac{\Delta KE_{\perp}}{M V} = \frac{2G^2 m(M+m)}{b^2 V^3}.
+\end{equation}
+
+OK, now what if there are a number density per cubic parsec $n$ perturbers of mass $m$?  
+We then have to integrate through the cylinder of radius $b$ to find the total
+effect on the galaxy of mass $M$.  We find that
+\begin{equation}
+-\frac{dV}{dt} = \int_{b_{\mathrm{min}}}^{b_{\mathrm{max}}} n V \frac{2G^2 m (M+m)}{b^2 V^3} 2\pi b db = \frac{4\pi G^2(M+m)}{V^2} n m \ln \Lambda
+\end{equation}
+\noindent
+where $\Lambda\equiv b_{\mathrm{max}}/b_{\mathrm{min}}$.
+
+Some interesting things to note
+\begin{enumerate}
+\item The slower the galaxy $M$ moves, the larger its deceleration.
+\item If $V\ll\sigma$, where $\sigma$ is the velocity dispersion of perturbers, we find that $dV/dt\propto -V$.  This is the same as what happens to a parachutist.
+\end{enumerate}
 
 
 
