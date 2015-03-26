@@ -31,7 +31,7 @@ assuming some mass profile for the system.  For
 a group with a $1-D$ radial
 velocity dispersion of $\sigma_r =310~\km~\s^{-1}$
 and typical radius of $a_p=100~\kpc$, then assuming
-a Plummer sphere for the potential the 
+a Plummer sphere (with $PE = -3\pi G M^2/32a_p$) for the potential the 
 virial theorem says that
 \begin{equation}
 \frac{3M\sigma_r^2}{2} = KE = -\frac{PE}{2} = \frac{3\pi}{64}\frac{GM^2}{a_p}.
@@ -47,11 +47,11 @@ M = \frac{64\sigma_r^2 a_p}{\pi G} = \frac{32\times(310~\km/\s)^2\times(100~\kpc
 Typically, the random motions of gas will also come in 
 virial equilibrium with the gravitational potential of a
 group or cluster.  For very large systems, the gas can be
-in excess of $T>10^{7}\K$, where it looses energy primarily
+in excess of $T>10^{7}\K$, where it loses energy primarily
 by {\it free-free} emission, also called {\it thermal bremsstrahlung}.
-If so, the luminosity of a gas with density $n$ will be
+If so, the luminosity of a gas of volume $V$ with density $n$ will be
 \begin{equation}
-L_{\mathrm{X}} = n^2 \Lambda(T_{\mathrm{X}}),~\mathrm{where}~\Lambda\approx3\times10^{-27}T_{\mathrm{X}}^{1/2}~\erg~\s^{-1}.
+L_{\mathrm{X}} = n^2 \Lambda(T_{\mathrm{X}}) V,~\mathrm{where}~\Lambda\approx3\times10^{-27}T_{\mathrm{X}}^{1/2}~\erg~\s^{-1}~\cm^{3}.
 \end{equation}
 \noindent
 If the gas is in hydrostatic equilibrium, then
@@ -85,7 +85,7 @@ gas.  That then allows us to infer the interior mass profile.
 
 One of the most important phenomena in groups and clusters is
 {\it dynamical friction}, which is the process by which the
-galaxies in groups and clusters loose energy and angular momentum
+galaxies in groups and clusters lose energy and angular momentum
 to the surrounding sea of dark matter and stars in the intragroup
 or intracluster medium. Dynamical friction causes galaxies to ``sink''
 to the central regions of the group or cluster and thereby be
@@ -186,7 +186,7 @@ heat source.  The time for the gas to cool
 depends on the density $n$ and the thermal
 energy $2n \times (3kT/2)$ as
 \begin{equation}
-t_{\mathrm{cool}} \frac{3nkT}{3\times 10^{-27}n^2\sqrt{T}}~\s\approx 14\left(\frac{10^{-3}\cm^{-3}}{n}\right)\left(\frac{10^{7}\K}{T}\right)^{1/2}~\Gyr
+t_{\mathrm{cool}} \frac{3nkT}{3\times 10^{-27}n^2\sqrt{T}}~\s\approx 14\left(\frac{10^{-3}\cm^{-3}}{n}\right)\left(\frac{T}{10^{7}\K}\right)^{1/2}~\Gyr
 \end{equation}
 \noindent
 In the centers of clusters, the gas density is $n\sim10^{-2}\cm^{-3}$ so
@@ -281,8 +281,8 @@ Let's re-write Equation \ref{eqn:alpha_grav_lens} as
 \end{equation}
 \noindent
 We can then sum the effect of all the mass within the lense.
-If the lens size is small compared with $d_L$ and $d_LS$ then
-the deflection only depens on the surface density $\Sigma(\vx)$
+If the lens size is small compared with $d_L$ and $d_{LS}$ then
+the deflection only depends on the surface density $\Sigma(\vx)$
 of the lens.  We then have
 \begin{equation}
 \alpha(\vb) \equiv \nabla \psi_L(\vb),~\mathrm{where}~\psi_L(\vb) = \frac{4G}{c^2}\int \Sigma(\vb') \ln |\vb - \vb'| dS'
