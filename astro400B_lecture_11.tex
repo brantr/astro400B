@@ -3,7 +3,7 @@
 \usepackage{amssymb}
 
 %title material
-\title{Astronomy 400B Lecture 11: }
+\title{Astronomy 400B Lecture 11: Structure Formation and Cosmology}
 \author{Brant Robertson}
 \date{March, 2015}
 
@@ -18,12 +18,105 @@
 \maketitle
 
 %first section
-\section{First Section}
+\section{Structure Formation}
 
-\subsection{First Subsection}
+Galaxies are not randomly distributed in the
+Poisson or white-noise sense. They have a 
+clustering strength that changes the probability
+that two galaxies will lie near one another.
+For instance, if the mean number density of
+galaxies is $n$, then the expected number
+of galaxies in a volume $\Delta V_1$ is $\sim n\Delta V_1$
+as long as $n\Delta V_1\ll1$.  However, the joint
+probability of having galaxies in two volumes
+$V_1$ and $V_2$ depends on the radial separation $r_{12}$
+of the two volumes as
+\begin{equation}
+\Delta P = n^2 [1 + \xi(r_{12})]\Delta V_1 \Delta V_2.
+\end{equation}
+\noindent
+where $\xi(r)$ is called the {\it correlation function}.
+If $\xi(r)>0$, then galaxies are clustered (biased) and
+if $\xi(r)<0$ then galaxies are anti-biased.
 
+The form of the correlation function is very roughly
+a power-law of the form
+\begin{equation}
+\xi(r) \approx (r/r_0)^{-\gamma}
+\end{equation}
+\noindent
+where $r_0$ is called the {\it correlation length} and
+$\gamma<0$.  This holds on scales $r\lesssim10 h^{-1}\mathrm{Mpc}$.
+When $r<r_0$ then the probability of
+finding galaxies proximate to one another is much
+larger than for a Poisson distribution.
 
+The correlation length for all galaxies is about $r_0\sim 5 h^{-1}\Mpc$, but
+a bit larger for ellipticals.  The slope is $\gamma\sim1.7$.  At
+$r\lesssim50h^{-1}\Mpc$, $\xi(r)\sim0$ and galaxies are roughly
+uniformly randomly distributed.
 
+\subsection{Power Spectrum}
+
+The spatial power spectrum of galaxy counts is given by
+\begin{equation}
+P(\vk) \equiv \int \xi(\vr) \exp(i\vk\cdot\vr)d^3\vr = 4\pi \int_0^\infty \xi(r) \frac{\sin(kr)}{kr} r^2 dr,
+\end{equation}
+\noindent
+such that the galaxy power spectrum is the Fourier transform of the correlation function.
+Remember, small $k$ corresponds to large $r$.  The correlation function has
+no units, so the power spectrum has dimensions of volume.
+
+\subsection{Galaxy Number Density}
+
+We can write the galaxy density at some location $\vx$ as
+\begin{equation}
+\rho(\vx) = \bar{\rho}[1+\delta(\vx)]
+\end{equation}
+\noindent
+where $\bar{\rho}$ is the mean density and $\delta$ is the overdensity
+\begin{equation}
+\delta(\vx) = \frac{\rho(\vx) - \bar{\rho}}{\bar{\rho}}.
+\end{equation}
+We can calculate the statistics of the overdensity most readily
+by averaging the over all spherical volumes of radius $R$.
+We write this quantity $\delta_R$, and the variance of 
+this quantity $\sigma_R^2 = \ave{\delta_R^2}$.  Defining
+the dimensionless quanity $\Delta_k^2$ as the typical
+fluctuation in over density in a volume $k^{-1}~h^{-1}\Mpc$
+in radius as
+\begin{equation}
+\Delta_k^2 \equiv \frac{k^3 P(k)}{2\pi^2},
+\end{equation}
+\noindent
+we then have $\sigma_R^2 \approx \Delta_k^2$ and if
+$P(k)\propto k^n$, then $\sigma_R \propto R^{-(n+3)/2}$.
+Then if $n>-3$, the universe is lumpiest on small scales.
+We often characterize the power spectrum by the 
+quantity $\sigma_8\equiv\sigma(R=8~h^{-1}\Mpc)$.  Today, we think 
+$\sigma_8\approx0.8$.
+
+Instead of taking the variance in a volume corresponding to
+a radius $R$, we can take the variance $\sigma(M)$ on a mass scale
+$M \approx 4\pi R^3  \bar{\rho}/3$.  Since $M \propto R^3$, we
+have that $\sigma(M) \propto M^{-(n+3)/6}$.
+
+\section{Expansion of a Homogenous Universe}
+
+We know from the CMB that the universe is homogeneous on
+large scales.  We can describe the distance between two
+points in such a universe by the relation
+\begin{equation}
+ds^2 = R^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + \sigma^2 d\theta^2 + \sigma^2 \sin^2 \theta d\phi^2\right)
+\end{equation}
+\noindent
+where $\sigma, \theta, \phi$ are spherical polar coordinates in curved space.
+The constant $k$ specifies the curvature of space.  For $k=1$ the universe
+is {\it closed} with positive curvature.  If $k=-1$ the universe is
+{\it open} with negative curvature.  If $k=0$ we have normal Euclidean
+flat space.
+
+We can include cosmic expansion just by setting $R = R(t)$.
 
 
 \end{document}
