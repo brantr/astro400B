@@ -116,7 +116,69 @@ is {\it closed} with positive curvature.  If $k=-1$ the universe is
 {\it open} with negative curvature.  If $k=0$ we have normal Euclidean
 flat space.
 
-We can include cosmic expansion just by setting $R = R(t)$.
+We can include cosmic expansion just by setting $R = R(t)$. Galaxies
+remain at points with fixed values of $\sigma, \theta, \phi$ called
+the comoving coordinates.  Two systems in this coordinate system
+move apart from each other at the rate
+\begin{equation}
+V = \dot{d} = \frac{\dot{R}(t)}{R(t)}d \equiv H(t) d
+\end{equation}
+\noindent
+where $H(t)$ is the Hubble parameter that has $H(t_0) = H_0$
+today.
+
+\section{Time in an Expanding Universe}
+Owing to the finite speed of light, General Relativity
+informs us that the distance between two events happening
+at different times in different places depends on  the
+motion of an observer.  But all observers will measure
+the same proper time $\tau$ along a path through space
+and time connecting the events.  The proper time
+is found by integrating the relation
+\begin{equation}
+c^2 d\tau^2 = c^2 dt^2 - ds^2.
+\end{equation}
+\noindent
+Light rays travel paths with $d\tau^2 = 0$, called
+null geodesics.
+
+Place yourself at the origin.  Then the light
+received from a galaxy at comoving distance
+$\sigma_e$ has followed the path
+\begin{equation}
+\frac{c dt}{R(t)} = -\frac{d\sigma}{\sqrt{1-k\sigma^2}}.
+\end{equation}
+\noindent
+As the universe grows, light covers less and less 
+comoving distance per unit time.
+
+\section{Redshift}
+
+Consider a light wave that leaves at time $t_e$
+from a distance $\sigma_e$ and arrives today $t_0$.
+We have that
+\begin{equation}
+c\int_{t_e}^{t_0} \frac{dt}{R(t)} = \int_0^{\sigma_e} \frac{d\sigma}{\sqrt{1-k\sigma^2}}.
+\end{equation}
+\noindent
+Now consider another wave leaving at a later time $t_e + \Delta t_e$.
+It arrives at $t + \Delta t$.  The comoving position hasn't changed
+so we have that
+\begin{equation}
+\int_{t_e+\Delta t_e}^{t_0 + \Delta t} \frac{dt}{R(t)} = \int_{t_e}^{t_0} \frac{dt}{R(t)},~~\mathrm{so}~\frac{\Delta t_e}{R(t)} = \frac{\Delta t}{R(t_0)},
+\end{equation}
+\noindent
+provided that $\Delta t \ll R(t)/\dot{R}(t)$.  So all processes appear to be
+slowed by a factor $R(t_0)/R(t_e)$.
+
+If the light was emitted with wavelength $\lambda_e = c \Delta t_e$, it is
+received with wavelength $\lambda_{obs} = c \Delta t$.  The
+redshift is then
+\begin{equation}
+1 + z = \frac{\lambda_{obs}}{\lambda_e} = \frac{R(t_0)}{R(t_e)}.
+\end{equation}
+
+
 
 
 \end{document}
