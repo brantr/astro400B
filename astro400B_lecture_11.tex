@@ -107,7 +107,7 @@ We know from the CMB that the universe is homogeneous on
 large scales.  We can describe the distance between two
 points in such a universe by the relation
 \begin{equation}
-ds^2 = R^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + \sigma^2 d\theta^2 + \sigma^2 \sin^2 \theta d\phi^2\right)
+ds^2 = a^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + \sigma^2 d\theta^2 + \sigma^2 \sin^2 \theta d\phi^2\right)
 \end{equation}
 \noindent
 where $\sigma, \theta, \phi$ are spherical polar coordinates in curved space.
@@ -116,12 +116,12 @@ is {\it closed} with positive curvature.  If $k=-1$ the universe is
 {\it open} with negative curvature.  If $k=0$ we have normal Euclidean
 flat space.
 
-We can include cosmic expansion just by setting $R = R(t)$. Galaxies
+We can include cosmic expansion just by setting $a = a(t)$. Galaxies
 remain at points with fixed values of $\sigma, \theta, \phi$ called
-the comoving coordinates.  Two systems in this coordinate system
+the comoving coordinates.  Two systems a distance $d$ in this coordinate system
 move apart from each other at the rate
 \begin{equation}
-V = \dot{d} = \frac{\dot{R}(t)}{R(t)}d \equiv H(t) d
+V = \dot{d} = \frac{\dot{a}(t)}{a(t)}d \equiv H(t) d
 \end{equation}
 \noindent
 where $H(t)$ is the Hubble parameter that has $H(t_0) = H_0$
@@ -146,7 +146,7 @@ Place yourself at the origin.  Then the light
 received from a galaxy at comoving distance
 $\sigma_e$ has followed the path
 \begin{equation}
-\frac{c dt}{R(t)} = -\frac{d\sigma}{\sqrt{1-k\sigma^2}}.
+\frac{c dt}{a(t)} = -\frac{d\sigma}{\sqrt{1-k\sigma^2}}.
 \end{equation}
 \noindent
 As the universe grows, light covers less and less 
@@ -158,24 +158,24 @@ Consider a light wave that leaves at time $t_e$
 from a distance $\sigma_e$ and arrives today $t_0$.
 We have that
 \begin{equation}
-c\int_{t_e}^{t_0} \frac{dt}{R(t)} = \int_0^{\sigma_e} \frac{d\sigma}{\sqrt{1-k\sigma^2}}.
+c\int_{t_e}^{t_0} \frac{dt}{a(t)} = \int_0^{\sigma_e} \frac{d\sigma}{\sqrt{1-k\sigma^2}}.
 \end{equation}
 \noindent
 Now consider another wave leaving at a later time $t_e + \Delta t_e$.
 It arrives at $t + \Delta t$.  The comoving position hasn't changed
 so we have that
 \begin{equation}
-\int_{t_e+\Delta t_e}^{t_0 + \Delta t} \frac{dt}{R(t)} = \int_{t_e}^{t_0} \frac{dt}{R(t)},~~\mathrm{so}~\frac{\Delta t_e}{R(t)} = \frac{\Delta t}{R(t_0)},
+\int_{t_e+\Delta t_e}^{t_0 + \Delta t} \frac{dt}{a(t)} = \int_{t_e}^{t_0} \frac{dt}{a(t)},~~\mathrm{so}~\frac{\Delta t_e}{a(t_e)} = \frac{\Delta t}{a(t_0)},
 \end{equation}
 \noindent
-provided that $\Delta t \ll R(t)/\dot{R}(t)$.  So all processes appear to be
-slowed by a factor $R(t_0)/R(t_e)$.
+provided that $\Delta t \ll a(t)/\dot{a}(t)$ (e.g., a Hubble time).  So all processes appear to be
+slowed by a factor $a(t_0)/a(t_e)$.
 
 If the light was emitted with wavelength $\lambda_e = c \Delta t_e$, it is
 received with wavelength $\lambda_{obs} = c \Delta t$.  The
 redshift is then
 \begin{equation}
-1 + z = \frac{\lambda_{obs}}{\lambda_e} = \frac{R(t_0)}{R(t_e)}.
+1 + z = \frac{\lambda_{obs}}{\lambda_e} = \frac{a(t_0)}{a(t_e)}.
 \end{equation}
 
 
