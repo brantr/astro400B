@@ -244,7 +244,7 @@ Differentiating Equation \ref{eqn:friedman_B} and substituting for $d\rho/dt$
 yields
 \begin{equation}
 \label{eqn:friedman_C}
-\ddot{R}(t) = - \frac{4\pi G}{3} R(t) \left[ \rho(t) + \frac{3p(t)}{c^2}]
+\ddot{R}(t) = - \frac{4\pi G}{3} R(t) \left[ \rho(t) + \frac{3p(t)}{c^2}\right]
 \end{equation}
 \noindent
 So in GR, the pressure $p$ adds to the gravitational attraction. 
@@ -254,6 +254,105 @@ the pressure $p \sim \rho c_s^2$ where the sound speed $c_s \ll c$,
 and the pressure term in equation \ref{eqn:friedman_C} is 0.
 Then $\rho(t)\propto R^{-3}$.  For radiation and particles,
 $p\approx pc^2/3$ and $\rho(t) \propto R^{-4}(t)$.
-For matter and radiation $\rho + 3p/c^2$ is positive and the
-universe decelerates. PAGE 328.
+For matter and radiation $\rho + 3p/c^2$ is positive, and the
+universe decelerates. 
+
+The quantity $\rho(t)R^2(t)$ decreases as $R(t)$ grows, so the
+right hand side of eqn \ref{eqn:friedman_B} becomes negative
+for large $R$ if $k=1$.  Since $\dot{R}^2$ cannot be negative,
+$R$ will reach a maximum and turn around.  For $k\le0$, the
+expansion never ends.
+
+GR allows for a {\it vacuum energy} with constant density $\rho_{\Lambda} = \Lambda/(8\pi G)$.  Since $\rho_{\Lambda}$ is a constant, the RHS of the $\Delta Q$ equation must
+be zero since $\rho_{\Lambda}$
+cannot change and the pressure is $p_{\Lambda} = -\Lambda c^2/(8\pi G)$,
+which is more like a tension pulling out than a pressure pushing in.
+Once the universe expands so $\rho_{\Lambda}$ is larger than the other
+components, the universe expands exponentially.  This kind of 
+expansion may have happened in the early universe (inflation), which
+enables us to explain away several cosmological puzzles.
+
+\section{Flat Cosmologies}
+
+In the case where $k=0$, we need that the
+density is equal to the {\it critical density}, such that
+\begin{equation}
+\rho(t) = \rhoc(t) \equiv \frac{3 H^2(t)}{8 \pi G}.
+\end{equation}
+\noindent
+Today, $\rhoc(t) = 3.3\times 10^{11} h^2~\Msun~\Mpc^{-3}$.
+
+We can express the abundance of various mass-energy components
+relative to the critical density as
+\begin{equation}
+\Omega(t) \equiv \rho(t)/\rhoc(t).
+\end{equation}
+\noindent
+We typically write $\Omega_0$ as the present value today.
+We can re-write equation \ref{eqn:friedman_B} as
+\begin{equation}
+H^2(t)[1 - \Omega(t)] = -kc^2/R^2(t).
+\end{equation}
+\noindent
+If $k=1$, then $\Omega(t)>1$ and the density exceeds the
+critical density always.  If $k=-1$ then $\Omega(t)<1$
+and the density is lower than $\rhoc$. For $k=0$,
+we have that the density always equals the critical
+density.
+
+{\bf See Figure 8.7 of SG.}
+
+We can measure the cosmic expansion relative to the present
+through the {\it scale factor} $a\equiv R(t)/R(t_0)$.
+The first Friedmann equation becomes
+\begin{equation}
+\frac{kc^2}{R^2(t_0)} = H_0^2(1 - \Omega) = a^2(t)\left[ H^{2}(t) - \frac{8\pi G}{3}\rho(t)\right].
+\end{equation}
+\noindent
+We can then write an important equation for the Hubble parameter
+\begin{equation}
+H^2(t) = H_0^2[\Omega_r (1+z)^4 + \Omega_m(1+z)^3 + \Omega_k(1+z)^2 + \Omega_{\Lambda}]
+\end{equation}
+\noindent
+where $\Omega_k = (1-\Omega)$ is the fractional density contributed by curvature with $k\ne0$.
+
+\section{Lookback Time}
+Since the universe is redshifting and time can be clocked by
+successive troughs in a wave, the rate at which universal
+time changes with redshift is
+\begin{equation}
+\frac{dt}{dz} = - \frac{1}{H(z)}\frac{1}{1+z}
+\end{equation}
+\noindent
+We can integrate this to find the {\it lookback time}
+\begin{equation}
+t_0 - t_e = \int_{0}^{z} \frac{1}{H(z')}\frac{dz'}{1+z'}.
+\end{equation}
+\noindent
+The appearance of $H(z)$ in the denominator complicates things,
+but if $\Omega_m + \Omega_\Lambda = 1$ we can find
+\begin{eqnarray}
+t_e &=& \int_z^{\infty}\frac{1}{H(z')}\frac{dz'}{1+z'} \nonumber\\
+&=&\int_z^{\infty} \frac{dz'}{H_0(1+z')[\Omega_m(1+z')^3 + \Omega_\Lambda]^{1/2}}\nonumber\\
+&=&\frac{2}{3 H_0\sqrt{\Omega_\Lambda}}\ln\left(\frac{1+\cos\theta}{\sin\theta}\right)\nonumber\\
+\mathrm{where}~\tan^{2}\theta&\equiv&\frac{(1-\Omega_\Lambda)}{\Omega_\Lambda}(1+z)^3
+\end{eqnarray}
+\noindent
+which is accurate to a few percent.
+
+For $\Lambda=0$, we have
+\begin{equation}
+t_e \int_z^\infty \frac{1}{H_0\sqrt{1+\Omega z}}\frac{dz'}{(1+z')^2}
+\end{equation}
+\noindent
+Which we can solve for $\Omega=1$ or $\Omega=0$, giving
+\begin{equation}
+t_0 - t_e = \frac{1}{H_0}\int_0^z \frac{dz'}{(1+z')^{5/2}} = \frac{2}{3H_0}\left[1-\frac{1}{(1+z)^{3/2}}\right]~\mathrm{for}~\Omega = 1
+\end{equation}
+\noindent
+and
+\begin{equation}
+t_0 - t_e = \frac{1}{H_0}\int_0^z \frac{dz'}{(1+z')^{2}} = \frac{1}{H_0}\frac{z}{(1+z)}~\mathrm{for}~\Omega = 0.
+\end{equation}
+
 \end{document}
