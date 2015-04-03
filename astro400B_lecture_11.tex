@@ -505,5 +505,73 @@ The number density of objects per comoving volume element is then
 \end{equation}
 
 
+\section{Growth of Structure}
+
+The initial perturbations seeded by cosmic inflation likely had a
+power spectrum $P(k) \propto k$.  These perturbations were affected
+by physical processes at later times to alter $P(k)$ on small scales.
+We see evidence of this in the cosmic microwave background. As
+photons try to move out of the gravitational potential wells of the
+initial density perturbations, the photons experience a 
+{\it gravitational redshift} $\Delta\Phi_g$ that changes the
+temperature $T$ of the radiation by an amount $\Delta T$ according
+to
+\begin{equation}
+\frac{\Delta T}{T}|_{\mathrm{grav}} \sim \Delta \Phi_g c^{-2}
+\end{equation}
+\noindent
+The temperature is reduced where the potentially
+is unusually deep since $\Delta \Phi_g$ is negative
+there, and time runs more slowly such that $\Delta t/t =\Delta \Phi_g/c^2$
+and we see the gas at an earlier time when it was hotter.  The temperature
+declines by $T\propto 1/ a(t)$, so we have
+\begin{equation}
+\frac{\Delta T}{T}|_{\mathrm{time}} = -\frac{\Delta a}{a} = -\frac{2}{3}\frac{\Delta t}{t} =  -\frac{2}{3}\frac{\Delta Phi_g}{c^2}
+\end{equation}
+\noindent
+where we've used $a\propto t^{2/3}$ for the matter-dominated era.
+The net effect is that $\Delta T/T \sim \Delta \Phi_g / (3 c^2)$.
+If the region has density $\rho = \bar{\rho}(1+\delta)$ and a
+corresponding mass excess of $\Delta M = 4\pi \bar{\rho}R^3 \delta / 3$,
+then 
+\begin{equation}
+3c^2\frac{\Delta T}{T} = \Delta \Phi_g \sim - \frac{2G\Delta M}{R} = - \frac{8\pi}{3} G \bar{\rho}R^2 \delta \approx - \delta(t)[\bar{H}(t)R]^2
+\end{equation}
+\noindent
+such that radiation from dense regions is {\it colder}.
+
+We can model the temperature map of the sky by expanding
+the pattern of the CMB in spherical harmonics as
+\begin{equation}
+\Delta T(\theta, \phi) = \sum_{l>1} \sum_{-l\le m \le l} a_l^m Y_l^m(\theta, \phi).
+\end{equation}
+\noindent
+The theoretical predictions are often expressed in terms of $C_l = \ave{|a_l^m|^2}$ averaged over $m$ since this does not depend on the direction of ``north''
+in the map.  A commonly plotted quantity is $\Delta_T^2 = T^2 l(l+1)C_l/(2\pi)$.
+
+
+Pressure forces can act to suppress structure, but only on the
+sound horizon scale.  The sound horizon scale when the
+gas becomes transparent to photons (recombination) is
+\begin{equation}
+R(t_{rec}) \sigma_H = 3 c t_{rec} = \frac{2c}{H(t_{rec})} \approx \frac{2c}{H_0\sqrt{\Omega_m}(1+z_{rec})^{3/2}}.
+\end{equation}
+\noindent
+This works out to about $184/(h^2 \Omega_m)^{1/2}$~Mpc today.  The
+angle $\theta_H$ subtended by the sound horizon depends on
+the angular-size distance to $z_{rec}$.  When $\Omega_\Lambda\to0$
+and $\Omega_0 z\gg1$, then $d_A\to 2c/(H_0 z \Omega_0)$. We then
+have
+\begin{equation}
+\theta_H \approx \frac{R(t_{rec}\sigma_H)}{d_A(t_{rec})} \approx \sqrt{\frac{\Omega_0}{z_{rec}}} \approx 2^\circ \times \sqrt{\Omega_0},
+\end{equation}
+\noindent
+and only points separated by this angle on the sky can communicate before $t_{rec}$.  For $\Omega_0=1$, $\Delta_T$ is largest on the scale of about a degree,
+where the {\it first acoustic peak} of the CMB is found. A model
+with $\Omega_0=0.3$ provides about half this angle. In a cosmology
+close to what we think ours is, it turns out the 
+first peak is at $l\approx 220$ that corresponds to a size scale of 
+aobut $105~\Mpc$ today, which is a sphere that contains $2.5\times10^{16}M_{\odot}$.  The second peak is at $l\approx540$.
+
 
 \end{document}
