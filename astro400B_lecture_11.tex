@@ -360,4 +360,115 @@ In the matter dominated era, we have
 t_e \approx \frac{2}{3H_0\sqrt{\Omega_m}}\frac{1}{(1+z)^{3/2}}~\mathrm{when}~\frac{\Omega_m}{\Omega_r}\gg1+z \gg \left(\frac{\Omega_{\Lambda}}{\Omega_m}\right)^{1/3}~\mathrm{and}~\frac{1}{\Omega_m}.
 \end{equation}
 
+\section{Observing Distant Galaxies}
+
+For nearby objects, the flux is related to luminosity by
+\begin{equation}
+F = \frac{L}{4\pi d^2},
+\end{equation}
+\noindent
+which still holds for very distant galaxies provided we
+use the correct distance that accounts for the expansion
+of the universe and the change in energy density.  Actually,
+if these effects did not come into play, the sky would be
+bright because in a static universe filled with stars light
+``accumulate''s without limit {\it Olber's paradox}.
+
+\subsection{Luminosity Distance}
+In an expanding universe, we now write
+\begin{equation}
+F = \frac{L}{4\pi R^2(t_0)\sigma_e^2(1+z)^2} \equiv \frac{L}{4\pi d_L^2}
+\end{equation}
+\noindent
+where
+\begin{equation}
+d_L = (1+z) R(t_0) \sigma_e
+\end{equation}
+\noindent
+is the {\it luminosity distance}.
+
+\subsection{Angular-Size Distance}
+The distance we use to measure an angular size also changes.
+We are comfortable with the small angle approximation $\alpha = D/d$,
+where $D$ is the transverse size and $d$ is the line-of-sight distance.
+In an expanding universe we instead have
+\begin{equation}
+\alpha~[\mathrm{rad}] = \frac{D}{R(t_e)\sigma_e}\equiv\frac{D}{d_A}
+\end{equation}
+\noindent
+where
+\begin{equation}
+d_A = R(t_e) \sigma_e = \frac{R(t_0) \sigma_e}{1+z}
+\end{equation}
+\noindent
+is the {\it angular-size distance} or the {\it angular diameter distance}.
+Note that the angular-size distance is a factor $(1+z)^2$ less than the
+luminosity distance.
+
+\subsection{Surface Brightness}
+Owing to the behavior of the angular-size and lumionsity distances,
+the surface brightness of galaxies are affected dramatically by the
+expansion of the universe.  The surface brightness is
+\begin{equation}
+I(\vx) = \frac{F}{\alpha^2} = \frac{L/(4\pi d_L^2)}{D^2 / d_A^2} = \frac{L}{4\pi D^2}\left(\frac{d_A}{d_L}\right)^2 = \frac{L}{4\pi D^2}\frac{1}{(1+z)^4}.
+\end{equation}
+
+\subsection{Comoving Distance}
+To evaluate the luminosity or angular-size distance, we have to
+compute the {\it comoving distance} $R(t_0) \sigma_e$.  We can
+compute this quantity by evaluating the integral of the distance
+$R(t)\chi$ as
+\begin{equation}
+R(t) \chi \equiv \int_0^{\sigma} ds = R(t)\int_0^\sigma \frac{d\sigma'}{\sqrt{1-k\sigma'^2}}
+\end{equation}
+\noindent
+which gives
+\begin{equation}
+\label{eqn:sigma_chi}
+\chi(\sigma) = \left\{ \begin{array}{lll}\arcsin(\sigma) & \mathrm{for}~k=1\\ \sigma & \mathrm{for}~k=0 \\ \mathrm{arcsinh}(\sigma) = \ln(\sigma + \sqrt{1+\sigma^2}) & \mathrm{for}~k=-1\end{array}\right.
+\end{equation}
+\noindent
+Everything is more complicated in a non-flat universe, but in a flat universe $\chi = \sigma$ and we can safely call $R(t_0) \sigma_e$ the comoving distance.
+
+Moving at $c$, in a time $\Delta t$ light travels a distance $c \Delta t = R(t)\Delta \chi$.  We can then write the total distance
+\begin{equation}
+\chi_e = \int_{t_e}^{t_0}\frac{c dt}{R(t)} = \int_0^{z} \frac{c}{R(t_0)}\frac{dz'}{H(t)}
+\end{equation}
+\noindent
+For $\Omega_\Lambda=0$, we have
+\begin{equation}
+\frac{R(t_0) H_0}{c} \chi_e = \left\{ \begin{array}{ll} \int_0^{z} \frac{dz'}{(1+z')^{3/2}}  = 2 \left( 1 - \frac{1}{\sqrt{1+z}}\right) & \mathrm{for}~\Omega_0=1 \\ \int_0^z \frac{dz'}{(1+z')} = \ln(1+z) & \mathrm{for}~\Omega_0 = 0 \end{array}\right.
+\end{equation}
+\noindent
+And subbing these into Equation \ref{eqn:sigma_chi} gives the comoving distance
+\begin{equation}
+R(t_0) \sigma_e = \left\{ \begin{array}{ll} \frac{2c}{H_0} \left[1 - \frac{1}{\sqrt{1+z}} \right] & \mathrm{for}~\Omega_0 = 1 \\ \frac{c}{H_0}\frac{z(1+z/2)}{1+z} & \mathrm{for}~\Omega_0=0 \end{array}\right.
+\end{equation}
+\noindent
+``An excessive quantity of algebra'' gives the {\it Mattig formula} (still for $\Omega_\Lambda=0$)
+\begin{equation}
+R(t_0) \sigma_e = \frac{c}{H_0} \frac{2}{\Omega_0^2 (1+z)}[\Omega_0 z + (\Omega_0 - 2)(\sqrt{1+\Omega_0 z}-1)]
+\end{equation}
+\noindent
+In the limit $z\gg1$, $R(t_0)\sigma_e \to 2 c/(H_0\Omega_0)$.
+
+In the limit $\Omega_0\ll1$, we have
+\begin{equation}
+R(t_0)\sigma_e = \frac{c}{H_0} \frac{z}{1+z} \frac{1+\sqrt{1+\Omega_0 z}+z}{1+ \sqrt{1+\Omega_0 z} + \Omega_0 z/2}.
+\end{equation}
+
+For a flat universe with $\Omega_\Lambda\ne0$, there is no useful exact 
+result.  But for $\Omega_m \gtrsim 0.1$ and in the limit $z\to\infty$, we have 
+\begin{equation}
+R(t_0)\sigma_e \approx \frac{2c}{(H_0 z \Omega_m^{0.4})}.
+\end{equation}
+
+One of the seemingly crazy things is that the angular diameter distance can have
+a {\it maximum}, such that objects at high redshift actually can start to 
+appear larger again.
+
+
+
+
+
 \end{document}
