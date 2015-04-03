@@ -467,7 +467,42 @@ One of the seemingly crazy things is that the angular diameter distance can have
 a {\it maximum}, such that objects at high redshift actually can start to 
 appear larger again.
 
+\section{Flux Density}
 
+If we take a bandpass limited observation of a galaxy, the total
+flux that we measure from an object with the same intrinsic
+spectrum will change with redshift as the spectrum stretches in
+wavelength owing to cosmological redshifting.  We then have that
+\begin{eqnarray}
+F_{BP} &=& \frac{1}{4\pi d_L^2} \int_{\lambda_1(1+z)}^{\lambda_2(1+z)} L_{\lambda}(\lambda,t_e) d\lambda \\
+&=& \frac{1}{4\pi d_L^2}\frac{1}{1+z} \int_{\lambda_1}^{\lambda_2} L_{\lambda}[\lambda/(1+z),t_e]d \lambda.
+\end{eqnarray}
+\noindent
+At cosmological distances, the apparent magnitude is then
+\begin{equation}
+m_{BP} = M_{BP} + 5 \log_10 \left(\frac{d_L}{10\pc}\right) + k_{BP}(z) + e_{BP}(z)
+\end{equation}
+\noindent
+where $k(z)$ is the {\it k correction} and the {\it evolutionary term} $e(z)$
+allows for the galaxy to evole during the travel time of its light.  The
+{\it k} correction is given by
+\begin{equation}
+k_{BP}(z) \equiv 2.5 \log_{10} (1+z) - 2.5 \log_{10} \left\{ \frac{\int_{\lambda_1}^{\lambda_2} L_{\lambda}[\lambda/(1+z),t_0]d\lambda}{\int_{\lambda_1}^{\lambda_2} L_{\lambda}(\lambda,t_0)d\lambda   } \right\}.
+\end{equation}
+
+
+\section{Galaxy Space Densities}
+
+The volume of the sky area $A = 4\pi R^2(t_e)\sigma_e^2$ over the redshift interval
+$z$, $z+\Delta z$, corresponding to thickness $c |\Delta t_e|$, gives us the
+relation
+\begin{equation}
+\frac{A c |\Delta t_e|}{\Delta z} \approx \frac{dV}{dz} = \frac{4\pi c R^2(t_0)\sigma_e^2}{H(z)(1+z)^3}.
+\end{equation}
+The number density of objects per comoving volume element is then
+\begin{equation}
+\frac{d N}{dz} = n_0(1+z)^3 \frac{dV}{dz} = n_0 c \frac{4 \pi R^2(t_0)\sigma_e^2}{H(z)}.
+\end{equation}
 
 
 
