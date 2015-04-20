@@ -27,6 +27,16 @@ T \approx \frac{(m_p/2)\sigma^2}{k_B} \approx 5 \times 10^6 \left( \frac{\sigma}
 \noindent
 Hot gas in a group or cluster is usually close to this {\it virial temperature}.
 
+\subsection{Solution}
+
+If the atom's kinetic energy is shared between protons and electrons, then we should equate the thermal energy with half the kinetic energy.  This gives
+\begin{eqnarray}
+\frac{3}{2} k_B T &\approx& \frac{3}{4} m_p \sigma^2 \\
+T &\approx& \frac{m_p}{2} \frac{\sigma^2}{k_B} = \frac{1.672622\times10^{-24}~\g}{2} \frac{\sigma^2}{1.380650\times10^{-16}~\erg~\K^{-1}}\\
+T &\approx& 6.1\times 10^{-1} \frac{\sigma^2}{\cm^2~\s^{-2}}~\K \\
+\therefore T &\approx& 5.5 \times 10^{6} \left(\frac{\sigma}{300~\km~\s^{-1}}\right)^2~\K
+\end{eqnarray}
+
 \section{Sparke \& Gallagher Problem 7.13}
 
 If the lens $L$ is an object of mass $M_{\odot}$ at a distance $d_{\mathrm{Lens}}$ from
@@ -34,6 +44,21 @@ us, show that the Einstein radius for a star at distance $d_S = 2 d_{\mathrm{Len
 \begin{equation}
 \theta_{E} = \sqrt{\frac{R_s}{d_{\mathrm{Lens}}}} \approx 2 \times 10^{-3} \sqrt{\frac{1~\kpc}{d_{\mathrm{Lens}}}}~\mathrm{arcsec}.
 \end{equation}
+
+\subsection{Solution}
+
+The Einstein radius is given by
+\begin{equation}
+\theta_{E} = \left( \frac{4 G M}{c^2} \frac{d_{LS}}{d_L d_S}\right)^{\frac{1}{2}} = \sqrt{ 2 R_s \frac{d_{LS}}{d_L d_S}},
+\end{equation}
+\noindent
+where $R_s = 2 G M c^{-2}$ is the Schwarzschild radius (for the Sun, $R_s =  = 295343.16~\cm = 9.57\times10^{-17}~\kpc$. If $d_s = 2 d_L$, then $d_{LS} = d_L$. We then have
+\begin{equation}
+\theta_E = \sqrt{ 2 R_s \frac{d_{LS}}{d_L d_S}} = \sqrt{ 2 R_s \frac{d_L}{2 d_L^2}} = \sqrt{\frac{R_s}{d_L}} = \sqrt{9.57\times10^{-17} \frac{1~\kpc}{d_L}} = 9.78\times10^{-9}~\mathrm{rad}~\sqrt{\frac{1~\kpc}{d_L}}
+\end{equation}
+\begin{equation}
+\therefore \theta_E  = 2.02\times10^{-3}~\mathrm{arcsec}~\sqrt{\frac{1~\kpc}{d_L}}.
+\end{equation} 
 
 \section{Sparke \& Gallagher Problem 7.17}
 
@@ -48,5 +73,33 @@ and that the mass projected within angle $\theta_E$ of the center is
 \begin{equation}
 M(<\theta_E) \approx \left(\frac{d_{\mathrm{Lens}}}{100~\Mpc}\right)\left(\frac{\theta_E}{1~\mathrm{arcsec}}\right)^2 ~ 10^{10}~M_{\odot}.
 \end{equation}
+
+\subsection{Solution}
+The critical surface density is
+\begin{equation}
+\Sigma_{\mathrm{crit}} = \frac{c^2}{4\pi G} \frac{d_S}{d_L d_{LS}}.
+\end{equation}
+\noindent
+If $d_{LS}\gg d_L$, then $d_S \equiv d_{LS} + d_L \approx d_{LS}$.
+Then we have
+\begin{eqnarray}
+\Sigma_{\mathrm{crit}} &\approx& \frac{c^2}{4\pi G} \frac{d_{LS}}{d_L d_{LS}}\\
+\Sigma_{\mathrm{crit}} &\approx& \frac{c^2}{4\pi G} \frac{1}{d_L}\\
+\Sigma_{\mathrm{crit}} &\approx& \frac{(3\times10^5~\km~\s)^2}{4\pi \left(4.301\times10^{-3}~\km^2~\s^2~\Msun^{-1}~\pc\right)} \frac{1}{d_L}\\
+\Sigma_{\mathrm{crit}} &\approx& 1.67\times10^{12}\frac{1}{d_L}~\Msun~\pc^{-1}\\
+\therefore \Sigma_{\mathrm{crit}} &\approx& 1.67\times10^{4}\left(\frac{100~\Mpc}{d_L}\right)~\Msun~\pc^{-2}.
+\end{eqnarray}
+\noindent
+With the definition that $b_E = \theta_E d_L$, the projected mass is
+\begin{eqnarray}
+M(<\theta_E) = \pi b_E^2 \Sigma_{\mathrm{crit}}&=& \pi \left(\theta_E d_L\right)^2 \Sigma_{\mathrm{crit}}\\
+M(<\theta_E) &=& \pi \left(\theta_E d_L\right)^2 \left[ 1.67\times10^{4}\left(\frac{100~\Mpc}{d_L}\right)~\Msun~\pc^{-2}\right]\\
+M(<\theta_E) &=& \pi\times10^{16}~\pc^2 \theta_E^2 \left(\frac{d_L}{100~\Mpc}\right)^2 \left[ 1.67\times10^{4}\left(\frac{100~\Mpc}{d_L}\right)~\Msun~\pc^{-2}\right]\\
+M(<\theta_E) &=& 5.25\times10^{10} \theta_E^2 \left(\frac{d_L}{100~\Mpc}\right)~10^{10}\Msun\\
+M(<\theta_E) &=& 5.25\times10^{10} \left(4.85\times10^{-6}~\rad\right)^2 \left(\frac{\theta_E}{1~\mathrm{arcsec}}\right)^2 \left(\frac{d_L}{100~\Mpc}\right)~10^{10}\Msun\\
+M(<\theta_E) &=& 1.23 \left(\frac{\theta_E}{1~\mathrm{arcsec}}\right)^2 \left(\frac{d_L}{100~\Mpc}\right)~10^{10}\Msun\\
+\therefore M(<\theta_E) &\approx&  \left(\frac{\theta_E}{1~\mathrm{arcsec}}\right)^2 \left(\frac{d_L}{100~\Mpc}\right)~10^{10}\Msun\\
+\end{eqnarray}
+
 
 \end{document}
