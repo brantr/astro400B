@@ -1,0 +1,71 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Lecture X: YYY}
+\author{Brant Robertson}
+\date{April, 2015}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+%first section
+\section{Tidal Torques}
+
+Peculiar velocities grow as $\vv\propto t^{1/3}$ while distances
+grow as $d\propto a(t) \propto t^{2/3}$. In the linear regime,
+angular momentum then grows as $d \times v\propto t$. The
+region stops accruing angular momentum once it turns around
+and begins to collapse. Therefore, more overdense regions 
+tend to have less time to spin up.  However, tidal torques
+are also stronger in dense regions and so objects
+acquire the same average angular momentum in relation to their
+mass or energy.
+
+A galaxy of radius $R$, mass $M$, and angular momentum $L$
+will rotate an angular speed
+\begin{equation}
+\omega \sim L / (MR^2).
+\end{equation}
+\noindent
+The angular speed of a circular orbit at radius $R$ is
+\begin{equation}
+\omega_c^2 R \sim G M/R^2.
+\end{equation}
+The energy is $E\sim - GM^2/R$.  We therefore have 
+\begin{equation}
+\frac{\omega}{\omega_c}\equiv\lambda = \frac{L}{MR^2} \times \frac{R^{3/2}}{\sqrt{GM}} = \frac{L|E|^{1/2}}{GM^{5/2}}.
+\end{equation}
+\noindent
+From N-body simulations, we expect that $\lambda\sim$ a  few percent.
+Ellipticals have about this spin, but the Milky Way has $\lambda \approx 0.5$.
+Since the MW is a disk, energy dissipation can help amplify $\lambda$.
+
+This also argues for a dark halo, as otherwise the disk would
+not have time to form.  Without a halo, $L$ and $M$ remain
+fixed as the disk moves in.  The radius must decrease by $100\times$
+for $E$ to increase proportionally by the same amount.
+Disk material near the Sun would need to originate $800~\kpc$
+from the center, but $M(<R)$ would lie interior to the Sun's orbit.
+The orbital period of the Sun would be $1000\times$ longer than
+it's observed to be ($240~\Gyr$).  It would take many times the
+age of the universe to make the disk.
+
+Since the milky way has a large DM halo, the gas in the MW disk
+originates from a radius closer by a factor $M_d/M_{DM}$. The
+decrease in size is only a factor of 10.  Shrinking at
+$200~\km~\s^{-1}$ from a radius $80~\kpc$, the disk could
+have formed in $\lesssim2~\Gyr$.
+
+
+
+
+\end{document}
