@@ -65,7 +65,107 @@ decrease in size is only a factor of 10.  Shrinking at
 $200~\km~\s^{-1}$ from a radius $80~\kpc$, the disk could
 have formed in $\lesssim2~\Gyr$.
 
+\section{Jeans Mass}
 
+The potential energy of a uniform sphere of radius $r$ and
+density $\rho$ is
+\begin{equation}
+PE \equiv -\frac{1}{2}\int \rho(\vx)\Phi(\vx)d^3\vx \approx - \frac{16\pi^2}{15}G\rho^2 r^5.
+\end{equation}
+\noindent
+The kinetic energy of such a sphere made of gas with sound
+speed $c_s$ is
+\begin{equation}
+KE \approx \frac{3c_s^2}{2}\frac{4\pi r^3}{3}\rho.
+\end{equation}
+In virial equilibrium, we have $|PE| = 2 KE$.  The
+cloud's thermal motions couldn't support its weight if
+the $KE$ is less than this, and cloud would collapse.
+This always happens if the cloud is big enough!  In
+fact $KE < |PE|/2$ when
+\begin{equation}
+2r \gtrsim \sqrt{\frac{15}{\pi}}\sqrt{\frac{c_s^2}{G\rho}}\approx\lambda_J,~\mathrm{where}~\lambda_J\equiv c_s\sqrt{\frac{\pi}{G\rho}}.
+\end{equation}
+\noindent
+We call $\lambda_J$ the {\it Jeans length}.  If the cloud
+is larger than $\lambda_J$, then perturbations or slight compressions
+will cause the cloud to collapse under gravity.
 
+\subsection{Early Universe}
+Early in the radiation-dominated era, the
+density $\rho_r = a_B T^4 / c^2$ is low and the
+pressure is high, with $c_s = c/\sqrt{3}$.  We
+find that
+\begin{equation}
+\lambda_J = c^2\left(\frac{\pi}{3Ga_BT^4}\right)^{1/2} \propto T^{-2}.
+\end{equation}
+\noindent
+The {\it Jeans mass} $M_J$ is the amount of matter in a sphere of 
+diameter $\lambda_J$:
+\begin{equation}
+M_J \equiv \frac{\pi}{6} \lambda_J^3 \rho_m,
+\end{equation}
+\noindent
+where $\rho_m$ refers only to the matter density.
+During radiation-domination, we have $M_J\propto\rho_m T^{-6}$,
+with $T\propto 1/R(t)$ and $\rho_m \propto R^{-3}$.  The
+Jeans mass then grows as $M_J \propto R^3(t)$.
 
+At matter-radiation equality, the temperature is $T_{eq}$ and
+the matter density is $\rho_m = \rho_r = a_B T_{eq}^4/c^2$.
+Radiation still provides most of the pressure and
+$p\approx c^2\rho_r/3$.  The jeans mass is
+\begin{equation}
+M_J(t_{eq}) = \frac{\pi}{6}\rho_m(t_{eq})\left(\frac{\pi c^4/3}{Ga_B T_{eq}^4}\right)^{3/2} = \frac{\pi^{5/2}}{18\sqrt{3}}\frac{c^4}{G^{3/2}a_B^{1/2}}\frac{1}{T_{eq}^2}.
+\end{equation}
+\noindent
+If equality occurs at $1+z_{eq} = 24000\Omega_m h^{2}$, then
+\begin{equation}
+M_(T_{eq}) = 3.6 \times 10^{16}(\Omega_m h^2)^{-2}~\Msun
+\end{equation}
+\noindent
+which is $\sim 100\times$ the mass of the Virgo cluster, and
+today would require the mean density in a volume $50/(\Omega_m h^2)~\Mpc$
+on a side.
+
+\subsection{After Matter-Radiation Equality}
+While the gas in the early universe is still ionized, after
+matter-radiation equality the density is $\rho\approx\rho_m$
+and the pressure is still $p\approx c^2 \rho_r/3$.
+If a small volume is squeezed adiabatically, the changes
+in the matter and radiation densities are
+\begin{equation}
+4 \Delta \rho_m / \rho_m = 3 \Delta \rho_r/\rho_r.
+\end{equation}
+\noindent
+The sound speed is then
+\begin{equation}
+c_s^2 = \frac{\partial p}{\partial \rho} = \frac{c^2 \Delta\rho_r/3}{\Delta \rho_m} = \frac{c^2}{3}\frac{4\rho_r}{3\rho_m}\propto \frac{1}{R(t)},~\mathrm{so}~\lambda_J = c_s\sqrt{\frac{\pi}{G\rho_m}}\propto R(t).
+\end{equation}
+\noindent
+The Jeans mass remains constant in this era.
+
+\subsection{Recombination}
+By $z\sim1100$ the temperature declined to $T_{rec}\sim 3000~\K$ and
+electrons could remain bound to protons as hydrogen atoms.  At this
+point, the opacity of the universe declined dramatically and photons
+could free-stream, becoming uncoupled to the matter.  The operative
+pressure then became the pressure of the gas
+\begin{equation}
+c_s(t_{rec})\approx\sqrt{\frac{k_BT}{m_p}}\approx 5~\km~\s^{-1}.
+\end{equation}
+\noindent
+The Jeans mass became
+\begin{equation}
+M_J = \frac{\pi}{6} \rho_m\left(\frac{\pi k_B T_{rec}}{G\rho_m m_p}\right)^{3/2} \approx 5\times 10^4 (\Omega_m h^2)^{-1/2}~\Msun
+\end{equation}
+\noindent
+which is about twelve orders of magnitude less than before
+matter-radiation equality.
+
+During matter-domination, overdensities grow as $\delta(t)\propto R(t)$, such
+that to reach $\delta\sim1$ by the present day we would need that at $z_{rec}\approx1100$
+the overdensity would need to be $\delta\gtrsim10^{-3}$.  But the typical
+flucutations in the CMB are $\sim 2\times 10^{-5}$.  How can we possibly generate
+structure by the present day?  We need dark matter!
 \end{document}
