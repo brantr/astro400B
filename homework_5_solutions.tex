@@ -1,0 +1,197 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Homework \#5}
+\author{Please Show Your Work for Full Credit}
+\date{Due April 30, 2015 by 9:35am}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+\section{Sparke \& Gallagher Problem 8.7}
+
+The quantity $\ave{\Delta_k^2}^{1/2}$ gives the expected fractional deviation
+$|\delta(\vx)|$ from the mean density in an overdense of diffuse region of
+size $1/k$.  Write $\delta(\vx)$ and $\Delta \Phi(\vx)$ as Fourier transforms and
+use Poisson's equation
+\begin{equation}
+\nabla^2 \Phi(\vx) = 4\pi G \rho(\vx)
+\end{equation}
+\noindent
+to show that these lumps and voids cause fluctuations $\Delta\Phi_k$ in the
+gravitational potential, where $k^2|\Delta\Phi_k|\sim4\pi G\bar{\rho}\ave{\Delta_k^2}^{1/2}$.
+Show that, when $P(k)\propto k$, the {\it Harrison-Zel'dovich} spectrum, $|\Phi_k|$ does
+not depend on $k$: the potential is equally `rippled' on all spatial scales.
+
+\subsection{Solution}
+
+We write the density as
+\begin{equation}
+\rho = \bar{\rho}[1 + \delta]
+\end{equation}
+\noindent
+and the potential as
+\begin{equation}
+\Phi = \bar{\Phi} + \Delta \Phi.
+\end{equation}
+\noindent
+The Poisson equation gives us
+\begin{eqnarray}
+\nabla^2 \Phi &=& 4\pi G \rho\\
+\nabla^2 \bar{\Phi} + \nabla^2 \Delta \Phi &=& 4\pi G \bar{\rho}[1 + \delta].
+\end{eqnarray}
+\noindent
+Defining $\nabla^2{} \bar{\Phi} = 4 \pi G \bar{\rho}$, we then have
+\begin{equation}
+\label{eqn:fpoisson}
+\nabla^2 \Delta \Phi = 4\pi G \bar{\rho} \delta.
+\end{equation}
+\noindent
+Let's write $\Delta \Phi$ and $\delta$ as Fourier transforms, meaning
+\begin{equation}
+\Delta \Phi = \int d^3 k \Delta \Phi_k e^{i \vk \cdot \vx}
+\end{equation}
+\noindent
+and
+\begin{equation}
+\delta = \int d^3 k \tilde{\delta}(\vk) e^{i \vk \cdot \vx}.
+\end{equation}
+\noindent
+Applying Equation \ref{eqn:fpoisson} we have
+\begin{eqnarray}
+\nabla^2 \Delta \Phi &=& 4\pi G \bar{\rho} \delta \\
+\nabla^2 \int d^3 k \Delta \Phi_k e^{i \vk \cdot \vx} &=& 4\pi G \bar{\rho}\int d^3 k \tilde{\delta}(\vk) e^{i \vk \cdot \vx} \\
+- \int d^3 k k^2 \Delta \Phi_k e^{i \vk \cdot \vx}&=& 4\pi G \bar{\rho}\int d^3 k \tilde{\delta}(\vk) e^{i \vk \cdot \vx} \\
+k^2 |\Delta \Phi_k| &=& 4\pi G \bar{\rho} |\tilde{\delta}|.
+\end{eqnarray}
+\noindent
+But since $\ave{\Delta_k}^{1/2} \sim | \tilde{\delta} |$, we have
+\begin{equation}
+k^2 |\Delta \Phi_k| \sim 4\pi G \bar{\rho} |\ave{\Delta_k}^{1/2}|.
+\end{equation}
+
+
+If $P(k) \propto k$, and $\ave{\Delta_k^2}^{1/2} \propto (k^3 P(k))^{1/2} \propto k^2$, then $|\Delta \Phi_k| \propto k^2 \times k^{-2} \propto~\mathrm{const}$.  Note that the total $\Phi_k$, the Fourier transform of the total potential $\Phi = \bar{\Phi} + \Delta \Phi$ can have no additional $k$ dependence since $\bar{\rho}$ is a constant.
+
+
+\section{Sparke \& Gallagher Problem 8.9}
+
+By substituting into the equation
+\begin{equation}
+\ddot{R}(t) = -\frac{4\pi G}{3} R(t)\left[ \rho(t) + \frac{3p(t)}{c^2}\right]
+\end{equation}
+\noindent
+show that, when vacuum energy dominates the expansion, we have $R(t) \propto \exp(t\sqrt{\Lambda/3})$.
+
+\subsection{Solution}
+
+The energy density of vacuum energy is 
+\begin{equation}
+\rho_{\Lambda} = \frac{\Lambda}{8\pi G}.
+\end{equation}
+\noindent
+The pressure of vacuum energy is
+\begin{equation}
+p_{\Lambda} = -\frac{\Lambda c^2}{8\pi G}
+\end{equation}
+\noindent
+The Friedmann equation then reads
+\begin{equation}
+\ddot{R}(t) = -\frac{4\pi G}{3} R(t)\left[ \frac{\Lambda}{8\pi G} - \frac{3}{c^2}\frac{\Lambda c^2}{8\pi G}\right] = R(t) \frac{\Lambda}{3}.
+\end{equation}
+\noindent
+Multiplying both sides by $\dot{R}(t)/2$, we have
+\begin{equation}
+\frac{1}{2}\dot{R}(t)\ddot{R}(t) = \frac{1}{2} \dot{R}(t) R(t) \frac{\Lambda}{3}.
+\end{equation}
+\noindent
+Integrating, we have
+\begin{eqnarray}
+\dot{R}^2(t) &=& R^2(t)\frac{\Lambda}{3} \\
+\frac{dR}{dt} &=& R\sqrt{\frac{\Lambda}{3}}\\
+\frac{dR}{R} &=&dt\sqrt{\frac{\Lambda}{3}}\\
+\therefore R(t) &\propto& \exp\left[t\sqrt{\frac{\Lambda}{3}}\right].
+\end{eqnarray}
+
+\section{Sparke \& Gallagher Problem 8.11}
+
+Blackbody radiation and relativistic particles provide most of the
+energy density at $t\ll t_{eq}$. Show that the equation
+\begin{equation}
+H^2(t) = H_0^2[\Omega_r(1+z)^4 + \Omega_m(1+z)^3 + (1 -\Omega_{tot})(1+z)^2 + \Omega_{\Lambda}]
+\end{equation}
+\noindent
+then implies that $H(t)=1/(2t)$. Early on, the leftmost term of the
+equation
+\begin{equation}
+-\frac{kc^2}{R^2(t_0)} = H_0^2(1-\Omega_{tot}) = a^2(t)\left[H^2(t) - \frac{8\pi G}{3} \rho(t)\right]
+\end{equation}
+\noindent
+is tiny, so $H^2(t)\approx8\pi G\rho(t)/3$: show that the temperature $T(t)$ is
+given by
+\begin{equation}
+T = \left(\frac{3c^2}{32 \pi G a_B t^2}\right)^{1/4},
+\end{equation}
+where $a_B = 7.56\times 10^{-16}~\mathrm{J}~\mathrm{m}^{-3}~\K^{-4}$ is the blackbody constant.
+
+\subsection{Solution}
+
+In the radiation-dominated era, we have
+\begin{eqnarray}
+H^{2}(t) &=& H_0^2\left[\Omega_r(1+z)^4\right]\\
+\left(\frac{\dot{a}}{a}\right)^2&\propto& a^{-4} \\
+\dot{a}/a &\propto& a^{-2}\\
+\dot{a} &\propto& a^{-1}\\
+a \times da &\propto& dt\\
+a^2 / 2 &\propto& t\\
+\therefore R(t) \propto a &\propto& t^{1/2},~\mathrm{and}~H(t)\propto1/t.
+\end{eqnarray}
+\noindent
+Evaluating $H(t)$, we have
+\begin{equation}
+H(t) = \frac{\dot{a}}{a} = \frac{\frac{d}{dt} a}{a} = \frac{\frac{1}{2}t^{-1/2}}{t^{1/2}} = \frac{1}{2t}.
+\end{equation}
+\noindent
+Early on we have
+\begin{equation}
+H^{2}(t) = \frac{1}{4t^2} = \frac{8\pi G \rho}{3},
+\end{equation}
+\noindent
+but the energy density of black body radiation is $\rho c^2 = a_B T^{4}$.
+We then have
+\begin{eqnarray}
+\frac{1}{4t^2} = \frac{8\pi G \rho}{3} &=& \frac{8\pi G a_B T^4}{3c^2}\\
+T^{4} &=& \frac{3 c^2}{32\pi G a_B t^2}\\
+\therefore T &=& \left(\frac{3 c^2}{32\pi G a_B t^2}\right)^{1/4}.
+\end{eqnarray}
+
+
+
+\section{Sparke \& Gallagher Problem 8.13}
+
+Show that, when cool matter accounts for most of the energy density, and the universe
+is flat with $k=0$, we have
+\begin{equation}
+\dot{a}\propto a^{-1/2},~\mathrm{and}~a(t)\propto t^{2/3}.
+\end{equation}
+
+\subsection{Solution}
+During matter domination, we have
+\begin{eqnarray}
+H^2(t) \propto (1+z)^3 &\propto& a^{-3}\\
+\dot{a}^2 &\propto& a^{-1}\\
+\therefore \dot{a} &\propto& a^{-1/2}\\
+\mathrm{and}~ a^{1/2} da &\propto& dt\\
+a^{3/2} &\propto& t\\
+\therefore a&\propto& t^{2/3}.
+\end{eqnarray}
+\end{document}
