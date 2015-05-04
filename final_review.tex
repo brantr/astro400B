@@ -1,0 +1,843 @@
+\documentclass[]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amssymb}
+
+%title material
+\title{Astronomy 400B Final Review}
+\author{Brant Robertson}
+\date{May, 2015}
+
+
+%include latex definitions
+\input{astro400B_definitions.tex}
+
+%begin the document
+\begin{document}
+
+%make the title, goes after document begins
+\maketitle
+
+%first section
+\section{Letcure 1: Stellar Mass, Luminosity, Flux, Radius, and Temperature}
+Stellar masses are often expressed in terms of a {\it solar mass} ($\Msun$; mass of the Sun)
+\begin{equation}
+1\Msun = 1.9891\times10^{33}\g
+\end{equation}
+\noindent
+in grams ($\g$). The most massive stars are $\approx100\Msun$ while the
+least massive stars are $\approx0.075\Msun$.
+
+Stellar luminosities (ergs of energy emitted per second; $1\erg = 1~\g~\cm^{2}~\s^{-2}$) are also 
+often expressed in terms of the total (bolometric) {\it solar luminosity} ($\Lsun$; luminosity of the Sun)
+\begin{equation}
+1\Lsun = 3.846\times10^{33} \erg~\s^{-1}
+\end{equation}
+\noindent
+Stars range in luminosity from $10^{6}\Lsun$ to less than $10^{-4}\Lsun$.
+
+The {\it flux} $F$ is the energy per unit second per unit area ($\erg~\s^{-1}~\cm^{-2}$)
+that is received from an object a distance $d$ away, and is
+given by the {\it inverse square law}
+\begin{equation}
+\label{eqn:inverse_square}
+F = \frac{L}{4\pi d^{2}}.
+\end{equation}
+\noindent
+
+The {\it flux density} ($\Fnu \equiv dF/d\nu$) of an object is best measured in {\it janskys}
+\begin{equation}
+1\Jy = 10^{-23} \erg~\s^{-1}~\cm^{-2}~\Hz^{-1}.
+\end{equation}
+\noindent
+Note that the {\it hertz} ($1\Hz = 1 s^{-1}$) is the unit of frequency $\nu$.
+Astronomers will also use a flux density ($\Flambda = dF/d\lambda$) 
+defined relative to wavelength. Typically, the units of $\Flambda$
+are in $\erg~\cm^{-2}~\s^{-1}~\Ang^{-1}$, where $\Ang$ is the {\it angstrom}
+($1\Ang = 10^{-8}\cm$). The wavelength and frequency of light are related by
+$c = \nu \lambda$, and the two flux densities are therefore 
+related by $\Flambda = (c/\lambda^2)\Fnu$.
+The total flux is related to the flux density by
+\begin{equation}
+F = \int \Fnu d \nu = \int \Flambda d\lambda.
+\end{equation}
+\noindent
+If the distance of an object is known, astronomers will also use the term
+{\it luminosity density} (e.g., $\Lnu = dL/d\nu$).
+
+The luminosity, radius, and temperature of an object are related. For stellar
+objects, we often use the {\it solar radius} ($\Rsun$) to express sizes
+\begin{equation}
+1\Rsun = 6.995 \times 10^{10} \cm
+\end{equation}
+\noindent
+If the luminosity $L$ and radius $R$ of an object are known, we can define
+the effective temperature $T$ in {\it Kelvin} ($K$)
+of an object through the {\it Stefan-Boltzmann Law}
+\begin{equation}
+L = 4\pi R^{2}\sigmaSB T^{4}
+\end{equation}
+\noindent
+where the {\it Stefan-Boltzmann constant} is
+\begin{equation}
+\sigmaSB = 5.670373\times10^{-5} \erg~\cm^{-2}~\s^{-1}~\K^{-4}.
+\end{equation}
+The Stefan-Boltzmann constant can be computed theoretically in
+terms of the speed of light, the {\it Boltzmann constant}
+\begin{equation}
+\kB = 1.380658\times10^{-16} \erg~\K^{-1}
+\end{equation}
+\noindent
+and the {\it Planck constant}
+\begin{equation}
+h = 6.6260755\times10^{-27}\erg~\s,
+\end{equation}
+\noindent
+which gives the definition
+\begin{equation}
+\sigmaSB \equiv \frac{2\pi^5 \kB^4}{15 h^3 c^2}.
+\end{equation}
+
+The effective temperature is typically a measure of the temperature
+of the star at its {\it photosphere}, or the radius where the optical
+depth of the star's atmosphere is $\tau\approx1$ and it becomes opaque. 
+For the Sun,
+$T\approx5780\K$. The temperature is also related to the wavelength
+at the peak of the black body curve via {\it Wien's Displacement Law}
+\begin{equation}
+\lambda_{\mathrm{max}} = \frac{2.897756\times10^{7} \Ang~\K}{T},
+\end{equation}
+which gives $\lambda_{\mathrm{max}}\approx5000\Ang$ (yellow)
+for the Sun.
+
+
+\section{Lecture 2: Extinction}
+
+Dust absorbs and scatters optical light, and we can describe
+the rate at which light is absorbed as it travels along the
+$x$ direction through the differential relation
+\begin{equation}
+\frac{d\Flambda}{dx} = - \kappa_{\lambda} \Flambda
+\end{equation}
+\noindent
+where $\kappa_{\lambda}$ is the {\it opacity}. This relation
+has a simple solution
+\begin{equation}
+\Flambda(x) = \Flambda(x=0)\exp\left(-\int_{0}^{x} \kappa_{\lambda} dx'\right)
+\end{equation}
+\noindent
+where we can define the optical depth
+\begin{equation}
+\tau = \int_{0}^{x} \kappa_{\lambda} dx'
+\end{equation}
+\noindent
+In the limit of pure absorption, a system is {\it optically thick}
+when $\tau = 1$ and $\Flambda = \Flambda(x=0)/e$. For
+optical light, interstellar dust has approximately $\kappa_{\lambda}\propto1/\lambda$.
+
+\section{Lecture 3: Galaxy Luminosity Function}
+
+We can count the number density of galaxies as a function of their luminosity,
+and we appropriately call this distribution the {\it luminosity function}. The
+galaxy luminosity function has been found to have a shape close to a parameterized
+form called the {\it Schechter} function (after Paul Schechter).  The Schechter
+function provides the number density of galaxies in a differential luminosity bin
+$dL$ as
+\begin{equation}
+\label{eqn:schechter_function_luminosity}
+\Phi(L)dL = \phi_{\star} \left(\frac{L}{L_{\star}}\right)^{\alpha}\exp\left(-\frac{L}{L_{\star}}\right)\frac{dL}{L_{\star}}
+\end{equation}
+\noindent
+where $L_{\star}$ is a characteristic luminosity of galaxies and $\phi_{\star}$ is 
+a typical abundance.  Below $L_\star$, the luminosity function is a power law, and
+above $L_\star$ the abundance of galaxies drops exponentially. Sometimes, astronomers
+will use $1+\alpha$ as the power law exponent, so beware!
+
+{\bf See Figure 1.16 of Sparke and Gallagher.}
+
+It happens to be the case that $L_{\star}\approx2\times10^{10}\Lsun$, which is close
+to the luminosity of the Milky Way. The typical abundance of galaxies is $\phi_\star\approx7\times10^{-3}\Mpc^{-3}$. The faint-end slope of the 2DF luminosity function is $\alpha=-0.46$.
+Defined as in Equation \ref{eqn:schechter_function_luminosity}, the number of galaxies
+diverges as $L\to0$ if $\alpha<-1$.
+
+The total luminosity density provided by galaxies can be found by integrating 
+Equation \ref{eqn:schechter_function_luminosity} as
+\begin{equation}
+\rho_{L} = \int_{0}^{\infty} \Phi(L) L dL = \phi_\star L_{\star} \Gamma(\alpha + 2)
+\end{equation}
+\noindent
+where $\Gamma$ is the Gamma function, which for an integer $n$ is $\Gamma(n) = (n-1)!$.
+It turns out that $\Gamma(1.5)\approx0.886227$, so we have that 
+$\rho_{L}\approx1.25\times10^{8}\Lsun\Mpc^{-3}$.
+
+For a partial integral, we have
+\begin{equation}
+\rho_{L}(L>L_{\mathrm{min}}) = \int_{L_{\mathrm{min}}}^{\infty} \Phi(L) L dL = \phi_\star L_{\star} \Gamma(\alpha + 2, L_{\mathrm{min}}/L_{\star}),
+\end{equation}
+\noindent
+where $\Gamma(a,x)$ is the incomplete gamma function.
+
+\section{Lecture 4: Recombination and the Ionization State of the ISM}
+
+Ionized hydrogen (proton plus electron) can undergo a recombination
+to form neutral hydrogen. The rate of this process depends on the
+properties of the ionized gas.  We can write the recombination rate
+$dn_e/dt$ that changes the number density $n_e$ of free electrons as
+\begin{equation}
+\frac{d n_{e}}{d t} = n_{e}^2 \alpha(T_e)
+\end{equation}
+\noindent
+where $T_e$ is the temperature of the gas and $\alpha(T_e)$ is 
+the ``recombination coefficient''
+\begin{equation}
+\alpha(T_e) \approx 2 \times 10^{-13} \left( \frac{T_e}{10^4~\K}\right)^{-3/4}~\cm^{3}~\s^{-1}.
+\end{equation}
+\noindent
+There's a lot hidden in the coefficient!
+
+We can also define the recombination time $t_{rec}$ that characterizes
+the timescale over which the ionized gas will significantly increase
+its neutrality.  The recombination time is given by
+\begin{equation}
+t_{rec} = \frac{n_e}{|dn_e/dt|} = \frac{1}{n_e \alpha(T_e)} \approx 1500~\yr \times \left(\frac{T_e}{10^{4}K}\right)^{3/4}\left(\frac{100~\cm^{-3}}{n_e}\right)
+\end{equation}
+
+In HII regions, $t_{rec}$ is a few thousand years.  In the diffuse ionized ISM, the recombination time is a few million years.
+
+\subsection{Cooling Rate and Time}
+
+Gas has an internal thermal energy of $E \propto nT$. If the gas radiates this thermal energy with an energy $L$, the
+cooling timescale for the gas is $t_{cool} \propto nT/L$. For optically thin gas, we can write
+\begin{equation}
+L = n^{2} \Lambda(T)
+\end{equation}
+\noindent
+and
+\begin{equation}
+t_{cool}  \propto T/[n\Lambda(T)].
+\end{equation}
+The quantity $\Lambda(T)$ is called the ``cooling function'' and depends only on temperature.
+
+{\bf See Table 2.5 and Figure 2.25 of Sparke and Gallagher.}
+
+At high temperatures $T>10^{7}~\K$, free-free cooling dominates such that $\Lambda(T) \propto T^{1/2}$
+and $t_{cool} \propto \sqrt{T}/n$.
+
+
+
+\section{Lecture 5: Poisson's Equation}
+
+Take the potential and apply the Laplacian operator 
+\begin{equation}
+\nabla^{2} \equiv \nabla \cdot \nabla = \left[\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}+\frac{\partial^{2}}{\partial z^{2}}\right]
+\end{equation}
+\noindent
+to both sides.  Remembering that the operator acts on $\vx$ and not $\vx'$, we have
+\begin{equation}
+\label{eqn:pois_init}
+\nabla^{2} \Phi(\vx) = - \int G \rho(\vx') \nabla^{2} \left(\frac{1}{|\vx-\vx'|}\right)d^{3}\vx'.
+\end{equation}
+\noindent
+We can evaluate this by noting that
+\begin{equation}
+\label{eqn:nabla}
+\nabla\left(\frac{1}{|\vx - \vx'|}\right) = -\frac{\vx-\vx'}{|\vx-\vx'|^3}, \nabla^{2}\left(\frac{1}{|\vx - \vx'|}\right) = 0.
+\end{equation}
+\noindent
+So we conclude that outside of a very small region around $\vx$, $\nabla^{2}\Phi(\vx)=0$.
+Let's take a spherical region $S(\epsilon)$ of radius $\epsilon$ centered on $\vx$. In proceeding, let's 
+note that 
+\begin{equation}
+\nabla^{2} f(|\vx-\vx'|) = \nabla_{\vx'}^{2} f(|\vx-\vx'|)
+\end{equation}
+\noindent
+for any function $f(|\vx - \vx'|)$. If we take $\epsilon$ to be small enough such 
+that $\rho(\vx)\approx$ a constant, then we can write
+\begin{eqnarray}
+\label{eqn:pois_med}
+\nabla^{2}\Phi(\vx) &\approx& - G\rho(\vx) \int_{S(\epsilon)} \nabla^2 \left( \frac{1}{|\vx - \vx'|} \right)d^{3}\vx' \nonumber \\
+&=& - G \rho(\vx)  \int_{S(\epsilon)} \nabla_{\vx'}^2 \left( \frac{1}{|\vx - \vx'|} \right)d V'.
+\end{eqnarray}
+\noindent
+Now we get to use the {\it divergence} theorem
+\begin{equation}
+\int \nabla^{2} f dV = \oint \nabla f \cdot dS,
+\end{equation}
+\noindent
+which allows us to write Equation \ref{eqn:pois_med} as
+\begin{equation}
+- G \rho(\vx)  \int_{S(\epsilon)} \nabla_{\vx'}^2 \left( \frac{1}{|\vx - \vx'|} \right)d V' = - G \rho(\vx) \oint_{S(\epsilon)} \nabla_{\vx'}\left(\frac{1}{|\vx-\vx'|}\right) \cdot d\vS'
+\end{equation}
+\noindent
+By applying Equation \ref{eqn:nabla} and the identity $\nabla_{\vx'} f = -\nabla f$, we have
+\begin{eqnarray}
+- G \rho(\vx) \oint_{S(\epsilon)} \nabla_{\vx'}\left(\frac{1}{|\vx-\vx'|}\right) \cdot d\vS' &=&
+-G \rho(\vx) \oint_{S(\epsilon)} \left(\frac{\vx-\vx'}{|\vx-\vx'|^{3}}\right) \cdot d\vS' \nonumber \\
+&=& 4 \pi G \rho(\vx)
+\end{eqnarray}
+
+
+
+
+
+
+\section{Lecture 6: Distribution Function}
+
+The {\it distribution function} $f(\vx,\vv,t)$ gives the probability density
+in six-dimensional {\it phase space} $(\vx,\vv)$ of having an object
+in the volume $d\vx d\vv$.  The number density $n(\vx,t)$ of objects is the
+volume integral of the distribution function
+\begin{equation}
+n(\vx,t) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(\vx,\vv,t) dv_{x}dv_y,dv_z.
+\end{equation}
+\noindent
+We can use this expression to define moments of the velocity distribution, such as
+the average velocity 
+\begin{equation}
+\ave{\vv(\vx,t)} = \frac{1}{n(\vx,t)} \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} \vv f(\vx,\vv,t) dv_{x}dv_y,dv_z.
+\end{equation}
+
+For a collisionless system where objects cannot be created or destroyed, the number density of objects
+in a given volume will follow the continuity equation
+\begin{equation}
+\label{eqn:continuity}
+\frac{\partial n}{\partial t} + \frac{\partial (nv)}{\partial x} = 0.
+\end{equation}
+\noindent
+This equation simply describes the mass conservation of objects, such that
+the time rate of change of the number density is balanced by the advection of
+spatial gradients in the number density.
+
+The {\it collisionless Boltzmann equation} that describes the probability density 
+of objects in phase space is more complicated because it must describe a time variation
+in the velocity as well as the spatial coordinates.  In one dimension, we have that
+\begin{equation}
+\frac{\partial f}{\partial t} + v\frac{\partial f}{\partial x} + \frac{dv}{dt}(x,v,t) \cdot \frac{\partial f}{\partial v} = 0
+\end{equation}
+\noindent
+The acceleration of an object will only depend on position in a background potential, so
+we have that $dv/dt = -\partial \Phi/\partial x$, and
+\begin{equation}
+\label{eqn:boltzmann}
+\frac{\partial f}{\partial t} + v \frac{\partial f}{\partial x} - \frac{\partial \Phi}{\partial x}(x,t)\cdot \frac{\partial f}{\partial v} = 0.
+\end{equation}
+\noindent
+In three dimensions, we can write
+\begin{equation}
+\label{eqn:bvec}
+\frac{\partial f(\vx, \vv, t)}{\partial t} + \vv \cdot \nabla f - \nabla \Phi \cdot \frac{\partial f}{\partial \vv} = 0.
+\end{equation}
+\noindent
+We usually don't deal with this equation in this form, but often will take moments with respect to
+e.g., velocity
+\begin{equation}
+\frac{\partial n(x,t)}{\partial t} + \frac{\partial}{\partial x}[n(x,t)\ave{v(x,t)}] - \frac{\partial \Phi}{\partial x}(x,t)[f]_{-\infty}^{\infty} = 0
+\end{equation}
+\noindent
+The last term will be zero if $f$ is well behaved, and we get back Equation \ref{eqn:continuity}.
+
+If we integrate Equation \ref{eqn:boltzmann} multiplied by $v$, we instead find
+\begin{equation}
+\frac{\partial}{\partial t}[n(x,t)\ave{v(x,t)}] + \frac{\partial}{\partial x}[n(x,t)\ave{v^2(x,t)}] = - n(x,t) \frac{\partial \Phi}{\partial x}
+\end{equation}
+\noindent
+If we define the velocity dispersion as
+\begin{equation}
+\ave{v^2(x,t)} = \ave{v(x,t)}^2 + \sigma^2,
+\end{equation}
+\noindent
+apply this definition, and then divide by $n(x,t)$, we have
+\begin{equation}
+\label{eqn:v_ave}
+\frac{d\ave{v}}{dt} + \ave{v}\frac{\partial \ave{v}}{\partial x} = -\frac{\partial \Phi}{\partial x} - \frac{1}{n}\frac{\partial}{\partial x}[n\sigma^2(x,t)].
+\end{equation}
+
+
+
+\section{Lecture 7: A Simple Example of the Tidal Limit}
+
+Consider the satellite to have mass $m$ and the main galaxy to have mass $M$, separated by distance $D$,
+orbiting the center of mass $C$ with angular speed $\Omega$.  Take $x$ as the coordinate
+along the ray between $m$ toward $M$.  The center of mass is then at $x=DM/(M+m)$.  The
+effective potential is then
+\begin{equation}
+\Phieff(x) = -\frac{GM}{|D-x|} -\frac{Gm}{|x|} - \frac{\Omega^2}{2}\left(x-\frac{DM}{M+m}\right)^2.
+\end{equation}
+
+The effective potential has three maxima known as the {\it Lagrange points}, [$L_1$, $L_2$, $L_3$].  Let's find them by setting
+the derivative of the effective potential to zero.
+\begin{equation}
+\label{eqn:find_phieff_max}
+\frac{\partial\Phieff}{\partial x} = 0 = -\frac{GM}{(D-x)^2} \pm \frac{Gm}{x^2} - \Omega^2\left(x-\frac{DM}{M+m}\right)
+\end{equation}
+\noindent
+The acceleration $\Omega^2DM/(M+m)$ of $m$ as it circles $C$ owes to the gravitational
+attraction of $M$. We can then write
+\begin{equation}
+\Omega\frac{DM}{M+m}=\frac{GM}{D^2},~~\mathrm{so}~\Omega^2=\frac{G(M+m)}{D^3}
+\end{equation}
+\noindent
+If the satellite is much less massive than the main galaxy, $L_1$ and $L_2$ will lie close to $m$.
+Substitute $\Omega^2$ into Equation \ref{eqn:find_phieff_max}, and expand in powers of $x/D$ to find
+\begin{equation}
+0 \approx -\frac{GM}{D^2} - 2\frac{GM}{D^3}x \pm \frac{Gm}{x^2} - \frac{G(M+m)}{D^3}\left(x-\frac{DM}{M+m}\right)
+\end{equation}
+\noindent
+At the Lagrange points $L_1$ and $L_2$ we have
+\begin{equation}
+x = \pm r_J, ~~\mathrm{where}~r_J = D\left(\frac{m}{3M+m}\right)^{1/3}
+\end{equation}
+\noindent
+Stars that cannot stray further from the satellite than $r_J$, the {\it Jacobi radius} or {\it Roche limit},
+will remain bound to it.  The radius $L_1$ is not where the gravitational force from the satellite and 
+main galaxy are the same, but where the effective potential has a minimum and lies further from the satellite.
+This radius is also where expanding stars lose mass to their companion.
+
+When $M\gg m$, then the mean density within $r_J$ is three times the mean density within $D$ of the main galaxy.
+A star orbiting the satellite near $r_J$ will have an orbital period comparable to the orbit period of the
+satellite around the main galaxy.
+
+When satellites are not on circular orbits, the relevant $r_J$ is determined at the pericenter. If the
+satellite is orbiting within the dark matter halo of the main galaxy, the relevant radius is
+\begin{equation}
+r_J = D\left[\frac{m}{2M(<D)}\right]^{1/3}
+\end{equation}
+where $M(<D)$ is the mass within D.
+
+What's the Jacobi radius of the LMC-Milky Way system? The LMC is at a distance of $\sim50\kpc$ where
+the speed of a circular orbit is about the same as it is at the solar circle, or about $\sim200\km~\s^{-1}$.
+The mass of the Milky Way within the LMC's orbit is about $5\times10^{11}\Msun$.  The LMC mass is about
+$10^{10}\Msun$, so we have
+\begin{equation}
+r_J\approx 50\kpc~\times~\left(\frac{10^{10}\Msun}{2\times5\times10^{11}\Msun}\right)^{1/3} \approx 11\kpc.
+\end{equation}
+The LMC disk lies within this radius, but the SMC is too far away to stay bound to the LMC.
+
+
+\section{Lecture 8: Rotation Curve}
+
+For a galaxy at a systemic velocity $V_{sys}$ inclined at an angle $i$ to face-on, the rotation curve we measure as a function of radial distance $R$ and azimuth $\phi$ is
+\begin{equation}
+V_r(R,i) = V_{sys} + V(R)\sin i \cos \phi
+\end{equation}
+\noindent
+so to determine $V(R)$ we must determine the inclination and perhaps determine an angular average over azimuth.
+
+In determining the rotation curve, we are often trying to weigh the galaxy.  This is straightforward to do in
+some limiting cases.
+
+For a thin exponential disk that supplies its own gravity, the rotation curve can be written in terms of Bessel
+functions as
+\begin{equation}
+V^2(R) = 4\pi G \Sigma_0 h_R y^2 [I_0(y) K_0(y) - I_1(y) K_1(y)]
+\end{equation}
+\noindent
+where $\Sigma_0$ is the central mass surface density, $y\equiv R/2h_R$,
+ and $I$ and $K$ are modified Bessel functions (mind the subscript!). We can
+relate this to the total disk mass $M_d = 2\pi\Sigma_0 h_R^2$, such that
+\begin{equation}
+V^2(R) = \frac{2GM_d}{h_R}f(y).
+\end{equation}
+
+Otherwise, if we examine the regions of a disk where the dark halo dominates the potential, than we can just use
+the radial force equation
+\begin{equation}
+\frac{V^2(R)}{R} = \frac{GM(<R)}{R^2}
+\end{equation}
+\noindent 
+to estimate the interior mass from the rotation curve.
+
+\section{Lecture 9: Fundamental Relations of Elliptical Galaxies}
+
+There is a correlation between elliptical galaxy luminosity and
+velocity dispersion called the Faber-Jackson relation
+\begin{equation}
+\frac{L_V}{2\times10^{10}\Lsun} \approx \left( \frac{\sigma}{200~\km~\s^{-1}}\right)^{4}.
+\end{equation}
+
+There is another relation called the {\it Fundamental Plane} that
+connects the effective radius, surface brightness within the effective
+radius, and velocity dispersion as
+\begin{equation}
+\Reff \propto \sigma^{1.2} I_{e}^{-0.8}.
+\end{equation}
+Note that expectations would suggest $\Reff \propto \sigma^2 I_{e}^{-1}$.
+
+\section{Lecture 10: Dynamical Friction}
+
+One of the most important phenomena in groups and clusters is
+{\it dynamical friction}, which is the process by which the
+galaxies in groups and clusters lose energy and angular momentum
+to the surrounding sea of dark matter and stars in the intragroup
+or intracluster medium. Dynamical friction causes galaxies to ``sink''
+to the central regions of the group or cluster and thereby be
+assimilated into the larger system.  So how does this process work?
+
+As with the impluse approximation we studied before, consider a
+{\it galaxy} of mass $M$ moving past a star (or clump of dark matter)
+with a mass $m$ at an impact parameter $b$.  During the passage, the
+galaxy has a change of velocity in the direction perpendicular to the
+direction motion of
+\begin{equation}
+\Delta V_{\perp} = \frac{2Gm}{bV}.
+\end{equation}
+\noindent
+This equation applies when the impact parameter $b$ is larger than the
+size of the galaxy with mass $M$, and when the velocity $V$ is large
+enough at separation $b$ such that $\Delta V_{\perp}\ll V$.  We then
+require that
+\begin{equation}
+b \gg \frac{2G(M+m)}{V^2} \equiv 2 r_s.
+\end{equation}
+\noindent
+Note this radius differs from the strong encounter radius we used
+previously because $M\ne m$ in this case.
+
+The perturber must obtain an equal and opposite momentum, so the
+total kinetic energy in the perpendicular motion becomes
+\begin{equation}
+\Delta KE_{\perp} = \frac{M}{2}\left(\frac{2Gm}{bV}\right)^2 + \frac{m}{2}\left(\frac{2GM}{bV}\right)^2 = \frac{2G^2mM(M+m)}{b^2 V^2}.
+\end{equation}
+\noindent
+The smaller object acquires most of the energy, which must be depleted from the motion by an amount $\Delta V_{\parallel}$ of the
+larger object.  Once the galaxy and the perturber are far away (and before the encounter) the kinetic energies 
+before and after the encounter must be the same.  We then have that
+\begin{equation}
+\frac{M}{2}V^2 = \Delta KE_{\perp} + \frac{M}{2}(V + \Delta V_{\parallel})^2 + \frac{m}{2}\left(\frac{M}{m} \Delta V_{\parallel} \right)^2
+\end{equation}
+\noindent
+If we take $\Delta V_{\parallel} \ll V$, then the terms proportional to $\Delta V_{\parallel}^2$ are very small and
+can be ignored.  We can then find the amount by which each perturber reduces the velocity of the galaxy with
+mass $M$ as
+\begin{equation}
+- \Delta V_{\parallel} \approx \frac{\Delta KE_{\perp}}{M V} = \frac{2G^2 m(M+m)}{b^2 V^3}.
+\end{equation}
+
+OK, now what if there are a number density per cubic parsec $n$ perturbers of mass $m$?  
+We then have to integrate through the cylinder of radius $b$ to find the total
+effect on the galaxy of mass $M$.  We find that
+\begin{equation}
+-\frac{dV}{dt} = \int_{b_{\mathrm{min}}}^{b_{\mathrm{max}}} n V \frac{2G^2 m (M+m)}{b^2 V^3} 2\pi b db = \frac{4\pi G^2(M+m)}{V^2} n m \ln \Lambda
+\end{equation}
+\noindent
+where $\Lambda\equiv b_{\mathrm{max}}/b_{\mathrm{min}}$.
+
+Some interesting things to note
+\begin{enumerate}
+\item The slower the galaxy $M$ moves, the larger its deceleration.
+\item If $V\ll\sigma$, where $\sigma$ is the velocity dispersion of perturbers, we find that $dV/dt\propto -V$.  This is the same as what happens to a parachutist.
+\item The net effect is to lower the total kinetic motions of the galaxies over time.
+Before the encounter, the kinetic energy of one of the galaxies is
+\begin{equation}
+E_0 = KE_0 + PE_0 = - KE_0
+\end{equation}
+\noindent
+since the potential energy is $ PE_0 = - 2KE_0$ in virial equilibrium.
+Dynamical friction increases the energy in random motions and the internal kinetic
+energy by $\Delta KE$.  After the system again reaches virial equilibrium,
+the kinetic energy is less than before
+\begin{equation}
+KE_1  = - (E_0 + \Delta KE) = KE_0 - \Delta KE
+\end{equation}
+\noindent
+Stars that gain the most kinetic energy are ejected.
+\item Groups have lower relative velocties, so the dynamical
+friction should operate more efficiently.
+\end{enumerate}
+
+
+
+\section{Lecture 10: Gravitational Lensing}
+
+Einstein predicted that light passing a distance $b$
+past a mass $M$ would be deflected by an angle
+\begin{equation}
+\label{eqn:alpha_grav_lens}
+\alpha \approx \frac{4GM}{bc^2} = \frac{2R_s}{b}
+\end{equation}
+\noindent
+where $R_s = 2 GM/c^2$ is the {\it Schwarzschild radius}.
+For the Sun, $R_s\sim3~\km$. The approximation
+holds only for small deflections $\alpha\ll1$.
+Note this is exactly twice the deflection determined by 
+the impluse approximation.
+
+{\bf Show figure 7.14 of SG.}
+
+Without the lense $L$, the object would appear at an angle
+$\beta = y/d_{S}$ as long as $d_{S} \gg y$.
+The light is bent by $\alpha$, so the object instead appears
+at an angle $\theta \approx x/d_S$ (for $d_S \gg x$).
+When the bending is small $x-y = \alpha d_{LS}$.
+The impact parameter in the lens plane is $b = \theta d_{L}$
+as long as $d_S \gg b$.
+
+If we divide Equation \ref{eqn:alpha_grav_lens} by $d_S$
+we find
+\begin{equation}
+\theta - \beta = \frac{\alpha d_{LS}}{d_S} = \frac{1}{\theta} \frac{4 GM}{c^2} \frac{d_{LS}}{d_L d_S} \equiv \frac{1}{\theta} \theta_E^2
+\end{equation}
+\noindent
+where $\theta_E$ is called the {\it Einstein radius}.
+We have a quadratic relation between the angular distance $\theta$ between
+$L$ and the object's position as
+\begin{equation}
+\theta^2 - \beta \theta - \theta_E^2 = 0,~\mathrm{so}~\theta_{\pm} = \frac{\beta \pm \sqrt{\beta^2 + 4 \theta_E^2}}{2}.
+\end{equation}
+\noindent
+A star directly behind the lense with $\beta=0$ will be seen as a circle
+on the sky with radius $\theta_E$.  When $\beta>0$, the image at $\theta_{+}$
+is further away from the lense with $\theta_{+}>\beta$ and is outside
+the Einstein radius with $\theta_{+}>\theta_E$ (these were the images
+seen in the Sun's lensing).  The image at $\theta_{-}$ is inverted, on
+the other side of the lens, and is within the Einstein radius.
+
+Stars in the disk plane of the Milky Way will lense each other.  We
+often cannot resolve the lense and the source separately, but we will
+see the magnification of the star -- we call this microlensing.
+
+Gravitational lensing leaves the surface brightness unchanged by increases
+the area of an extended source on the sky.  The increase of the apparent
+brightness is then just proportional to the increase in the area.
+
+{\bf Show figure 7.15 of SG.}
+
+Consider an annulus of width $S'$ centered on $L$ between
+radius $y$ and $y+\Delta y$.  An image $I$ of
+$S'$ occupies the same angle $\delta \Phi$ but the distance
+from the center is expanded or contracted as $x/y = \theta/\beta$
+while $\delta x/\delta y= d\theta/d\beta$.  The ratio of the areas
+is 
+\begin{equation}
+\frac{A_{\pm}(image)}{A(source)} = \left| \frac{\theta}{\beta}\frac{d\theta}{d\beta}\right| = \frac{1}{4}\left( \frac{\beta}{\sqrt{\beta^2 + 4 \theta_E^2}} + \frac{\sqrt{\beta^2 + 4 \theta_E^2}}{\beta}\pm 2 \right)
+\end{equation}
+\noindent
+The image at $\theta_{+}$ is always brighter than the source and is stretched in the
+tangential direction.  The closer image is dimmer unless
+\begin{equation}
+\beta^2 < (3-2\sqrt{2})\theta_E^2 / \sqrt{2}
+\end{equation}
+\noindent
+or
+\begin{equation}
+\beta \lesssim 0.348 \theta_E.
+\end{equation}
+
+
+
+
+\section{Lecture 11: Expansion History}
+
+The rate of expansion is determined by the gravitational effects
+of the energy densities it contains.  We can model the expansion
+using Newtonian physics first, and then use general relativity
+to revise for a more correct answer.
+
+Consider a sphere of radius $r$ at time $t$ when the 
+universe has a typical density $\rho(t)$, and assume
+$r$ is much less than any curvature radius in the 
+universe.  Assuming symmetry about $r=0$, the
+gravitational force at radius $r$ is just supplied by the
+mass within the sphere.  If the sphere
+is large enough that pressure forces are small, then
+the force on a object of mass $m$ at radius $r$ is
+\begin{equation}
+m \frac{d^2 r}{dt^2} = - \frac{G m M(<r)}{r^2} = - \frac{4\pi Gm}{3}\rho(t)r.
+\end{equation}
+\noindent
+The radius of the sphere of matter is expanding with the
+rest of the universe, so $r\propto R(t)$.  The mass of the
+cloud cancels, such that
+\begin{equation}
+\label{eqn:friedman_A}
+\ddot{R}(t) = - \frac{4\pi G}{3} \rho(t) R(t).
+\end{equation}
+\noindent
+The mass doesn't change, so $\rho(t) R(t)$ is a constant.
+We can multiply by $\dot{R}(t)$ to find
+\begin{equation}
+\frac{1}{2} \frac{d}{dt}[\dot{R}^2(t)] = - \frac{4 \pi G}{3} \frac{\rho(t_0)R^3(t_0)}{R^2(t)} \dot{R}(t)
+\end{equation}
+\noindent
+where $t_0$ is the present day.  We then integrate to find
+\begin{equation}
+\label{eqn:friedman_B}
+\dot{R}^2(t) = \frac{8\pi G}{3}\rho(t) R^2(t) - kc^2
+\end{equation}
+\noindent
+where $k$ is a constant of integration.  Turns out Equation
+\ref{eqn:friedman_B} is valid in GR, and tells us
+that $k$ is the same constant as in the metric.
+
+We appeal to thermodynamics to tell us that
+as heat $\Delta Q$ flows into a volume $V$ its
+internal energy $E$ must increase, or it expands
+and does work against pressure
+\begin{equation}
+\Delta Q = \Delta E + p \Delta V = V \Delta(\rho c^2) + (\rho c^2 + p)\Delta V
+\end{equation}
+\noindent
+where $\rho$ includes all the forms of matter and energy.
+But no volume $V$ gains heat at the expense of another and
+\begin{equation}
+\Delta Q = 0 = \Delta \rho + \left(\rho + \frac{p}{c^2}\right)\frac{\Delta V}{V}
+\end{equation}
+\noindent
+or
+\begin{equation}
+\frac{d\rho}{dt} = - c \frac{\dot{R}(t)}{R(t)}\left( \rho + \frac{p}{c^2}\right)
+\end{equation}
+\noindent
+Differentiating Equation \ref{eqn:friedman_B} and substituting for $d\rho/dt$
+yields
+\begin{equation}
+\label{eqn:friedman_C}
+\ddot{R}(t) = - \frac{4\pi G}{3} R(t) \left[ \rho(t) + \frac{3p(t)}{c^2}\right]
+\end{equation}
+\noindent
+So in GR, the pressure $p$ adds to the gravitational attraction. 
+Equations \ref{eqn:friedman_B} and \ref{eqn:friedman_C} are
+called the {\it Friedmann equations}.  For cool matter
+the pressure $p \sim \rho c_s^2$ where the sound speed $c_s \ll c$,
+and the pressure term in equation \ref{eqn:friedman_C} is 0.
+Then $\rho(t)\propto R^{-3}$.  For radiation and particles,
+$p\approx pc^2/3$ and $\rho(t) \propto R^{-4}(t)$.
+For matter and radiation $\rho + 3p/c^2$ is positive, and the
+universe decelerates. 
+
+The quantity $\rho(t)R^2(t)$ decreases as $R(t)$ grows, so the
+right hand side of eqn \ref{eqn:friedman_B} becomes negative
+for large $R$ if $k=1$.  Since $\dot{R}^2$ cannot be negative,
+$R$ will reach a maximum and turn around.  For $k\le0$, the
+expansion never ends.
+
+GR allows for a {\it vacuum energy} with constant density $\rho_{\Lambda} = \Lambda/(8\pi G)$.  Since $\rho_{\Lambda}$ is a constant, the RHS of the $\Delta Q$ equation must
+be zero since $\rho_{\Lambda}$
+cannot change and the pressure is $p_{\Lambda} = -\Lambda c^2/(8\pi G)$,
+which is more like a tension pulling out than a pressure pushing in.
+Once the universe expands so $\rho_{\Lambda}$ is larger than the other
+components, the universe expands exponentially.  This kind of 
+expansion may have happened in the early universe (inflation), which
+enables us to explain away several cosmological puzzles.
+
+
+\section{Lecture 11: Growth of Structure}
+
+The initial perturbations seeded by cosmic inflation likely had a
+power spectrum $P(k) \propto k$.  These perturbations were affected
+by physical processes at later times to alter $P(k)$ on small scales.
+We see evidence of this in the cosmic microwave background. As
+photons try to move out of the gravitational potential wells of the
+initial density perturbations, the photons experience a 
+{\it gravitational redshift} $\Delta\Phi_g$ that changes the
+temperature $T$ of the radiation by an amount $\Delta T$ according
+to
+\begin{equation}
+\frac{\Delta T}{T}|_{\mathrm{grav}} \sim \Delta \Phi_g c^{-2}
+\end{equation}
+\noindent
+The temperature is reduced where the potentially
+is unusually deep since $\Delta \Phi_g$ is negative
+there, and time runs more slowly such that $\Delta t/t =\Delta \Phi_g/c^2$
+and we see the gas at an earlier time when it was hotter.  The temperature
+declines by $T\propto 1/ a(t)$, so we have
+\begin{equation}
+\left.\frac{\Delta T}{T}\right|_{\mathrm{time}} = -\frac{\Delta a}{a} = -\frac{2}{3}\frac{\Delta t}{t} =  -\frac{2}{3}\frac{\Delta \Phi_g}{c^2}
+\end{equation}
+\noindent
+where we've used $a\propto t^{2/3}$ for the matter-dominated era.
+The net effect is that $\Delta T/T \sim \Delta \Phi_g / (3 c^2)$.
+If the region has density $\rho = \bar{\rho}(1+\delta)$ and a
+corresponding mass excess of $\Delta M = 4\pi \bar{\rho}R^3 \delta / 3$,
+then 
+\begin{equation}
+3c^2\frac{\Delta T}{T} = \Delta \Phi_g \sim - \frac{2G\Delta M}{R} = - \frac{8\pi}{3} G \bar{\rho}R^2 \delta \approx - \delta(t)[\bar{H}(t)R]^2
+\end{equation}
+\noindent
+such that radiation from dense regions is {\it colder}.
+
+We can model the temperature map of the sky by expanding
+the pattern of the CMB in spherical harmonics as
+\begin{equation}
+\Delta T(\theta, \phi) = \sum_{l>1} \sum_{-l\le m \le l} a_l^m Y_l^m(\theta, \phi).
+\end{equation}
+\noindent
+The theoretical predictions are often expressed in terms of $C_l = \ave{|a_l^m|^2}$ averaged over $m$ since this does not depend on the direction of ``north''
+in the map.  A commonly plotted quantity is $\Delta_T^2 = T^2 l(l+1)C_l/(2\pi)$.
+
+
+Pressure forces can act to suppress structure, but only on the
+sound horizon scale.  The sound horizon scale when the
+gas becomes transparent to photons (recombination) is
+\begin{equation}
+R(t_{rec}) \sigma_H = 3 c t_{rec} = \frac{2c}{H(t_{rec})} \approx \frac{2c}{H_0\sqrt{\Omega_m}(1+z_{rec})^{3/2}}.
+\end{equation}
+\noindent
+This works out to about $184/(h^2 \Omega_m)^{1/2}$~Mpc today.  The
+angle $\theta_H$ subtended by the sound horizon depends on
+the angular-size distance to $z_{rec}$.  When $\Omega_\Lambda\to0$
+and $\Omega_0 z\gg1$, then $d_A\to 2c/(H_0 z \Omega_0)$. We then
+have
+\begin{equation}
+\theta_H \approx \frac{R(t_{rec}\sigma_H)}{d_A(t_{rec})} \approx \sqrt{\frac{\Omega_0}{z_{rec}}} \approx 2^\circ \times \sqrt{\Omega_0},
+\end{equation}
+\noindent
+and only points separated by this angle on the sky can communicate before $t_{rec}$.  For $\Omega_0=1$, $\Delta_T$ is largest on the scale of about a degree,
+where the {\it first acoustic peak} of the CMB is found. A model
+with $\Omega_0=0.3$ provides about half this angle. In a cosmology
+close to what we think ours is, it turns out the 
+first peak is at $l\approx 220$ that corresponds to a size scale of 
+aobut $105~\Mpc$ today, which is a sphere that contains $2.5\times10^{16}M_{\odot}$.  The second peak is at $l\approx540$.
+
+
+\section{Lecture 12: Tidal Torques}
+
+Peculiar velocities grow as $\vv\propto t^{1/3}$ while distances
+grow as $d\propto a(t) \propto t^{2/3}$. In the linear regime,
+angular momentum then grows as $d \times v\propto t$. The
+region stops accruing angular momentum once it turns around
+and begins to collapse. Therefore, more overdense regions 
+tend to have less time to spin up.  However, tidal torques
+are also stronger in dense regions and so objects
+acquire the same average angular momentum in relation to their
+mass or energy.
+
+A galaxy of radius $R$, mass $M$, and angular momentum $L$
+will rotate an angular speed
+\begin{equation}
+\omega \sim L / (MR^2).
+\end{equation}
+\noindent
+The angular speed of a circular orbit at radius $R$ is
+\begin{equation}
+\omega_c^2 R \sim G M/R^2.
+\end{equation}
+The energy is $E\sim - GM^2/R$.  We therefore have 
+\begin{equation}
+\frac{\omega}{\omega_c}\equiv\lambda = \frac{L}{MR^2} \times \frac{R^{3/2}}{\sqrt{GM}} = \frac{L|E|^{1/2}}{GM^{5/2}}.
+\end{equation}
+\noindent
+From N-body simulations, we expect that $\lambda\sim$ a  few percent.
+Ellipticals have about this spin, but the Milky Way has $\lambda \approx 0.5$.
+Since the MW is a disk, energy dissipation can help amplify $\lambda$.
+
+This also argues for a dark halo, as otherwise the disk would
+not have time to form.  Without a halo, $L$ and $M$ remain
+fixed as the disk moves in.  The radius must decrease by $100\times$
+for $E$ to increase proportionally by the same amount.
+Disk material near the Sun would need to originate $800~\kpc$
+from the center, but $M(<R)$ would lie interior to the Sun's orbit.
+The orbital period of the Sun would be $1000\times$ longer than
+it's observed to be ($240~\Gyr$).  It would take many times the
+age of the universe to make the disk.
+
+Since the milky way has a large DM halo, the gas in the MW disk
+originates from a radius closer by a factor $M_d/M_{DM}$. The
+decrease in size is only a factor of 10.  Shrinking at
+$200~\km~\s^{-1}$ from a radius $80~\kpc$, the disk could
+have formed in $\lesssim2~\Gyr$.
+
+
+
+
+
+\end{document}
